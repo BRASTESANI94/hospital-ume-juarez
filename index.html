@@ -585,6 +585,39 @@
   <!-- Tailwind compilado (va DESPUÉS del CSS propio, igual que antes con el CDN) (fuente: ../4_codigo_fuente_y_respaldos/tailwind/compilar-css.bat) -->
   <link rel="stylesheet" href="assets/css/tailwind.css">
 
+  <style>
+    /* ================= ZONAS TACTILES Y TEXTO MINIMO (movil / pantallas tactiles) ================= */
+    @media (pointer: coarse), (max-width: 1023px) {
+      /* Area de toque ampliada con un elemento invisible: no cambia el diseño */
+      #dock-mobile-toggle, #btn-expand-map, #testimonial-dots button,
+      #hover-footer a:not(.hover-border-gradient),
+      main a[class*="text-brand-teal"][class*="inline-flex"],
+      main a[class*="text-brand-emergency"][class*="inline-flex"],
+      main a[class*="text-brand-cyan"][class*="text-xs"] { position: relative; }
+      #dock-mobile-toggle::after, #btn-expand-map::after, #testimonial-dots button::after,
+      #hover-footer a:not(.hover-border-gradient)::after,
+      main a[class*="text-brand-teal"][class*="inline-flex"]::after,
+      main a[class*="text-brand-emergency"][class*="inline-flex"]::after,
+      main a[class*="text-brand-cyan"][class*="text-xs"]::after { content: ""; position: absolute; inset: -12px -4px; }
+      #dock-mobile-toggle::after { inset: 0 -6px; }
+      #btn-expand-map::after { inset: -8px; }
+      #testimonial-dots { gap: 16px; }
+      #testimonial-dots button::after { inset: -18px -8px; }
+      #hover-footer a:not(.hover-border-gradient) { display: inline-block; }
+      #hover-footer a:not(.hover-border-gradient)::after { inset: -5px -4px; }
+      #hover-footer a[class*="w-9"] { display: flex; }
+      #hover-footer a[class*="w-9"]::after { inset: -4px; }
+      /* Botones con borde animado: alto minimo de 44px */
+      .hover-border-gradient-inner { min-height: 41px; }
+      /* Enlaces legales del pie */
+      .legal-nav button { padding: 11px 0; }
+    }
+    @media (max-width: 767px) {
+      .text-\[10px\], .text-\[11px\] { font-size: 12px; }
+      #hero-dark .tracking-\[0\.4em\] { letter-spacing: 0.28em; }
+    }
+  </style>
+
   <!-- SVG Global Gradient for Border Trail -->
   <svg width="0" height="0" class="absolute">
     <defs>
