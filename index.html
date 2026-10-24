@@ -488,9 +488,14 @@
       user-select: none;
       pointer-events: none;
       white-space: nowrap;
-      color: rgba(255, 255, 255, 0.03);
+      /* Las letras se iluminan solo en el punto donde esta el cursor (--lx/--ly); lejos de ellas no se ve luz */
+      color: transparent;
+      background-image:
+        radial-gradient(circle 190px at var(--lx, -9999px) var(--ly, -9999px), rgba(0, 168, 150, 0.95), rgba(0, 168, 150, 0.4) 45%, transparent 75%),
+        linear-gradient(rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.035));
+      -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.08);
-      transition: color 0.3s ease;
       z-index: 1;
     }
     .footer-glowing-torch {
@@ -498,7 +503,7 @@
       inset: 0;
       pointer-events: none;
       z-index: 2;
-      background: radial-gradient(circle 380px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 168, 150, 0.22), rgba(56, 189, 248, 0.12), transparent 75%);
+      background: radial-gradient(circle 260px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 168, 150, 0.1), rgba(56, 189, 248, 0.05), transparent 75%);
     }
 
     /* WhatsApp floating button */
@@ -1915,15 +1920,15 @@
         footerTorch.style.setProperty('--mouse-x', `${x}px`);
         footerTorch.style.setProperty('--mouse-y', `${y}px`);
 
-        // Iluminación reactiva en las letras UME
-        const centerX = rect.width / 2;
-        const distFromCenter = Math.abs(x - centerX);
-        const intensity = Math.max(0.08, 0.45 - (distFromCenter / rect.width) * 0.4);
-        footerUmeLetters.style.color = `rgba(0, 168, 150, ${intensity})`;
+        // Iluminación de las letras UME: la luz nace en el cursor, así que solo se ve cuando está cerca de ellas
+        const lr = footerUmeLetters.getBoundingClientRect();
+        footerUmeLetters.style.setProperty('--lx', `${e.clientX - lr.left}px`);
+        footerUmeLetters.style.setProperty('--ly', `${e.clientY - lr.top}px`);
       });
 
       hoverFooter.addEventListener('mouseleave', () => {
-        footerUmeLetters.style.color = 'rgba(255, 255, 255, 0.03)';
+        footerUmeLetters.style.removeProperty('--lx');
+        footerUmeLetters.style.removeProperty('--ly');
       });
     }
 
