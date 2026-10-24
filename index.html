@@ -1,0 +1,2551 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital UME | Unidad Médica Especializada - Ciudad Juárez</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Hospital UME en Ciudad Juárez: Tecnología avanzada y atención humana. Urgencias 24/7, quirófanos modernos, maternidad, laboratorio y más de 30 especialistas médicos.">
+  <link rel="icon" type="image/png" href="assets/images/logo-sitio.png">
+  <meta name="theme-color" content="#0c2340">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Hospital UME">
+  <meta property="og:title" content="Hospital UME | Unidad Médica Especializada - Ciudad Juárez">
+  <meta property="og:description" content="Tecnología avanzada y atención humana. Urgencias 24/7, quirófanos modernos, maternidad, laboratorio y más de 30 especialistas médicos en Ciudad Juárez.">
+  <link rel="canonical" href="https://hospitalume.com.mx/">
+  <meta property="og:url" content="https://hospitalume.com.mx/">
+  <meta property="og:image" content="https://hospitalume.com.mx/assets/images/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Fachada de Hospital UME en Ciudad Juárez">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hospital UME | Ciudad Juárez">
+  <meta name="twitter:description" content="Urgencias 24/7, quirófanos, maternidad y laboratorio. Tecnología avanzada, atención humana.">
+  <meta name="twitter:image" content="https://hospitalume.com.mx/assets/images/og-image.jpg">
+  <meta name="twitter:image:alt" content="Fachada de Hospital UME en Ciudad Juárez">
+  <link rel="preload" as="image" href="assets/images/foto%20de%20fachada.webp" fetchpriority="high">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Hospital",
+    "name": "Hospital UME - Unidad Médica Especializada",
+    "url": "https://hospitalume.com.mx/",
+    "image": "https://hospitalume.com.mx/assets/images/og-image.jpg",
+    "telephone": "+526569002248",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Blvd. Independencia #841, Colonia Zaragoza",
+      "addressLocality": "Ciudad Juárez",
+      "addressRegion": "Chihuahua",
+      "postalCode": "32570",
+      "addressCountry": "MX"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 31.674995574143438, "longitude": -106.35334712437877 },
+    "hasMap": "https://www.google.com/maps/dir/?api=1&destination=31.674995574143438,-106.35334712437877",
+    "contactPoint": [
+      { "@type": "ContactPoint", "telephone": "+526569002248", "contactType": "emergency", "areaServed": "MX", "availableLanguage": "es" },
+      { "@type": "ContactPoint", "telephone": "+526565632887", "contactType": "customer service", "areaServed": "MX", "availableLanguage": "es" }
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00", "closes": "23:59"
+    },
+    "medicalSpecialty": ["Obstetric","Surgical","Orthopedic","Emergency"]
+  }
+  </script>
+  <noscript><style>.soft-blur-title{opacity:1!important;filter:none!important;transform:none!important}</style></noscript>
+  
+  <!-- Google Fonts: Inter & Roboto Slab -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Slab:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+
+  <style>
+    /* ================= 6. SOFT BLUR IN (@educalvolpz/components/soft-blur-in) ================= */
+    .soft-blur-title {
+      opacity: 0;
+      filter: blur(14px);
+      transform: translateY(20px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+                  filter 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, filter, transform;
+    }
+    .soft-blur-title.is-visible {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0);
+    }
+
+    /* ================= 5. ANIMATED TEXT BANNER 1 SOLA VEZ (@designali-in/components/animated-text) ================= */
+    @keyframes animated-text-up {
+      0% {
+        opacity: 0;
+        transform: translateY(35px) scale(0.96);
+        filter: blur(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+    .animated-word {
+      display: inline-block;
+      opacity: 0;
+      animation: animated-text-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-iteration-count: 1; /* SOLO 1 VEZ COMO FUE SOLICITADO */
+    }
+    .animated-word-1 { animation-delay: 0.15s; }
+    .animated-word-2 { animation-delay: 0.32s; }
+    .animated-word-3 { animation-delay: 0.55s; }
+    .animated-word-4 { animation-delay: 0.72s; }
+
+    /* ================= 8. HOVER BORDER GRADIENT (@manuarora700/components/hover-border-gradient) ================= */
+    .hover-border-gradient {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      background-color: #071626;
+      padding: 1.5px;
+      overflow: hidden;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px -2px rgba(0, 168, 150, 0.25);
+    }
+    .hover-border-gradient::before {
+      content: '';
+      position: absolute;
+      inset: -150%;
+      background: conic-gradient(from 0deg, transparent 0 310deg, #00a896 335deg, #38bdf8 355deg, transparent 360deg);
+      animation: hbg-spin 4s linear infinite;
+      pointer-events: none;
+      opacity: 0.9;
+    }
+    .hover-border-gradient:hover::before {
+      animation-duration: 2s;
+      opacity: 1;
+      filter: drop-shadow(0 0 8px #38bdf8);
+    }
+    .hover-border-gradient-inner {
+      position: relative;
+      z-index: 10;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #0a2540 0%, #071626 100%);
+      padding: 0.65rem 1.35rem;
+      color: #ffffff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .hover-border-gradient:hover .hover-border-gradient-inner {
+      background: linear-gradient(135deg, #0e3356 0%, #0a2540 100%);
+      color: #f0fdfa;
+    }
+
+    .hover-border-gradient-whatsapp {
+      box-shadow: 0 4px 20px -2px rgba(37, 211, 102, 0.3);
+    }
+    .hover-border-gradient-whatsapp::before {
+      background: conic-gradient(from 0deg, transparent 0 310deg, #25D366 335deg, #86efac 355deg, transparent 360deg);
+    }
+    .hover-border-gradient-whatsapp .hover-border-gradient-inner {
+      background: linear-gradient(135deg, #0f3d2a 0%, #09261a 100%);
+    }
+    .hover-border-gradient-whatsapp:hover .hover-border-gradient-inner {
+      background: linear-gradient(135deg, #145238 0%, #0f3d2a 100%);
+    }
+
+    .hover-border-gradient-emergency {
+      box-shadow: 0 4px 20px -2px rgba(220, 38, 38, 0.4);
+    }
+    .hover-border-gradient-emergency::before {
+      background: conic-gradient(from 0deg, transparent 0 310deg, #dc2626 335deg, #f87171 355deg, transparent 360deg);
+    }
+    .hover-border-gradient-emergency .hover-border-gradient-inner {
+      background: linear-gradient(135deg, #5c1111 0%, #380a0a 100%);
+    }
+
+    @keyframes hbg-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ================= BORDER BEAM EFFECT ================= */
+    .border-beam-container {
+      position: relative;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.98);
+      overflow: hidden;
+    }
+    .border-beam-glow {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 2px;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .border-beam-glow::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent 0 300deg, #00a896 330deg, #38bdf8 350deg, transparent 360deg);
+      animation: rotate-beam 6s linear infinite;
+    }
+    @keyframes rotate-beam {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ================= BORDER TRAIL COMPONENT ================= */
+    .border-trail-card {
+      position: relative;
+      border-radius: 1.5rem;
+      background: #ffffff;
+      overflow: hidden;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .border-trail-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 35px -10px rgba(0, 168, 150, 0.18);
+    }
+    .border-trail-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    .border-trail-rect {
+      fill: none;
+      stroke: url(#trail-gradient);
+      stroke-width: 2.5;
+      stroke-dasharray: 70 300;
+      stroke-dashoffset: 0;
+      animation: trail-run 4s linear infinite;
+      opacity: 0.3;
+      transition: opacity 0.3s ease;
+    }
+    .border-trail-card:hover .border-trail-rect {
+      opacity: 1;
+      animation-duration: 2.2s;
+    }
+    @keyframes trail-run {
+      to { stroke-dashoffset: -370; }
+    }
+
+    /* ================= LUZ DE AMBULANCIA TITILAR ================= */
+    @keyframes ambulance-strobe {
+      0%, 100% {
+        background-color: #dc2626;
+        box-shadow: 0 0 35px rgba(220, 38, 38, 0.9), inset 0 0 25px rgba(239, 68, 68, 0.7);
+        border-color: #f87171;
+      }
+      25% {
+        background-color: #991b1b;
+        box-shadow: 0 0 15px rgba(220, 38, 38, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.4);
+        border-color: #ef4444;
+      }
+      50% {
+        background-color: #1e3a8a;
+        box-shadow: 0 0 35px rgba(37, 99, 235, 0.9), inset 0 0 25px rgba(59, 130, 246, 0.7);
+        border-color: #60a5fa;
+      }
+      75% {
+        background-color: #dc2626;
+        box-shadow: 0 0 50px rgba(239, 68, 68, 1), inset 0 0 30px rgba(255, 255, 255, 0.45);
+        border-color: #fca5a5;
+      }
+    }
+    .ambulance-banner {
+      animation: ambulance-strobe 1.6s infinite ease-in-out;
+    }
+    @keyframes siren-wiggle {
+      0%, 100% { transform: rotate(-10deg) scale(1.05); }
+      50% { transform: rotate(10deg) scale(1.2); }
+    }
+    .siren-icon {
+      animation: siren-wiggle 0.3s infinite ease-in-out;
+    }
+
+    /* ================= ANIMATED SVG ICONS ================= */
+    .icon-pulse-heart {
+      animation: heart-pulse-anim 1.5s ease-in-out infinite;
+      transform-origin: center;
+    }
+    @keyframes heart-pulse-anim {
+      0%, 100% { transform: scale(1); }
+      14% { transform: scale(1.18); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.12); }
+      70% { transform: scale(1); }
+    }
+
+    .icon-clock-hand {
+      transform-origin: 12px 12px;
+      animation: clock-spin 6s linear infinite;
+    }
+    @keyframes clock-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .icon-ecg-path {
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      animation: ecg-draw 2.4s ease-in-out infinite;
+    }
+    @keyframes ecg-draw {
+      0% { stroke-dashoffset: 60; }
+      50% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -60; }
+    }
+
+    .icon-phone-ring {
+      animation: phone-shake 2.5s infinite;
+      transform-origin: center;
+    }
+    @keyframes phone-shake {
+      0%, 80%, 100% { transform: rotate(0); }
+      85% { transform: rotate(14deg); }
+      90% { transform: rotate(-14deg); }
+      95% { transform: rotate(10deg); }
+    }
+
+    .icon-scissor-cut {
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+    .group:hover .icon-scissor-cut {
+      animation: scissor-snip 0.8s ease-in-out infinite;
+    }
+    @keyframes scissor-snip {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15) rotate(10deg); }
+    }
+
+    /* ================= DOCK NAVBAR ================= */
+    .dock-container {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 16px 40px -10px rgba(7, 22, 38, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.8);
+    }
+    .dock-item {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dock-item:hover {
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    .dropdown-bridge {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 12px;
+      z-index: 100;
+    }
+
+    /* ================= 2. 3D CIRCULAR GALLERY (ENLARGED, AUTO 2s, PAUSE ON HOVER & SWIPE) ================= */
+    .gallery-stage {
+      perspective: 1400px;
+      perspective-origin: 50% 50%;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: pan-y;
+      cursor: grab;
+    }
+    .gallery-stage:active {
+      cursor: grabbing;
+    }
+    .gallery-carousel {
+      position: relative;
+      width: 100%;
+      height: 460px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.2, 0.85, 0.4, 1);
+    }
+    .gallery-item {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 460px;
+      height: 300px;
+      margin-left: -230px;
+      margin-top: -150px;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      transition: filter 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    }
+    @media (max-width: 640px) {
+      .gallery-item {
+        width: 320px;
+        height: 220px;
+        margin-left: -160px;
+        margin-top: -110px;
+      }
+      .gallery-carousel {
+        height: 360px;
+      }
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .gallery-item:hover {
+        transform: scale(1.15) !important;
+        z-index: 60 !important;
+        border-color: #00a896;
+        box-shadow: 0 25px 60px rgba(0, 168, 150, 0.5);
+        filter: brightness(1.12) !important;
+      }
+    }
+
+    /* ================= 3. GLASS TESTIMONIAL SWIPER ================= */
+    .glass-swiper-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 25px 50px -12px rgba(10, 37, 64, 0.12);
+      border-radius: 2rem;
+      user-select: none;
+      touch-action: pan-y;
+      cursor: grab;
+    }
+    .glass-swiper-card:active {
+      cursor: grabbing;
+    }
+
+    /* ================= 4. ACCORDION SUAVE Y LENTO (RADIX/SHADCN UI) ================= */
+    .shadcn-accordion-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.48s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+      opacity: 0;
+    }
+    .shadcn-accordion-content.is-open {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+    .shadcn-accordion-inner {
+      overflow: hidden;
+    }
+
+    /* ================= 3. LOCATION MAP 3D COMPONENT (@dev.shejanmahamud/components/expanded-map - Joly UI) ================= */
+    .location-map-perspective {
+      perspective: 1200px;
+    }
+    .location-map-preserve-3d {
+      transform-style: preserve-3d;
+    }
+    .location-map-card {
+      transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      will-change: transform, height;
+      transform-style: preserve-3d;
+    }
+    .map-plane-3d {
+      transform: perspective(1000px) rotateX(32deg) rotateZ(-2deg) scale(1.08) !important;
+    }
+    .pin-stand-3d {
+      transform: translate(-50%, -100%) rotateX(-32deg) translateZ(50px) !important;
+    }
+    /* ================= 4. HOVER FOOTER CON LETRAS "UME" QUE SE ILUMINAN (@mdafsarx/components/hover-footer) ================= */
+    .hover-footer-container {
+      position: relative;
+      background-color: #050f1a;
+      overflow: hidden;
+    }
+    .footer-glowing-ume {
+      position: absolute;
+      bottom: 2%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24vw;
+      font-weight: 900;
+      line-height: 0.8;
+      letter-spacing: -0.05em;
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+      color: rgba(255, 255, 255, 0.03);
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.08);
+      transition: color 0.3s ease;
+      z-index: 1;
+    }
+    .footer-glowing-torch {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background: radial-gradient(circle 380px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 168, 150, 0.22), rgba(56, 189, 248, 0.12), transparent 75%);
+    }
+
+    /* WhatsApp floating button */
+    .pulse-whatsapp {
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* ================= ACCESIBILIDAD ================= */
+    *:focus-visible { outline: 3px solid #00a896 !important; outline-offset: 3px !important; border-radius: 6px; }
+    .skip-link { position: absolute; left: 12px; top: -64px; z-index: 200; background: #0c2340; color: #fff; padding: 10px 16px; border-radius: 999px; font-weight: 600; transition: top .2s; }
+    .skip-link:focus { top: 12px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      .soft-blur-title { opacity: 1; filter: none; transform: none; }
+    }
+
+    /* ================= HERO COMPARE-REVEAL: texto UME ================= */
+    .hero-ume-text {
+      font-size: clamp(88px, 13vw, 230px);
+      letter-spacing: 0.04em;
+      color: #00a896;
+      text-shadow: 0 0 40px rgba(0, 168, 150, 0.55), 0 0 90px rgba(0, 168, 150, 0.25);
+    }
+
+    /* ================= AVISOS LEGALES Y COOKIES ================= */
+    .legal-nav { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 10px; }
+    .legal-nav button, .legal-link { font: inherit; background: none; border: 0; padding: 0; cursor: pointer; color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .legal-nav button { font-size: 12px; color: #94a3b8; padding: 6px 0; }
+    .legal-nav button:hover { color: #fff; }
+    .legal-link { color: #0c2340; font-weight: 600; }
+    .legal-link:hover { opacity: .65; }
+    .legal-dlg { width: min(780px, calc(100% - 32px)); max-height: 88vh; padding: 0; border: 0; border-radius: 1.25rem; background: #fff; color: #0f172a; box-shadow: 0 40px 80px -30px rgba(0,0,0,.6); overflow: hidden; }
+    .legal-dlg[open] { display: flex; flex-direction: column; }
+    .legal-dlg::backdrop { background: rgba(7, 22, 38, .6); backdrop-filter: blur(3px); }
+    .legal-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 28px; border-bottom: 1px solid #e2e8f0; }
+    .legal-head h2 { font: 700 clamp(22px, 3vw, 28px)/1.1 'Roboto Slab', serif; color: #0c2340; margin: 0; }
+    .legal-close { width: 38px; height: 38px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; font-size: 14px; color: #0c2340; flex: none; }
+    .legal-close:hover { background: #f1f5f9; }
+    .legal-body { padding: 8px 28px 30px; overflow: auto; font-size: 14px; line-height: 1.65; }
+    .legal-body h3 { font: 700 14px 'Inter', sans-serif; margin: 22px 0 6px; color: #0c2340; }
+    .legal-body p, .legal-body ul, .legal-body ol { margin: 0 0 10px; }
+    .legal-body ul, .legal-body ol { padding-left: 20px; list-style: revert; }
+    .legal-body li { margin-bottom: 5px; }
+    .legal-body a:not(.ume-btn) { color: #028090; text-decoration: underline; text-underline-offset: 3px; }
+    .legal-date { font-size: 12px; color: #64748b; margin: 14px 0 0 !important; }
+    .ph { background: #fef3c7; color: #78350f; padding: 0 4px; border-radius: 4px; }
+    .legal-table { overflow-x: auto; margin: 6px 0 10px; }
+    .legal-table table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 13px; }
+    .legal-table th, .legal-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    .legal-table th { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #64748b; }
+    .legal-table code { font-size: 12px; background: #f1f5f9; padding: 1px 5px; border-radius: 4px; }
+    .ck-form { display: flex; flex-direction: column; gap: 2px; }
+    .ck-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 14px 0; border-bottom: 1px solid #e2e8f0; cursor: pointer; }
+    .ck-row small { display: block; color: #64748b; font-size: 12px; margin-top: 2px; }
+    .ck-row input { width: 20px; height: 20px; accent-color: #00a896; flex: none; }
+    .ck-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .ume-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 11px 18px; border-radius: 999px; font: 600 13px 'Inter', sans-serif; cursor: pointer; border: 1px solid transparent; }
+    .ume-btn-dark { background: #0c2340; color: #fff; }
+    .ume-btn-dark:hover { background: #0a2540; }
+    .ume-btn-outline { background: #fff; color: #0c2340; border-color: #0c2340; }
+    .ume-btn-outline:hover { background: #f1f5f9; }
+    .cookie-bar { position: fixed; left: max(16px, env(safe-area-inset-left, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 90; width: min(440px, calc(100% - 32px)); background: #fff; border: 1px solid #e2e8f0; border-radius: 1.1rem; padding: 18px 20px; box-shadow: 0 24px 50px -20px rgba(7,22,38,.55); font-size: 13px; color: #0f172a; }
+    .cookie-bar[hidden] { display: none; }
+    .cookie-bar p { margin: 0 0 14px; line-height: 1.55; }
+    .cookie-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    @media (max-width: 640px) {
+      .cookie-bar { right: 16px; width: auto; padding: 14px 16px; font-size: 12px; }
+      body.cookie-open a[href^="https://wa.me"].fixed { display: none; }
+      .legal-head, .legal-body { padding-left: 20px; padding-right: 20px; }
+      .legal-dlg { max-height: 92vh; width: calc(100% - 20px); }
+    }
+  </style>
+
+  <!-- Tailwind compilado (va DESPUÉS del CSS propio, igual que antes con el CDN) (fuente: ../4_codigo_fuente_y_respaldos/tailwind/compilar-css.bat) -->
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+
+  <!-- SVG Global Gradient for Border Trail -->
+  <svg width="0" height="0" class="absolute">
+    <defs>
+      <linearGradient id="trail-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00a896" />
+        <stop offset="50%" stop-color="#38bdf8" />
+        <stop offset="100%" stop-color="#028090" />
+      </linearGradient>
+    </defs>
+  </svg>
+</head>
+<body class="font-sans text-slate-700 bg-brand-graybg antialiased selection:bg-brand-teal selection:text-white pt-24">
+
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+  <!-- ================= DOCK NAVBAR FLOTANTE (@ibelick/components/dock) ================= -->
+  <header class="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6">
+    <div class="max-w-6xl mx-auto dock-container rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between gap-2 border border-slate-200/60 shadow-2xl">
+      
+      <!-- Logotipo Oficial UME -->
+      <a href="#inicio" class="dock-item flex items-center gap-2 pl-1 flex-shrink-0">
+        <img src="assets/images/logo-ume-scaled-e1776191801809.png" alt="Hospital UME" width="334" height="258" class="h-10 sm:h-11 w-auto object-contain">
+      </a>
+
+      <!-- Enlaces Centrales del Dock (Desktop) -->
+      <nav aria-label="Navegación principal" class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium text-slate-700">
+        <a href="#inicio" class="dock-item px-3.5 py-1.5 rounded-full text-brand-teal font-semibold hover:bg-slate-100 transition">
+          <span>Inicio</span>
+        </a>
+        <a href="#nosotros" class="dock-item px-3.5 py-1.5 rounded-full hover:text-brand-teal hover:bg-slate-100 transition">
+          <span>Nosotros</span>
+        </a>
+
+        <!-- Dropdown Especialidades con Puente Invisible y Toggle Estable -->
+        <div class="relative" id="dropdown-especialidades-container">
+          <button id="btn-especialidades" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-especialidades-menu" class="dock-item px-3.5 py-1.5 rounded-full hover:text-brand-teal hover:bg-slate-100 transition flex items-center gap-1.5 focus:outline-none">
+            <span>Especialidades</span>
+            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform duration-200" id="icon-especialidades"></i>
+          </button>
+          
+          <div class="dropdown-bridge hidden" id="dropdown-especialidades-menu">
+            <div class="w-72 bg-white/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-100 p-3 py-2 space-y-1">
+              <a href="#especialidades" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal text-xs font-semibold">
+                <i class="fa-solid fa-stethoscope text-brand-teal w-5 text-center text-sm"></i>
+                <div>
+                  <div class="text-sm font-bold text-brand-navy">Consulta de Especialidad</div>
+                  <div class="text-[11px] text-slate-400 font-normal">+30 Médicos certificados</div>
+                </div>
+              </a>
+              <a href="#especialidades" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal text-xs font-semibold">
+                <i class="fa-solid fa-baby text-brand-teal w-5 text-center text-sm"></i>
+                <div>
+                  <div class="text-sm font-bold text-brand-navy">Maternidad y Partos</div>
+                  <div class="text-[11px] text-slate-400 font-normal">Paquetes todo incluido</div>
+                </div>
+              </a>
+              <a href="#especialidades" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal text-xs font-semibold">
+                <i class="fa-solid fa-hospital-user text-brand-teal w-5 text-center text-sm"></i>
+                <div>
+                  <div class="text-sm font-bold text-brand-navy">Cirugía General</div>
+                  <div class="text-[11px] text-slate-400 font-normal">Quirófanos equipados</div>
+                </div>
+              </a>
+              <a href="#especialidades" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal text-xs font-semibold">
+                <i class="fa-solid fa-vial-virus text-brand-teal w-5 text-center text-sm"></i>
+                <div>
+                  <div class="text-sm font-bold text-brand-navy">Laboratorio Clínico</div>
+                  <div class="text-[11px] text-slate-400 font-normal">Entrega rápida de análisis</div>
+                </div>
+              </a>
+              <a href="#especialidades" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal text-xs font-semibold">
+                <i class="fa-solid fa-x-ray text-brand-teal w-5 text-center text-sm"></i>
+                <div>
+                  <div class="text-sm font-bold text-brand-navy">Imagenología y Rayos X</div>
+                  <div class="text-[11px] text-slate-400 font-normal">Diagnóstico de precisión</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="#segmento" class="dock-item px-3.5 py-1.5 rounded-full hover:text-brand-teal hover:bg-slate-100 transition">
+          <span>Médicos y Pacientes</span>
+        </a>
+        <a href="#tour3d" class="dock-item px-3.5 py-1.5 rounded-full hover:text-brand-teal hover:bg-slate-100 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-cube text-brand-teal text-xs"></i>
+          <span>Tour 3D</span>
+        </a>
+        <a href="#testimonios" class="dock-item px-3.5 py-1.5 rounded-full hover:text-brand-teal hover:bg-slate-100 transition">
+          <span>Testimonios</span>
+        </a>
+        <a href="#contacto" class="dock-item px-3.5 py-1.5 rounded-full hover:text-brand-teal hover:bg-slate-100 transition">
+          <span>Contacto</span>
+        </a>
+      </nav>
+
+      <!-- Botones de Acción Derecha con Hover Border Gradient -->
+      <div class="flex items-center gap-2.5">
+        <a href="tel:6569002248" class="hover-border-gradient hidden sm:inline-flex" aria-label="Llamar">
+          <span class="hover-border-gradient-inner py-1.5 px-3.5 text-xs">
+            <svg class="w-3.5 h-3.5 text-brand-cyan icon-phone-ring" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>(656) 900-2248</span>
+          </span>
+        </a>
+
+        <a href="https://wa.me/526565632887?text=Hola,%20deseo%20agendar%20una%20cita%20médica%20en%20Hospital%20UME" target="_blank" rel="noopener" class="hover-border-gradient">
+          <span class="hover-border-gradient-inner py-1.5 px-4 text-xs sm:text-sm">
+            <svg class="w-4 h-4 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span>Agendar Cita</span>
+          </span>
+        </a>
+
+        <!-- Botón Móvil Hamburguesa -->
+        <button id="dock-mobile-toggle" type="button" aria-expanded="false" aria-controls="dock-mobile-menu" class="lg:hidden p-2 text-slate-700 hover:text-brand-teal rounded-full hover:bg-slate-100 transition" aria-label="Menú">
+          <i class="fa-solid fa-bars text-lg" id="dock-menu-icon"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Menú Desplegable Móvil Flotante -->
+    <div id="dock-mobile-menu" class="hidden lg:hidden max-w-md mx-auto mt-2 bg-white/95 backdrop-blur-2xl rounded-3xl p-5 shadow-2xl border border-slate-200 space-y-3 transition-all">
+      <a href="#inicio" class="block text-slate-800 font-semibold py-1.5 hover:text-brand-teal">Inicio</a>
+      <a href="#nosotros" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Nosotros y Galería 3D</a>
+      <a href="#especialidades" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Especialidades Médicas</a>
+      <a href="#segmento" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Para Médicos y Pacientes</a>
+      <a href="#tour3d" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Tour Virtual 3D</a>
+      <a href="#testimonios" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Testimonios</a>
+      <a href="#contacto" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Contacto y Citas</a>
+      <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+        <a href="tel:6569002248" class="text-center font-bold py-2.5 rounded-xl border border-slate-300 text-brand-navy flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone text-brand-teal"></i>
+          <span>(656) 900 2248</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+  <!-- ================= 1 & 5. BANNER HERO: IMAGEN 100% VÍVIDA Y ANIMATED TEXT (@designali-in) 1 SOLA VEZ ================= -->
+  <section id="inicio" class="relative overflow-hidden min-h-[620px] lg:min-h-[700px] bg-brand-navy text-white flex items-center max-lg:flex-col max-lg:justify-center">
+    
+    <!-- Imagen de Fachada en la Mitad Derecha: 100% Visible, Nítida y Luminosa -->
+    <div id="hero-compare" class="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none z-0 overflow-hidden max-lg:relative max-lg:inset-auto max-lg:order-last max-lg:z-10 max-lg:h-[340px] sm:max-lg:h-[420px] max-lg:w-[calc(100%-2rem)] max-lg:mb-10 max-lg:rounded-3xl max-lg:pointer-events-auto max-lg:shadow-2xl max-lg:ring-1 max-lg:ring-white/10" style="touch-action: pan-y;">
+      <img src="assets/images/foto de fachada.webp" alt="Fachada de Hospital UME en Ciudad Juárez" width="1600" height="900" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center scale-100 brightness-105 contrast-105">\2
+      <!-- Capa oscura revelada por el cursor (@rmahammad/components/compare-reveal) -->
+      <div id="hero-dark" class="absolute inset-0" style="clip-path: inset(0 0 0 100%);" aria-hidden="true">
+        <img src="assets/images/foto de fachada.webp" alt="" width="1600" height="900" decoding="async" class="w-full h-full object-cover object-center" style="filter: brightness(.3) saturate(.7) contrast(1.1);">
+        <div class="absolute inset-0 bg-brand-navy/55"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center select-none px-4">
+          <span class="hero-ume-text font-serif font-black leading-none">UME</span>
+          <span class="mt-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.4em] text-brand-teal">Unidad Médica Especializada</span>
+        </div>
+      </div>
+      <!-- Control deslizante -->
+      <div id="hero-handle" role="slider" tabindex="0" aria-label="Comparar fachada y versión oscura con el nombre UME" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"
+           class="flex absolute inset-y-0 z-20 pointer-events-auto items-center justify-center" style="left:97%; width:44px; margin-left:-22px;">
+        <span class="absolute inset-y-0 left-1/2 w-px bg-white/70"></span>
+        <span class="relative w-9 h-9 rounded-full bg-white/90 text-brand-navy shadow-lg flex items-center justify-center text-xs"><i class="fa-solid fa-arrows-left-right"></i></span>
+      </div>
+      <!-- El degradé corre únicamente en una franja angosta hacia la izquierda para la transición del fondo, dejando todo el edificio libre -->
+      <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-brand-navy to-transparent hidden lg:block"></div>
+      <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-brand-navy to-transparent lg:hidden"></div>
+    </div>
+
+    <!-- Fondo de respaldo sólido en la mitad izquierda para el texto -->
+    <div class="absolute inset-y-0 left-0 w-full lg:w-1/2 bg-brand-navy z-0"></div>
+
+    <!-- Patrón de puntos de fondo -->
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#00a896_1.5px,transparent_1.5px)] [background-size:24px_24px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10 w-full">
+      <div class="max-w-2xl space-y-6 text-center lg:text-left">
+        
+        <!-- Badge Superior -->
+        <div class="inline-flex items-center gap-2.5 bg-brand-teal/20 text-teal-300 border border-brand-teal/40 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-md">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-teal animate-ping"></span>
+          <span>Desde 2008 en Ciudad Juárez · +16 Años de Confianza</span>
+        </div>
+
+        <!-- 5. Título H1 con Animated Text (@designali-in) que se mueve 1 SOLA VEZ -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight tracking-tight drop-shadow-lg">
+          <span class="animated-word animated-word-1">Tecnología</span>
+          <span class="animated-word animated-word-2">avanzada,</span>
+          <br>
+          <span>
+            <span class="animated-word animated-word-3 text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-brand-teal">atención</span>
+            <span class="animated-word animated-word-4 text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-sky-300">humana.</span>
+          </span>
+        </h1>
+
+        <!-- Párrafo Descriptivo -->
+        <p class="text-slate-200 text-base sm:text-lg leading-relaxed font-normal drop-shadow">
+          En <strong>Hospital UME</strong> (Unidad Médica Especializada) cuidamos tu salud siempre contigo. Instalaciones hospitalarias modernas, quirófanos totalmente equipados, urgencias 24/7 y más de 30 especialistas médicos certificados cerca de ti.
+        </p>
+
+        <!-- Botones de Acción con Hover Border Gradient -->
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+          
+          <a href="https://wa.me/526565632887?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20o%20cotizar%20un%20servicio%20en%20Hospital%20UME" target="_blank" rel="noopener" class="hover-border-gradient hover-border-gradient-whatsapp w-full sm:w-auto">
+            <span class="hover-border-gradient-inner py-3.5 px-8 text-base">
+              <i class="fa-brands fa-whatsapp text-2xl text-emerald-400"></i>
+              <span>Agendar por WhatsApp</span>
+            </span>
+          </a>
+
+          <a href="#especialidades" class="hover-border-gradient w-full sm:w-auto">
+            <span class="hover-border-gradient-inner py-3.5 px-7 text-base">
+              <span>Ver Especialidades</span>
+              <i class="fa-solid fa-arrow-right text-xs text-brand-cyan"></i>
+            </span>
+          </a>
+        </div>
+
+        <!-- Badges Rápidos con Iconos Animados Lucide -->
+        <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-8 border-t border-white/15">
+          
+          <div class="flex flex-col sm:flex-row items-center gap-2.5">
+            <div class="w-10 h-10 rounded-xl bg-brand-teal/20 text-teal-300 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+                <line x1="12" y1="12" x2="12" y2="4" class="icon-clock-hand text-brand-cyan stroke-[2.5]"/>
+              </svg>
+            </div>
+            <div class="text-center sm:text-left">
+              <div class="text-white font-bold text-xs sm:text-sm">Urgencias 24/7</div>
+              <div class="text-slate-400 text-[11px]">Atención 365 días</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-2.5">
+            <div class="w-10 h-10 rounded-xl bg-brand-teal/20 text-teal-300 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-teal-300 icon-pulse-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </div>
+            <div class="text-center sm:text-left">
+              <div class="text-white font-bold text-xs sm:text-sm">+30 Especialistas</div>
+              <div class="text-slate-400 text-[11px]">Médicos certificados</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-2.5">
+            <div class="w-10 h-10 rounded-xl bg-brand-teal/20 text-teal-300 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div class="text-center sm:text-left">
+              <div class="text-white font-bold text-xs sm:text-sm">+2,000 Cirugías</div>
+              <div class="text-slate-400 text-[11px]">Procedimientos seguros</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. SECCIÓN SEGMENTADA CON SOFT BLUR IN (@educalvolpz) ================= -->
+  <section id="segmento" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Atención Personalizada</span>
+        <!-- 6. Soft Blur In en Título -->
+        <h2 class="soft-blur-title text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-brand-navy mt-1">¿Eres médico especialista o paciente?</h2>
+        <p class="text-slate-500 mt-2 text-sm sm:text-base">Infraestructura hospitalaria y tecnología médica de primer nivel al servicio de la comunidad juarense.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Tarjeta 1 con BORDER BEAM -->
+        <div class="border-beam-container p-8 sm:p-10 border border-slate-200/80 shadow-xl group">
+          <div class="border-beam-glow"></div>
+          
+          <div class="relative z-10">
+            <div class="w-14 h-14 rounded-2xl bg-teal-50 text-brand-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-teal group-hover:text-white transition duration-300">
+              <svg class="w-8 h-8 text-brand-teal group-hover:text-white transition-colors icon-pulse-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </div>
+            <span class="bg-brand-teal/10 text-brand-teal text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Para Pacientes y Familias</span>
+            <h3 class="text-2xl font-bold text-brand-navy mt-3 mb-3">Atención médica con sentido humano</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Te ofrecemos atención médica de primer nivel con especialistas certificados, consultas preventivas, paquetes accesibles de maternidad, cirugías seguras y servicio de urgencias abierto las 24 horas.
+            </p>
+            <ul class="space-y-3 mb-8 text-sm text-slate-700">
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-brand-teal"></i>
+                <span>Consultas con más de 30 especialistas</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-brand-teal"></i>
+                <span>Paquetes de parto y cesárea todo incluido</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-brand-teal"></i>
+                <span>Laboratorio de análisis clínicos e imagenología</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-brand-teal"></i>
+                <span>Habitaciones confortables para recuperación</span>
+              </li>
+            </ul>
+            
+            <a href="https://wa.me/526565632887?text=Hola,%20soy%20paciente%20y%20quisiera%20cotizar%20un%20servicio%20médico" target="_blank" rel="noopener" class="hover-border-gradient">
+              <span class="hover-border-gradient-inner py-2.5 px-6 text-sm">
+                <span>Cotizar o Agendar Consulta</span>
+                <i class="fa-solid fa-arrow-right text-xs text-brand-cyan"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 con BORDER BEAM -->
+        <div class="border-beam-container p-8 sm:p-10 border border-slate-200/80 shadow-xl group">
+          <div class="border-beam-glow"></div>
+          
+          <div class="relative z-10">
+            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-brand-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+              <svg class="w-8 h-8 text-brand-blue group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/>
+                <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/>
+                <circle cx="20" cy="10" r="2"/>
+              </svg>
+            </div>
+            <span class="bg-brand-blue/10 text-brand-blue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Para Médicos Especialistas</span>
+            <h3 class="text-2xl font-bold text-brand-navy mt-3 mb-3">Infraestructura y Renta de Quirófanos</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Brindamos a los cirujanos y médicos especialistas quirófanos con tecnología de vanguardia, instrumental esterilizado de alta precisión, área de recuperación, cuidados intensivos y soporte de enfermería 24/7.
+            </p>
+            <ul class="space-y-3 mb-8 text-sm text-slate-700">
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-brand-blue"></i>
+                <span>Quirófanos equipados para cirugía general y laparoscópica</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-brand-blue"></i>
+                <span>Camas de hospitalización privada y terapia intensiva</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-brand-blue"></i>
+                <span>Personal de enfermería y anestesiología calificado</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-brand-blue"></i>
+                <span>Costos competitivos y disponibilidad programable</span>
+              </li>
+            </ul>
+            
+            <a href="https://wa.me/526565632887?text=Hola,%20soy%20médico%20especialista%20y%20deseo%20información%20sobre%20renta%20de%20quirófanos" target="_blank" rel="noopener" class="hover-border-gradient">
+              <span class="hover-border-gradient-inner py-2.5 px-6 text-sm">
+                <span>Contactar para Renta de Quirófano</span>
+                <i class="fa-solid fa-arrow-right text-xs text-brand-cyan"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 2 & 6. QUIÉNES SOMOS: GALERÍA CIRCULAR 3D AUTO 2s, PAUSA AL PONER CURSOR Y DESLIZABLE ================= -->
+  <section id="nosotros" class="py-20 bg-gradient-to-b from-[#0a192f] via-[#0d233a] to-[#071626] text-white relative overflow-hidden">
+    <!-- Luces ambientales de iluminación para resaltar la galería -->
+    <div class="absolute top-10 left-1/4 w-[500px] h-[350px] bg-brand-teal/25 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-10 right-1/4 w-[500px] h-[350px] bg-sky-500/25 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-teal-300 font-semibold text-xs tracking-widest uppercase bg-teal-950/60 border border-teal-500/30 px-3.5 py-1 rounded-full">Instalaciones Médicas de Vanguardia</span>
+        <!-- 6. Soft Blur In en Título -->
+        <h2 class="soft-blur-title text-3xl sm:text-4xl font-serif font-bold text-white mt-3">Conoce Hospital UME por Dentro</h2>
+        <p class="text-slate-200 mt-2 text-sm sm:text-base">Gira automáticamente cada 2 segundos. <strong>Al colocar el cursor se detiene por completo</strong>. Desliza hacia los lados con el mouse para navegar manualmente.</p>
+      </div>
+
+      <!-- 2. Circular 3D Gallery Stage con Pausa al Cursor y Drag -->
+      <div class="gallery-stage my-6" id="gallery-wrapper" title="Coloca el cursor para detener el giro o arrastra para rotar">
+        <div class="gallery-carousel" id="circular-carousel">
+          
+          <!-- Item 1: Fachada -->
+          <div class="gallery-item" data-index="0" role="button" tabindex="0" aria-label="Ver foto 0 de la galeria" onclick="rotateGalleryTo(0)">
+            <img src="assets/images/foto de fachada.webp" alt="Fachada Hospital UME" width="1600" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-sm font-bold text-white drop-shadow">Fachada Principal · Cd. Juárez</div>
+          </div>
+
+          <!-- Item 2: CT Imaging Suite -->
+          <div class="gallery-item" data-index="1" role="button" tabindex="0" aria-label="Ver foto 1 de la galeria" onclick="rotateGalleryTo(1)">
+            <img src="assets/images/Bright Clinical CT Imaging Suite.webp" alt="Tomografía y Rayos X" width="1600" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-sm font-bold text-white drop-shadow">Suite de Tomografía Computarizada</div>
+          </div>
+
+          <!-- Item 3: MRI Suite -->
+          <div class="gallery-item" data-index="2" role="button" tabindex="0" aria-label="Ver foto 2 de la galeria" onclick="rotateGalleryTo(2)">
+            <img src="assets/images/Modern Siemens MRI Suite with Sky Ceiling.webp" alt="Resonancia Magnética" width="1600" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-sm font-bold text-white drop-shadow">Resonancia Magnética de Vanguardia</div>
+          </div>
+
+          <!-- Item 4: Ultrasound Room -->
+          <div class="gallery-item" data-index="3" role="button" tabindex="0" aria-label="Ver foto 3 de la galeria" onclick="rotateGalleryTo(3)">
+            <img src="assets/images/Modern Clinical Ultrasound Examination Room.webp" alt="Ultrasonido" width="1600" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-sm font-bold text-white drop-shadow">Sala de Ultrasonido y Diagnóstico</div>
+          </div>
+
+          <!-- Item 5: Diagnostic Room -->
+          <div class="gallery-item" data-index="4" role="button" tabindex="0" aria-label="Ver foto 4 de la galeria" onclick="rotateGalleryTo(4)">
+            <img src="assets/images/Modern Clinical Diagnostic Room.webp" alt="Diagnóstico Clínico" width="1600" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-sm font-bold text-white drop-shadow">Sala de Exploración Médica</div>
+          </div>
+
+          <!-- Item 6: Clinic Exam Room -->
+          <div class="gallery-item" data-index="5" role="button" tabindex="0" aria-label="Ver foto 5 de la galeria" onclick="rotateGalleryTo(5)">
+            <img src="assets/images/Modern Medical Clinic Exam Room.webp" alt="Consultorio de Especialidad" width="1600" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-sm font-bold text-white drop-shadow">Consultorios Privados</div>
+          </div>
+
+        </div>
+
+        <!-- Indicador de Foto Activa -->
+        <div class="flex items-center justify-center gap-2 mt-8">
+          <div class="flex items-center gap-1.5" id="gallery-dots">
+            <span class="w-6 h-2 rounded-full bg-brand-teal transition-all"></span>
+            <span class="w-2 h-2 rounded-full bg-white/30 transition-all"></span>
+            <span class="w-2 h-2 rounded-full bg-white/30 transition-all"></span>
+            <span class="w-2 h-2 rounded-full bg-white/30 transition-all"></span>
+            <span class="w-2 h-2 rounded-full bg-white/30 transition-all"></span>
+            <span class="w-2 h-2 rounded-full bg-white/30 transition-all"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto text-center mt-12 pt-8 border-t border-white/15">
+        <h3 class="text-xl font-bold font-serif text-white mb-3">Cubriendo las necesidades de atención médica desde el 2008</h3>
+        <p class="text-slate-200 text-sm leading-relaxed">
+          En <strong>Unidad Médica Especializada</strong>, nuestro compromiso es con la salud de las personas, mediante esfuerzo, trabajo y disciplina constante, ofreciendo servicios médicos de calidad, con tecnología de vanguardia y calidez humana.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 6. OFERTA MÉDICA CON SOFT BLUR IN Y BORDER TRAIL ================= -->
+  <section id="especialidades" class="py-20 bg-brand-graybg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Nuestra Oferta Médica</span>
+        <!-- 6. Soft Blur In en Título -->
+        <h2 class="soft-blur-title text-3xl sm:text-4xl font-serif font-bold text-brand-navy mt-1">Servicios Médicos de la Mejor Calidad, Cerca de Ti</h2>
+        <p class="text-slate-600 mt-2 text-sm sm:text-base">Tarjetas interactivas con tecnología de diagnóstico y atención integral.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Tarjeta 1: Laboratorio Clínico -->
+        <div class="border-trail-card p-8 group">
+          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="w-14 h-14 rounded-2xl bg-teal-50 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path class="icon-ecg-path" d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Laboratorio Clínico</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Pruebas y análisis clínicos completos con entrega ágil y confiable. Perfiles hormonales, metabólicos, pruebas de coagulación y rutina.
+          </p>
+          <a href="https://wa.me/526565632887?text=Hola,%20deseo%20información%20sobre%20análisis%20de%20laboratorio" target="_blank" rel="noopener" class="text-brand-teal font-semibold text-sm inline-flex items-center gap-2 hover:text-brand-navy transition">
+            <span>Cotizar estudios de laboratorio</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Tarjeta 2: Imagenología y Rayos X -->
+        <div class="border-trail-card p-8 group">
+          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-brand-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="2" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <circle cx="12" cy="12" r="4" class="text-brand-teal animate-ping opacity-75"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Imagenología y Rayos X</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Diagnóstico por imagen de alta definición: Rayos X digitales, ultrasonido obstétrico y Doppler para evaluaciones oportunas.
+          </p>
+          <a href="https://wa.me/526565632887?text=Hola,%20deseo%20información%20sobre%20rayos%20X%20o%20ultrasonido" target="_blank" rel="noopener" class="text-brand-teal font-semibold text-sm inline-flex items-center gap-2 hover:text-brand-navy transition">
+            <span>Solicitar estudio de imagen</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Tarjeta 3: Atención Especializada -->
+        <div class="border-trail-card p-8 group">
+          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="w-14 h-14 rounded-2xl bg-indigo-50 flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-indigo-600 icon-pulse-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Atención Especializada</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Más de 30 médicos especialistas en ginecología, pediatría, medicina interna, cardiología, traumatología y urología.
+          </p>
+          <a href="https://wa.me/526565632887?text=Hola,%20deseo%20agendar%20cita%20con%20un%20médico%20especialista" target="_blank" rel="noopener" class="text-brand-teal font-semibold text-sm inline-flex items-center gap-2 hover:text-brand-navy transition">
+            <span>Ver directorio médico</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Tarjeta 4: Quirófanos y Cirugía -->
+        <div class="border-trail-card p-8 group">
+          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-scissors icon-scissor-cut text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Quirófanos y Cirugía</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Cirugía laparoscópica y tradicional para vesícula, hernias, apéndice y procedimientos ambulatorios con máxima seguridad.
+          </p>
+          <a href="https://wa.me/526565632887?text=Hola,%20deseo%20cotizar%20una%20cirugía" target="_blank" rel="noopener" class="text-brand-teal font-semibold text-sm inline-flex items-center gap-2 hover:text-brand-navy transition">
+            <span>Cotizar cirugía programada</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Tarjeta 5: Maternidad y Partos -->
+        <div class="border-trail-card p-8 group">
+          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center text-2xl mb-6">
+            <svg class="w-8 h-8 text-rose-500 icon-pulse-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Maternidad y Partos</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            El nacimiento de tu bebé con calidez humana. Paquetes de parto humanizado y cesárea todo incluido con atención neonatal.
+          </p>
+          <a href="https://wa.me/526565632887?text=Hola,%20deseo%20conocer%20los%20paquetes%20de%20maternidad" target="_blank" rel="noopener" class="text-brand-teal font-semibold text-sm inline-flex items-center gap-2 hover:text-brand-navy transition">
+            <span>Conocer paquetes de parto</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Tarjeta 6: Urgencias 24 Horas -->
+        <div class="border-trail-card p-8 group">
+          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="w-14 h-14 rounded-2xl bg-red-50 text-brand-emergency flex items-center justify-center text-2xl mb-6">
+            <svg class="w-8 h-8 text-brand-emergency" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+              <line x1="12" y1="12" x2="12" y2="4" class="icon-clock-hand text-red-600 stroke-[2.5]"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Urgencias 24 Horas</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Atención médica de urgencia ininterrumpida los 365 días del año. Médicos de guardia permanente y sala de estabilización.
+          </p>
+          <a href="tel:6569002248" class="text-brand-emergency font-bold text-sm inline-flex items-center gap-2 hover:underline">
+            <i class="fa-solid fa-phone"></i>
+            <span>Llamar a Urgencias: (656) 900 2248</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 6. TOUR VIRTUAL 3D CON SOFT BLUR IN ================= -->
+  <section id="tour3d" class="py-20 bg-slate-950 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 bg-brand-teal/20 text-teal-300 px-4 py-1.5 rounded-full text-xs font-semibold mb-3 border border-brand-teal/30">
+          <i class="fa-solid fa-vr-cardboard"></i>
+          <span>Recorrido Virtual Oficial</span>
+        </div>
+        <!-- 6. Soft Blur In en Título -->
+        <h2 class="soft-blur-title text-3xl sm:text-4xl font-serif font-bold text-white">Explora Hospital UME en 360°</h2>
+        <p class="text-slate-300 mt-2 text-sm sm:text-base">Camina virtualmente por nuestras instalaciones, salas de espera, quirófanos y habitaciones antes de tu cita.</p>
+      </div>
+
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 aspect-video w-full max-w-5xl mx-auto">
+        <iframe 
+          src="https://my.matterport.com/show/?m=KsifUcXmd7W&play=1&qs=1" 
+          frameborder="0" 
+          allowfullscreen 
+          allow="xr-spatial-tracking" loading="lazy"
+          class="w-full h-full min-h-[400px] lg:min-h-[520px]"
+          title="Tour 3D Hospital UME">
+        </iframe>
+      </div>
+
+      <div class="mt-6 text-center">
+        <a href="https://my.matterport.com/show/?m=KsifUcXmd7W" target="_blank" rel="noopener" class="hover-border-gradient">
+          <span class="hover-border-gradient-inner py-2.5 px-6 text-xs sm:text-sm">
+            <i class="fa-solid fa-up-right-from-square text-xs text-brand-cyan"></i>
+            <span>Ver Tour en pantalla completa</span>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 3 & 6. TESTIMONIOS: AUTO-PLAY 3s Y DESLIZABLE CON MOUSE/TOUCH ================= -->
+  <section id="testimonios" class="py-20 bg-gradient-to-b from-white via-slate-50 to-brand-graybg relative overflow-hidden">
+    <div class="absolute top-12 left-10 w-72 h-72 bg-teal-200/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-12 right-10 w-80 h-80 bg-sky-200/40 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Opiniones de Pacientes</span>
+        <!-- 6. Soft Blur In en Título -->
+        <h2 class="soft-blur-title text-3xl sm:text-4xl font-serif font-bold text-brand-navy mt-1">Historias Reales de Confianza</h2>
+        <p class="text-slate-500 mt-2 text-sm sm:text-base">Giran automáticamente cada 3 segundos o <strong>desliza con el mouse</strong> para cambiar.</p>
+      </div>
+
+      <!-- 3. Glass Swiper Card con Drag / Swipe y Auto-Play 3s -->
+      <div class="relative max-w-4xl mx-auto">
+        
+        <div id="testimonial-container" role="group" aria-roledescription="carrusel" aria-label="Testimonios" class="glass-swiper-card p-8 sm:p-12 relative overflow-hidden transition-all duration-500" title="Arrastra hacia la izquierda o derecha para cambiar testimonio">
+          
+          <!-- Slide 1 -->
+          <div class="testimonial-slide space-y-6">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1 text-amber-400 text-lg">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">Paciente Verificado · Maternidad</span>
+            </div>
+
+            <p class="text-slate-700 text-lg sm:text-xl font-normal leading-relaxed italic">
+              "El nacimiento de mi bebé en Hospital UME fue una experiencia inmejorable. Los médicos y enfermeras nos trataron con un cariño y profesionalismo increíble. La habitación privada fue comodísima y el precio del paquete de parto fue exactamente el acordado, sin sorpresas."
+            </p>
+
+            <div class="flex items-center gap-4 pt-4 border-t border-slate-200/60">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-teal to-sky-400 text-white font-bold flex items-center justify-center text-base shadow-md">
+                MC
+              </div>
+              <div>
+                <div class="font-bold text-brand-navy text-base">Mariana Colmenero</div>
+                <div class="text-xs text-slate-500">Ciudad Juárez, Chih.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-slide space-y-6 hidden">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1 text-amber-400 text-lg">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">Paciente Verificado · Urgencias 24h</span>
+            </div>
+
+            <p class="text-slate-700 text-lg sm:text-xl font-normal leading-relaxed italic">
+              "Llegué de madrugada por un dolor abdominal agudo. En menos de 10 minutos ya me estaban realizando ultrasonido y análisis. El diagnóstico de apendicitis fue rapidísimo y la cirugía laparoscópica impecable. Excelente hospital y quirófanos de primer mundo."
+            </p>
+
+            <div class="flex items-center gap-4 pt-4 border-t border-slate-200/60">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-blue to-teal-500 text-white font-bold flex items-center justify-center text-base shadow-md">
+                RA
+              </div>
+              <div>
+                <div class="font-bold text-brand-navy text-base">Roberto Alarcón</div>
+                <div class="text-xs text-slate-500">Ciudad Juárez, Chih.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testimonial-slide space-y-6 hidden">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1 text-amber-400 text-lg">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">Médico Cirujano · Usuario de Quirófano</span>
+            </div>
+
+            <p class="text-slate-700 text-lg sm:text-xl font-normal leading-relaxed italic">
+              "Como médico especialista, rentar quirófanos en Hospital UME me da total tranquilidad. El equipo laparoscópico es de última generación, los tiempos de respuesta del personal son excelentes y mis pacientes siempre reciben la mejor atención postoperatoria."
+            </p>
+
+            <div class="flex items-center gap-4 pt-4 border-t border-slate-200/60">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-indigo-500 to-brand-teal text-white font-bold flex items-center justify-center text-base shadow-md">
+                Dr
+              </div>
+              <div>
+                <div class="font-bold text-brand-navy text-base">Dr. Jorge Méndez</div>
+                <div class="text-xs text-slate-500">Cirujano General Certificado</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Indicadores / Dots de Auto-Play -->
+        <div class="flex items-center justify-center gap-2 mt-8" id="testimonial-dots">
+          <button onclick="setTestimonial(0)" class="w-6 h-2 rounded-full bg-brand-teal transition-all" aria-label="Slide 1"></button>
+          <button onclick="setTestimonial(1)" class="w-2 h-2 rounded-full bg-slate-300 transition-all" aria-label="Slide 2"></button>
+          <button onclick="setTestimonial(2)" class="w-2 h-2 rounded-full bg-slate-300 transition-all" aria-label="Slide 3"></button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 6. BANNER ATENCIÓN INMEDIATA CON LUZ DE AMBULANCIA TITILANTE ================= -->
+  <section class="py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto rounded-3xl p-8 sm:p-12 text-white ambulance-banner border-2 border-red-400 relative overflow-hidden transition-all duration-300">
+      
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left relative z-10">
+        
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest text-red-100 border border-white/20">
+            <i class="fa-solid fa-lightbulb siren-icon text-yellow-300"></i>
+            <span>Atención de Emergencia · Urgencias 24 Horas</span>
+          </div>
+          <!-- 6. Soft Blur In en Título -->
+          <h2 class="soft-blur-title text-3xl sm:text-4xl font-serif font-black tracking-tight drop-shadow-lg">
+            ¿Tienes una Urgencia Médica en este Momento?
+          </h2>
+          <p class="text-red-100 max-w-2xl text-sm sm:text-base leading-relaxed drop-shadow">
+            Nuestro equipo de médicos de guardia, sala de choque y laboratorio se encuentran activos ahora mismo. Comunícate de inmediato para recibirte o asistirte.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0 w-full lg:w-auto">
+          
+          <a href="tel:6569002248" class="hover-border-gradient hover-border-gradient-emergency w-full sm:w-auto">
+            <span class="hover-border-gradient-inner py-3.5 px-8 text-lg font-extrabold">
+              <i class="fa-solid fa-phone-volume text-xl text-red-400"></i>
+              <span>(656) 900-2248</span>
+            </span>
+          </a>
+
+          <a href="https://wa.me/526565632887?text=URGENCIA:%20Necesito%20atención%20médica%20inmediata%20en%20Hospital%20UME" target="_blank" rel="noopener" class="hover-border-gradient hover-border-gradient-whatsapp w-full sm:w-auto">
+            <span class="hover-border-gradient-inner py-3.5 px-7 text-base font-bold">
+              <i class="fa-brands fa-whatsapp text-2xl text-emerald-400"></i>
+              <span>WhatsApp Urgente</span>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4 & 6. PREGUNTAS FRECUENTES CON APERTURA/CIERRE SUAVE Y LENTO (SHADCN UI) ================= -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-14">
+        <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Respuestas Claras</span>
+        <!-- 6. Soft Blur In en Título -->
+        <h2 class="soft-blur-title text-3xl sm:text-4xl font-serif font-bold text-brand-navy mt-1">Preguntas Frecuentes</h2>
+        <p class="text-slate-500 text-sm mt-2">Transición suave y pausada al abrir y cerrar (se cierra una al abrir otra).</p>
+      </div>
+
+      <!-- Shadcn UI Minimalist Accordion con animación grid-template-rows lenta y suave -->
+      <div class="divide-y divide-slate-200 border-y border-slate-200">
+        
+        <!-- Pregunta 1 -->
+        <div class="py-5 group">
+          <button class="w-full flex items-center justify-between text-left font-semibold text-brand-navy text-base sm:text-lg hover:text-brand-teal transition-colors duration-300 focus:outline-none" type="button" aria-expanded="false" aria-controls="shadcn-content-1" onclick="toggleShadcnFaq(1)">
+            <span>¿En qué horario operan el área de Urgencias y Laboratorio?</span>
+            <span class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-teal-50 text-slate-500 group-hover:text-brand-teal flex items-center justify-center transition ml-4 flex-shrink-0" id="shadcn-icon-1">
+              <i class="fa-solid fa-plus text-xs transition-transform duration-300"></i>
+            </span>
+          </button>
+          <div class="shadcn-accordion-content" id="shadcn-content-1" role="region">
+            <div class="shadcn-accordion-inner pt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+              El servicio de <strong>Urgencias Médicas</strong> está habilitado las 24 horas del día, los 365 días del año. Los estudios de laboratorio para urgencias se procesan de forma inmediata, mientras que los análisis de rutina se realizan todos los días desde temprano.
+            </div>
+          </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="py-5 group">
+          <button class="w-full flex items-center justify-between text-left font-semibold text-brand-navy text-base sm:text-lg hover:text-brand-teal transition-colors duration-300 focus:outline-none" type="button" aria-expanded="false" aria-controls="shadcn-content-2" onclick="toggleShadcnFaq(2)">
+            <span>¿Cómo puedo cotizar un paquete de maternidad (parto o cesárea)?</span>
+            <span class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-teal-50 text-slate-500 group-hover:text-brand-teal flex items-center justify-center transition ml-4 flex-shrink-0" id="shadcn-icon-2">
+              <i class="fa-solid fa-plus text-xs transition-transform duration-300"></i>
+            </span>
+          </button>
+          <div class="shadcn-accordion-content" id="shadcn-content-2" role="region">
+            <div class="shadcn-accordion-inner pt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+              Puedes solicitar tu cotización detallada escribiéndonos directamente a nuestro WhatsApp oficial <strong>(656) 563 2887</strong>. Nuestros paquetes incluyen quirófano, honorarios de enfermería, insumos hospitalarios, habitación privada y atención del pediatra neonatólogo.
+            </div>
+          </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="py-5 group">
+          <button class="w-full flex items-center justify-between text-left font-semibold text-brand-navy text-base sm:text-lg hover:text-brand-teal transition-colors duration-300 focus:outline-none" type="button" aria-expanded="false" aria-controls="shadcn-content-3" onclick="toggleShadcnFaq(3)">
+            <span>Soy médico especialista, ¿cómo puedo rentar un quirófano en UME?</span>
+            <span class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-teal-50 text-slate-500 group-hover:text-brand-teal flex items-center justify-center transition ml-4 flex-shrink-0" id="shadcn-icon-3">
+              <i class="fa-solid fa-plus text-xs transition-transform duration-300"></i>
+            </span>
+          </button>
+          <div class="shadcn-accordion-content" id="shadcn-content-3" role="region">
+            <div class="shadcn-accordion-inner pt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+              Contamos con facilidades completas para cirujanos y especialistas certificados. Comunícate al conmutador <strong>(656) 900 2248</strong> o vía WhatsApp para consultar disponibilidad de salas quirúrgicas, torres de laparoscopía y paquetes especiales para médicos.
+            </div>
+          </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="py-5 group">
+          <button class="w-full flex items-center justify-between text-left font-semibold text-brand-navy text-base sm:text-lg hover:text-brand-teal transition-colors duration-300 focus:outline-none" type="button" aria-expanded="false" aria-controls="shadcn-content-4" onclick="toggleShadcnFaq(4)">
+            <span>¿Aceptan seguros de gastos médicos mayores?</span>
+            <span class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-teal-50 text-slate-500 group-hover:text-brand-teal flex items-center justify-center transition ml-4 flex-shrink-0" id="shadcn-icon-4">
+              <i class="fa-solid fa-plus text-xs transition-transform duration-300"></i>
+            </span>
+          </button>
+          <div class="shadcn-accordion-content" id="shadcn-content-4" role="region">
+            <div class="shadcn-accordion-inner pt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+              Sí, colaboramos con las principales aseguradoras mediante pago directo o trámite de reembolso. Nuestro departamento de admisión te orientará con los informes médicos y formatos necesarios para tu cobertura.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-12 bg-slate-50 rounded-2xl p-6 border border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div>
+          <h4 class="font-bold text-brand-navy text-sm sm:text-base">¿Tienes alguna pregunta adicional?</h4>
+          <p class="text-xs sm:text-sm text-slate-500">Nuestro equipo de atención está disponible de inmediato vía WhatsApp.</p>
+        </div>
+        <a href="https://wa.me/526565632887?text=Hola,%20tengo%20una%20pregunta%20sobre%20Hospital%20UME" target="_blank" rel="noopener" class="hover-border-gradient flex-shrink-0">
+          <span class="hover-border-gradient-inner py-2 px-5 text-xs sm:text-sm">
+            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+            <span>Consultar por WhatsApp</span>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 3 & 6. CONTACTO Y MAPA EXPANDIBLE (@dev.shejanmahamud/components/expanded-map) ================= -->
+  <section id="contacto" class="py-20 bg-brand-graybg border-t border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Formulario de Contacto -->
+        <div class="lg:col-span-6 space-y-6">
+          <div>
+            <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Estamos a tu servicio</span>
+            <!-- 6. Soft Blur In en Título -->
+            <h2 class="soft-blur-title text-3xl font-serif font-bold text-brand-navy mt-1">Contacto y Agendamiento</h2>
+            <p class="text-slate-500 text-sm mt-2">Envíanos un mensaje para programar tu cita o recibir información personalizada.</p>
+          </div>
+
+          <div class="border-beam-container p-8 border border-slate-200 shadow-xl">
+            <div class="border-beam-glow"></div>
+            <form onsubmit="enviarMensajeWhatsApp(event)" class="relative z-10 space-y-5">
+              
+              <div>
+                <label for="nombre" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Nombre Completo</label>
+                <div class="relative">
+                  <i class="fa-regular fa-user absolute left-4 top-3.5 text-slate-400"></i>
+                  <input type="text" id="nombre" placeholder="Ej. Carlos Mendoza" required class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition bg-white">
+                </div>
+              </div>
+
+              <div>
+                <label for="servicio-interes" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Servicio o Especialidad de Interés</label>
+                <div class="relative">
+                  <i class="fa-solid fa-stethoscope absolute left-4 top-3.5 text-slate-400"></i>
+                  <select id="servicio-interes" class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition bg-white text-slate-700">
+                    <option value="Consulta con Médico Especialista">Consulta con Médico Especialista</option>
+                    <option value="Paquetes de Maternidad (Parto/Cesárea)">Paquetes de Maternidad (Parto/Cesárea)</option>
+                    <option value="Cotización de Cirugía Programada">Cotización de Cirugía Programada</option>
+                    <option value="Laboratorio Clínico o Rayos X">Laboratorio Clínico o Rayos X</option>
+                    <option value="Renta de Quirófanos (Para Médicos)">Renta de Quirófanos (Para Médicos)</option>
+                    <option value="Información General">Información General</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="mensaje" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Mensaje o Detalles de tu Consulta</label>
+                <textarea id="mensaje" rows="3" maxlength="500" placeholder="¿Cuándo te gustaría acudir o qué dudas tienes?" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition bg-white"></textarea>
+              </div>
+
+              <button type="submit" class="hover-border-gradient hover-border-gradient-whatsapp w-full">
+                <span class="hover-border-gradient-inner py-3.5 px-6 text-sm font-bold w-full justify-center">
+                  <i class="fa-brands fa-whatsapp text-xl text-emerald-400"></i>
+                  <span>Enviar Solicitud a WhatsApp</span>
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- 3. COMPONENTE LOCATION MAP 3D (@dev.shejanmahamud/components/expanded-map - Estilo Google Maps Oficial) -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <!-- Encabezado con Coordenadas y Estado -->
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Ubicación Estratégica</span>
+              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-brand-navy">Hospital UME</h3>
+            </div>
+            <div class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 px-3.5 py-1 rounded-full text-xs font-bold shadow-sm">
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+              <span>Abierto 24 Horas · Urgencias</span>
+            </div>
+          </div>
+
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Blvd. Independencia #841, Colonia Zaragoza, C.P. 32570, Ciudad Juárez, Chihuahua.<br>
+            <span class="text-xs text-slate-400">Conmutador: <strong class="text-slate-700">(656) 900 2248</strong> / <strong class="text-slate-700">(656) 208 0544</strong></span>
+          </p>
+
+          <!-- Componente LocationMap 3D (Siempre visible, mapa oficial embebido de Google Maps, tilt 3D y expansión 3D interactiva) -->
+          <div class="location-map-perspective relative w-full" id="location-map-wrapper">
+            
+            <div id="location-map-card" class="location-map-card location-map-preserve-3d relative w-full h-[360px] rounded-3xl overflow-hidden border border-slate-200/90 bg-[#f4f3f0] shadow-xl hover:shadow-2xl cursor-pointer">
+              
+              <!-- Reflejo / Glare Interactivo que sigue el cursor -->
+              <div id="location-map-glare" class="pointer-events-none absolute inset-0 z-30 opacity-0 transition-opacity duration-300"></div>
+
+              <!-- Plano del Mapa en 3D & Cuadrícula de Tiles Oficiales de Google Maps (Siempre Visible) -->
+              <div id="location-map-plane" class="absolute inset-0 overflow-hidden transition-transform duration-500 origin-center bg-[#f4f3f0]">
+                <iframe id="map-frame" title="Mapa de Hospital UME en Google Maps"
+                        src="https://maps.google.com/maps?q=31.674995574143438,-106.35334712437877&z=16&t=m&hl=es&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        class="absolute inset-0 w-full h-full border-0" style="pointer-events:none;"></iframe>
+
+                <!-- Degradados suaves para legibilidad de controles manteniendo el mapa nítido y claro -->
+                <div class="pointer-events-none absolute inset-x-0 top-0 h-24 z-10 bg-gradient-to-b from-white/70 via-white/20 to-transparent"></div>
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 z-10 bg-gradient-to-t from-white/85 via-white/30 to-transparent"></div>
+              </div>
+
+              <!-- Pin 3D Flotante en el Centro del Mapa (Hospital UME - Estilo Oficial Google Maps con H) -->
+              <div id="location-map-pin" class="hidden pointer-events-none absolute top-1/2 left-1/2 z-20 transition-all duration-500" style="transform: translate(-50%, -100%) translateZ(40px);">
+                <div class="relative flex flex-col items-center">
+                  
+                  <!-- Anillos de Radar Pulsante en la base -->
+                  <div class="absolute -bottom-1 flex items-center justify-center">
+                    <span class="absolute w-12 h-12 rounded-full bg-red-500/35 animate-ping"></span>
+                    <span class="absolute w-20 h-20 rounded-full bg-brand-teal/25 animate-pulse"></span>
+                    <div class="w-8 h-2 rounded-full bg-slate-900/35 blur-[2px]"></div>
+                  </div>
+
+                  <!-- Ícono del Pin Oficial de Google Maps con H Hospitalaria -->
+                  <div class="relative z-10 drop-shadow-xl flex items-center justify-center transition-transform hover:scale-110">
+                    <svg width="36" height="46" viewBox="0 0 36 46" fill="none" class="filter drop-shadow-md">
+                      <path d="M18 0C8.06 0 0 8.06 0 18C0 31.5 18 46 18 46C18 46 36 31.5 36 18C36 8.06 27.94 0 18 0Z" fill="#EA4335"/>
+                      <circle cx="18" cy="17" r="10" fill="#FFFFFF"/>
+                      <path d="M14 12V22M22 12V22M14 17H22" stroke="#EA4335" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+
+                  <!-- Etiqueta Oficial estilo Google Maps -->
+                  <div class="mt-1 bg-white/95 border border-slate-200/90 text-slate-800 text-[11px] font-bold px-3 py-0.5 rounded-full shadow-md whitespace-nowrap flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span>Hospital UME</span>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- HUD Superior Flotante en 3D (translateZ 30px) -->
+              <div class="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none" style="transform: translateZ(30px);">
+                
+                <!-- Badge de Coordenadas con Pin de Google Maps -->
+                <div class="inline-flex items-center gap-2 bg-white/95 backdrop-blur-md border border-slate-200 text-slate-800 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold shadow-md">
+                  <i class="fa-solid fa-location-dot text-red-500 text-xs"></i>
+                  <span>31.6750° N, 106.3533° W</span>
+                </div>
+
+                <!-- Botones Superiores (Modo 3D y Expandir) -->
+                <div class="flex items-center gap-2 pointer-events-auto">
+                  <button id="btn-toggle-3d" type="button" class="inline-flex items-center gap-1.5 bg-white/95 hover:bg-slate-50 backdrop-blur-md border border-slate-200 hover:border-brand-teal text-slate-800 px-3.5 py-1.5 rounded-full text-xs font-bold transition shadow-md">
+                    <i class="fa-solid fa-cube text-xs text-brand-teal"></i>
+                    <span id="btn-3d-text">Vista 3D</span>
+                  </button>
+
+                  <button aria-label="Expandir Mapa" id="btn-expand-map" type="button" class="w-8 h-8 rounded-full bg-white/95 hover:bg-slate-50 backdrop-blur-md border border-slate-200 text-slate-700 flex items-center justify-center text-xs transition shadow-md" title="Expandir Mapa">
+                    <i class="fa-solid fa-expand text-xs" id="icon-expand-map"></i>
+                  </button>
+                </div>
+
+              </div>
+
+              <!-- Barra de Controles Flotante Estilo Google Maps (Visible cuando se expande) -->
+              <div id="expanded-controls-toolbar" class="hidden absolute top-16 right-4 z-20 flex flex-col gap-2 pointer-events-auto" style="transform: translateZ(30px);">
+                <!-- Zoom In -->
+                <button aria-label="Acercar (+)" id="btn-zoom-in" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-slate-700 flex items-center justify-center text-xs transition shadow-md font-bold" title="Acercar (+)">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+                <!-- Zoom Out -->
+                <button aria-label="Alejar (-)" id="btn-zoom-out" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-slate-700 flex items-center justify-center text-xs transition shadow-md font-bold" title="Alejar (-)">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <!-- Centrar en UME -->
+                <button aria-label="Centrar en Hospital UME" id="btn-recenter" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-brand-teal flex items-center justify-center text-xs transition shadow-md" title="Centrar en Hospital UME">
+                  <i class="fa-solid fa-crosshairs"></i>
+                </button>
+                <!-- Cambiar Capa (Google Roadmap / Satélite Híbrido) -->
+                <button aria-label="Alternar Mapa Calles / Satélite Híbrido" id="btn-toggle-layer" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-blue-600 flex items-center justify-center text-xs transition shadow-md" title="Alternar Mapa Calles / Satélite Híbrido">
+                  <i class="fa-solid fa-layer-group"></i>
+                </button>
+              </div>
+
+              <!-- Panel Inferior Flotante en 3D Estilo Tarjeta Google Maps (translateZ 35px) -->
+              <div class="absolute bottom-4 left-4 right-4 z-20 pointer-events-none" style="transform: translateZ(35px);">
+                <div class="p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  
+                  <div class="space-y-0.5">
+                    <div class="flex items-center gap-2">
+                      <h4 class="text-sm font-bold text-slate-900 tracking-wide flex items-center gap-1.5">
+                        <i class="fa-brands fa-google text-red-500 text-xs"></i>
+                        Hospital UME
+                      </h4>
+                      <span class="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-bold">Abierto 24 Horas</span>
+                    </div>
+                    <p class="text-xs text-slate-600">Blvd. Independencia #841, Col. Zaragoza · Ciudad Juárez</p>
+                    <!-- Línea de Subrayado Gradiente Google Red & Brand Teal -->
+                    <div class="h-0.5 w-36 bg-gradient-to-r from-red-500 via-brand-teal to-transparent rounded-full mt-1.5"></div>
+                  </div>
+
+                  <!-- Botón / Indicador de Expansión -->
+                  <div class="pointer-events-auto flex items-center gap-2">
+                    <span id="click-hint-badge" class="text-xs text-slate-700 flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm transition font-semibold">
+                      <i class="fa-solid fa-cube text-brand-teal text-xs"></i>
+                      <span id="click-hint-text">Clic para expandir en 3D</span>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Botones Oficiales Directos Waze & Google Maps -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            
+            <a href="https://www.google.com/maps/dir/?api=1&destination=31.674995574143438,-106.35334712437877" target="_blank" rel="noopener" class="hover-border-gradient w-full">
+              <span class="hover-border-gradient-inner py-3 px-4 text-xs sm:text-sm font-bold w-full justify-center">
+                <i class="fa-brands fa-google text-blue-400 text-base"></i>
+                <span>Abrir en Google Maps</span>
+              </span>
+            </a>
+
+            <a href="https://waze.com/ul?ll=31.674995574143438,-106.35334712437877&navigate=yes" target="_blank" rel="noopener" class="hover-border-gradient w-full">
+              <span class="hover-border-gradient-inner py-3 px-4 text-xs sm:text-sm font-bold w-full justify-center">
+                <i class="fa-brands fa-waze text-cyan-400 text-base"></i>
+                <span>Cómo llegar en Waze</span>
+              </span>
+            </a>
+
+          </div>
+
+        </div></div>
+
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ================= 4. PIE DE PÁGINA INTERACTIVO CON LETRAS "UME" QUE SE ILUMINAN AL CURSOR (@mdafsarx/components/hover-footer) ================= -->
+  <footer id="hover-footer" class="hover-footer-container text-slate-300 pt-24 pb-14 border-t border-slate-800 relative">
+    
+    <!-- Efecto Linterna Luminous Torch que sigue el cursor -->
+    <div class="footer-glowing-torch" id="footer-torch"></div>
+
+    <!-- 4. Letras Gigantes de Fondo "UME" que se iluminan al paso del cursor -->
+    <div class="footer-glowing-ume" id="footer-ume-letters">
+      UME
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Fila Superior: Marca + Badge de Operación Activa -->
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-14 border-b border-slate-800/80">
+        <div>
+          <div class="flex items-center gap-3">
+            <img src="assets/images/logo-ume-scaled-e1776191801809.png" alt="Hospital UME" width="334" height="258" loading="lazy" class="h-12 w-auto brightness-0 invert drop-shadow">
+            <span class="text-2xl font-serif font-black text-white tracking-tight">HOSPITAL UME</span>
+          </div>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-md">
+            Unidad Médica Especializada · Tecnología médica avanzada y calidez humana al servicio de Ciudad Juárez desde 2008.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-slate-900/90 border border-slate-700 px-5 py-2.5 rounded-full text-xs text-slate-200 shadow-xl backdrop-blur-md">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="font-bold text-white">Operando 24 Horas</span>
+          <span class="text-slate-500">·</span>
+          <span>Urgencias Abiertas los 365 días</span>
+        </div>
+      </div>
+
+      <!-- 4 Columnas Limpias -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-14 border-b border-slate-800/80 text-sm">
+        
+        <!-- Columna 1 -->
+        <div class="space-y-4">
+          <h4 class="text-white font-bold text-xs uppercase tracking-widest text-teal-300">Sobre Hospital UME</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Nuestro compromiso es con la salud de las personas, mediante esfuerzo, trabajo y disciplina constante, ofreciendo servicios médicos de calidad, con tecnología de vanguardia y calidez humana.
+          </p>
+          <div class="pt-1">
+            <a href="https://my.matterport.com/show/?m=KsifUcXmd7W" target="_blank" rel="noopener" class="text-xs font-semibold text-brand-cyan hover:underline flex items-center gap-1.5">
+              <span>Ver Instalaciones en Tour 3D</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna 2 -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-xs uppercase tracking-widest text-teal-300">Navegación</h4>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li><a href="#inicio" class="hover:text-brand-cyan transition">Inicio</a></li>
+            <li><a href="#nosotros" class="hover:text-brand-cyan transition">Quiénes Somos y Galería</a></li>
+            <li><a href="#especialidades" class="hover:text-brand-cyan transition">Especialidades Médicas</a></li>
+            <li><a href="#segmento" class="hover:text-brand-cyan transition">Médicos y Pacientes</a></li>
+            <li><a href="#testimonios" class="hover:text-brand-cyan transition">Testimonios de Pacientes</a></li>
+            <li><a href="#contacto" class="hover:text-brand-cyan transition">Contacto y Ubicación</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3 -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-xs uppercase tracking-widest text-teal-300">Servicios</h4>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li><a href="#especialidades" class="hover:text-brand-cyan transition">Urgencias Médicas 24/7</a></li>
+            <li><a href="#especialidades" class="hover:text-brand-cyan transition">Quirófanos y Cirugía Laparoscópica</a></li>
+            <li><a href="#especialidades" class="hover:text-brand-cyan transition">Maternidad y Partos</a></li>
+            <li><a href="#especialidades" class="hover:text-brand-cyan transition">Laboratorio de Análisis Clínicos</a></li>
+            <li><a href="#especialidades" class="hover:text-brand-cyan transition">Imagenología y Rayos X</a></li>
+            <li><a href="#segmento" class="hover:text-brand-cyan transition">Renta de Quirófanos para Especialistas</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4 -->
+        <div class="space-y-3.5">
+          <h4 class="text-white font-bold text-xs uppercase tracking-widest text-teal-300">Atención Inmediata</h4>
+          <div class="text-xs text-slate-300">
+            <span class="text-slate-500 block mb-0.5">Teléfono Principal:</span>
+            <a href="tel:6569002248" class="text-brand-cyan font-bold text-sm hover:underline">(656) 900 2248</a>
+          </div>
+          <div class="text-xs text-slate-300">
+            <span class="text-slate-500 block mb-0.5">Conmutador:</span>
+            <a href="tel:6562080544" class="hover:text-white transition">(656) 208 0544</a>
+          </div>
+          <div class="text-xs text-slate-300">
+            <span class="text-slate-500 block mb-0.5">WhatsApp Oficial:</span>
+            <a href="https://wa.me/526565632887" target="_blank" rel="noopener" class="text-emerald-400 font-bold hover:underline">+52 (656) 563 2887</a>
+          </div>
+          <div class="text-xs text-slate-400 pt-1">
+            Blvd. Independencia #841, Col. Zaragoza, Ciudad Juárez, Chihuahua.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Fila Inferior: Pastillas Sociales + Derechos Reservados -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div>
+          &copy; 2026 Hospital UME (Unidad Médica Especializada). Todos los derechos reservados.
+          <nav class="legal-nav" aria-label="Información legal"><button type="button" data-dlg="dlg-privacidad">Aviso de privacidad</button><button type="button" data-dlg="dlg-cookies">Política de cookies</button><button type="button" data-dlg="dlg-arco">Derechos ARCO · Habeas Data</button><button type="button" data-cookie-settings>Configurar cookies</button></nav>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a href="https://www.facebook.com/hospitalUME" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-teal text-white flex items-center justify-center transition border border-slate-700" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f text-xs"></i>
+          </a>
+          <a href="https://www.instagram.com/unidad_medica_especializada/" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-teal text-white flex items-center justify-center transition border border-slate-700" aria-label="Instagram">
+            <i class="fa-brands fa-instagram text-xs"></i>
+          </a>
+          <a href="https://wa.me/526565632887" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-whatsapp text-white flex items-center justify-center transition border border-slate-700" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= BOTÓN FLOTANTE DE WHATSAPP ================= -->
+  <a href="https://wa.me/526565632887?text=Hola,%20quisiera%20agendar%20una%20consulta%20en%20Hospital%20UME" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 bg-brand-whatsapp hover:bg-brand-whatsapphover text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform pulse-whatsapp" aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ================= SCRIPTS INTERACTIVOS ================= -->
+  <script>
+    // 6. Soft Blur In Observer (@educalvolpz/components/soft-blur-in)
+    const softBlurTitles = document.querySelectorAll('.soft-blur-title');
+    const blurObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    softBlurTitles.forEach(title => blurObserver.observe(title));
+
+
+    // Hero: comparador (compare-reveal). Al deslizar el cursor sobre la fachada se oscurece y aparece UME.
+    (function initHeroCompare() {
+      const hero = document.getElementById('inicio');
+      const box = document.getElementById('hero-compare');
+      const dark = document.getElementById('hero-dark');
+      const handle = document.getElementById('hero-handle');
+      if (!hero || !box || !dark || !handle) return;
+
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let pos = 100, target = 100, raf = null, userMoved = false;
+
+      function render() {
+        dark.style.clipPath = 'inset(0 0 0 ' + pos + '%)';
+        handle.style.left = Math.min(Math.max(pos, 3), 97) + '%';
+        handle.setAttribute('aria-valuenow', String(Math.round(pos)));
+      }
+      function tick() {
+        pos += (target - pos) * (reduce ? 1 : 0.14);
+        if (Math.abs(target - pos) < 0.05) pos = target;
+        render();
+        raf = pos === target ? null : requestAnimationFrame(tick);
+      }
+      function setTarget(v) {
+        target = Math.max(0, Math.min(100, v));
+        if (!raf) raf = requestAnimationFrame(tick);
+      }
+
+      hero.addEventListener('pointermove', (e) => {
+        if (window.innerWidth < 1024) return;
+        const r = box.getBoundingClientRect();
+        const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+        if (inside) {
+          userMoved = true;
+          setTarget(((e.clientX - r.left) / r.width) * 100);
+        } else if (userMoved) {
+          setTarget(100);
+        }
+      });
+      hero.addEventListener('pointerleave', () => { if (userMoved && window.innerWidth >= 1024) setTarget(100); });
+
+      // Móvil / tableta: tocar o arrastrar el dedo sobre la foto (la posición se queda donde la sueltas)
+      let dragging = false;
+      function setFromPointer(e) {
+        const r = box.getBoundingClientRect();
+        userMoved = true;
+        setTarget(((e.clientX - r.left) / r.width) * 100);
+      }
+      box.addEventListener('pointerdown', (e) => {
+        if (window.innerWidth >= 1024) return;
+        dragging = true;
+        try { box.setPointerCapture(e.pointerId); } catch (err) {}
+        setFromPointer(e);
+      });
+      box.addEventListener('pointermove', (e) => {
+        if (dragging && window.innerWidth < 1024) setFromPointer(e);
+      });
+      ['pointerup', 'pointercancel'].forEach((ev) => box.addEventListener(ev, () => { dragging = false; }));
+
+      handle.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); userMoved = true; setTarget(target - 10); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); userMoved = true; setTarget(target + 10); }
+        if (e.key === 'Home') { e.preventDefault(); userMoved = true; setTarget(0); }
+        if (e.key === 'End') { e.preventDefault(); userMoved = true; setTarget(100); }
+      });
+
+      // Pista inicial: un barrido corto para que se note el efecto
+      if (!reduce) {
+        setTimeout(() => {
+          if (userMoved) return;
+          setTarget(55);
+          setTimeout(() => { if (!userMoved) setTarget(100); }, 1500);
+        }, 1400);
+      }
+      render();
+    })();
+
+    // 4. Hover Footer: Letras "UME" que se iluminan al paso del cursor (@mdafsarx/components/hover-footer)
+    const hoverFooter = document.getElementById('hover-footer');
+    const footerTorch = document.getElementById('footer-torch');
+    const footerUmeLetters = document.getElementById('footer-ume-letters');
+
+    if (hoverFooter && footerTorch) {
+      hoverFooter.addEventListener('mousemove', (e) => {
+        const rect = hoverFooter.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        footerTorch.style.setProperty('--mouse-x', `${x}px`);
+        footerTorch.style.setProperty('--mouse-y', `${y}px`);
+
+        // Iluminación reactiva en las letras UME
+        const centerX = rect.width / 2;
+        const distFromCenter = Math.abs(x - centerX);
+        const intensity = Math.max(0.08, 0.45 - (distFromCenter / rect.width) * 0.4);
+        footerUmeLetters.style.color = `rgba(0, 168, 150, ${intensity})`;
+      });
+
+      hoverFooter.addEventListener('mouseleave', () => {
+        footerUmeLetters.style.color = 'rgba(255, 255, 255, 0.03)';
+      });
+    }
+
+    // 3. LocationMap 3D Component (@dev.shejanmahamud/components/expanded-map - Google Maps Oficial)
+    (function initLocationMap3D() {
+      const LAT = 31.674995574143438;
+      const LNG = -106.35334712437877;
+      let currentZoom = 16;
+      let currentLayerIndex = 0;
+      // Capas del mapa oficial embebido de Google: calles, satélite híbrido y terreno
+      const layers = ['m', 'h', 'p'];
+
+      let isExpanded = false;
+      let is3DMode = false;
+
+      const card = document.getElementById('location-map-card');
+      const glare = document.getElementById('location-map-glare');
+      const mapPlane = document.getElementById('location-map-plane');
+      const pin = document.getElementById('location-map-pin');
+      const frame = document.getElementById('map-frame');
+      const btnToggle3D = document.getElementById('btn-toggle-3d');
+      const btn3DText = document.getElementById('btn-3d-text');
+      const btnExpandMap = document.getElementById('btn-expand-map');
+      const iconExpandMap = document.getElementById('icon-expand-map');
+      const expandedControls = document.getElementById('expanded-controls-toolbar');
+      const clickHintText = document.getElementById('click-hint-text');
+
+      if (!card || !frame) return;
+
+      function reloadMap() {
+        frame.src = 'https://maps.google.com/maps?q=' + LAT + ',' + LNG + '&z=' + currentZoom + '&t=' + layers[currentLayerIndex] + '&hl=es&output=embed';
+      }
+
+      // Física 3D interactiva en movimiento del cursor (Spring Lerp)
+      let targetRotX = 0;
+      let targetRotY = 0;
+      let currentRotX = 0;
+      let currentRotY = 0;
+      let isHovered = false;
+      let animFrameId = null;
+
+      function updatePhysics() {
+        if (!isHovered && Math.abs(targetRotX - currentRotX) < 0.05 && Math.abs(targetRotY - currentRotY) < 0.05) {
+          currentRotX = 0;
+          currentRotY = 0;
+          card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          animFrameId = null;
+          return;
+        }
+
+        currentRotX += (targetRotX - currentRotX) * 0.15;
+        currentRotY += (targetRotY - currentRotY) * 0.15;
+
+        card.style.transform = 'perspective(1200px) rotateX(' + currentRotX.toFixed(2) + 'deg) rotateY(' + currentRotY.toFixed(2) + 'deg) scale3d(1.015, 1.015, 1.015)';
+
+        animFrameId = requestAnimationFrame(updatePhysics);
+      }
+
+      card.addEventListener('mousemove', (e) => {
+        if (isExpanded) return; // expandido: el mapa se maneja directamente (arrastrar y hacer zoom)
+        const rect = card.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        targetRotX = (-(mouseY - centerY) / centerY) * 10;
+        targetRotY = ((mouseX - centerX) / centerX) * 10;
+
+        // Reflejo glare interactivo
+        glare.style.opacity = '0.25';
+        glare.style.background = 'radial-gradient(circle at ' + mouseX + 'px ' + mouseY + 'px, rgba(255,255,255,0.35), transparent 60%)';
+
+        if (!animFrameId) {
+          animFrameId = requestAnimationFrame(updatePhysics);
+        }
+      });
+
+      card.addEventListener('mouseenter', () => {
+        isHovered = true;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        isHovered = false;
+        targetRotX = 0;
+        targetRotY = 0;
+        glare.style.opacity = '0';
+        if (!animFrameId) {
+          animFrameId = requestAnimationFrame(updatePhysics);
+        }
+      });
+
+      // Expansión y Modo 3D Perspectivo
+      function setExpanded(expand) {
+        isExpanded = expand;
+        frame.style.pointerEvents = expand ? 'auto' : 'none';
+        if (isExpanded) {
+          card.classList.remove('h-[360px]');
+          card.classList.add('h-[520px]');
+          expandedControls.classList.remove('hidden');
+          iconExpandMap.classList.remove('fa-expand');
+          iconExpandMap.classList.add('fa-compress');
+          clickHintText.innerText = 'Vista 3D activa';
+          targetRotX = 0;
+          targetRotY = 0;
+          glare.style.opacity = '0';
+          set3DMode(true);
+        } else {
+          card.classList.remove('h-[520px]');
+          card.classList.add('h-[360px]');
+          expandedControls.classList.add('hidden');
+          iconExpandMap.classList.remove('fa-compress');
+          iconExpandMap.classList.add('fa-expand');
+          clickHintText.innerText = 'Clic para expandir en 3D';
+          set3DMode(false);
+          reloadMap();
+        }
+      }
+
+      function set3DMode(enable3D) {
+        is3DMode = enable3D;
+        if (is3DMode) {
+          mapPlane.classList.add('map-plane-3d');
+          pin.classList.add('pin-stand-3d');
+          btn3DText.innerText = 'Vista 2D';
+          btnToggle3D.classList.add('border-brand-teal', 'text-brand-teal');
+        } else {
+          mapPlane.classList.remove('map-plane-3d');
+          pin.classList.remove('pin-stand-3d');
+          btn3DText.innerText = 'Vista 3D';
+          btnToggle3D.classList.remove('border-brand-teal', 'text-brand-teal');
+        }
+      }
+
+      btnToggle3D.addEventListener('click', (e) => {
+        e.stopPropagation();
+        set3DMode(!is3DMode);
+      });
+
+      btnExpandMap.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setExpanded(!isExpanded);
+      });
+
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('button') || e.target.closest('a')) return;
+        if (!isExpanded) {
+          setExpanded(true);
+        }
+      });
+
+      // Controles de zoom del mapa oficial
+      document.getElementById('btn-zoom-in').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentZoom < 19) {
+          currentZoom++;
+          reloadMap();
+        }
+      });
+
+      document.getElementById('btn-zoom-out').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentZoom > 14) {
+          currentZoom--;
+          reloadMap();
+        }
+      });
+
+      // Centrar en UME (recarga el mapa en el punto exacto)
+      document.getElementById('btn-recenter').addEventListener('click', (e) => {
+        e.stopPropagation();
+        reloadMap();
+      });
+
+      // Alternar capa: Calles / Satélite híbrido / Terreno
+      document.getElementById('btn-toggle-layer').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentLayerIndex = (currentLayerIndex + 1) % layers.length;
+        reloadMap();
+      });
+
+    })();
+
+    // Dropdown Especialidades Toggle & Click Outside Handler
+    const btnEsp = document.getElementById('btn-especialidades');
+    const menuEsp = document.getElementById('dropdown-especialidades-menu');
+    const iconEsp = document.getElementById('icon-especialidades');
+    const containerEsp = document.getElementById('dropdown-especialidades-container');
+
+    function setEspOpen(open) {
+      menuEsp.classList.toggle('hidden', !open);
+      iconEsp.classList.toggle('rotate-180', open);
+      btnEsp.setAttribute('aria-expanded', String(open));
+    }
+
+    btnEsp.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setEspOpen(menuEsp.classList.contains('hidden'));
+    });
+
+    let hoverTimeout;
+    containerEsp.addEventListener('mouseenter', () => {
+      clearTimeout(hoverTimeout);
+      setEspOpen(true);
+    });
+    containerEsp.addEventListener('mouseleave', () => {
+      hoverTimeout = setTimeout(() => setEspOpen(false), 300);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!containerEsp.contains(e.target)) setEspOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        setEspOpen(false);
+        if (!dockMobileMenu.classList.contains('hidden')) dockMobileToggle.click();
+      }
+    });
+
+    // Toggle Dock Mobile Menu
+    const dockMobileToggle = document.getElementById('dock-mobile-toggle');
+    const dockMobileMenu = document.getElementById('dock-mobile-menu');
+    const dockMenuIcon = document.getElementById('dock-menu-icon');
+
+    dockMobileToggle.addEventListener('click', () => {
+      dockMobileMenu.classList.toggle('hidden');
+      dockMobileToggle.setAttribute('aria-expanded', String(!dockMobileMenu.classList.contains('hidden')));
+      if (dockMobileMenu.classList.contains('hidden')) {
+        dockMenuIcon.classList.remove('fa-xmark');
+        dockMenuIcon.classList.add('fa-bars');
+      } else {
+        dockMenuIcon.classList.remove('fa-bars');
+        dockMenuIcon.classList.add('fa-xmark');
+      }
+    });
+
+    dockMobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        dockMobileMenu.classList.add('hidden');
+        dockMobileToggle.setAttribute('aria-expanded', 'false');
+        dockMenuIcon.classList.remove('fa-xmark');
+        dockMenuIcon.classList.add('fa-bars');
+      });
+    });
+
+    // 2. Circular 3D Gallery: Auto-rotación cada 2s + PAUSA INMEDIATA AL PONER EL CURSOR + Swipe/Deslizar con Mouse
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const totalGalleryItems = galleryItems.length;
+    const galleryDotsContainer = document.getElementById('gallery-dots');
+    let currentGalleryIndex = 0;
+    const radius = 390;
+
+    function updateGallery() {
+      const angleStep = 360 / totalGalleryItems;
+      galleryItems.forEach((item, index) => {
+        const offset = (index - currentGalleryIndex);
+        const angle = offset * angleStep;
+        const rad = (angle * Math.PI) / 180;
+        const x = Math.sin(rad) * radius;
+        const z = Math.cos(rad) * radius - radius;
+        const rotateY = angle;
+        
+        item.style.transform = `translate3d(${x}px, 0, ${z}px) rotateY(${rotateY}deg)`;
+        
+        if (Math.abs(angle % 360) < 30) {
+          item.style.opacity = '1';
+          item.style.zIndex = '10';
+          item.style.filter = 'brightness(1.05)';
+        } else {
+          item.style.opacity = '0.85';
+          item.style.zIndex = '1';
+          item.style.filter = 'brightness(0.9)';
+        }
+      });
+
+      if (galleryDotsContainer) {
+        const dots = galleryDotsContainer.querySelectorAll('span');
+        dots.forEach((dot, i) => {
+          if (i === currentGalleryIndex) {
+            dot.className = "w-6 h-2 rounded-full bg-brand-teal transition-all";
+          } else {
+            dot.className = "w-2 h-2 rounded-full bg-white/30 transition-all";
+          }
+        });
+      }
+    }
+
+    function rotateGalleryTo(index) {
+      currentGalleryIndex = index;
+      updateGallery();
+    }
+    function nextGallerySlide() {
+      currentGalleryIndex = (currentGalleryIndex + 1) % totalGalleryItems;
+      updateGallery();
+    }
+    function prevGallerySlide() {
+      currentGalleryIndex = (currentGalleryIndex - 1 + totalGalleryItems) % totalGalleryItems;
+      updateGallery();
+    }
+
+    updateGallery();
+
+    // 2. Control de Intervalo con Pausa Inmediata al cursor
+    let galleryInterval = null;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let galleryInView = true;
+    let testimonialInView = true;
+
+    function startGalleryTimer() {
+      if (!galleryInterval && !reduceMotion && galleryInView && !document.hidden) {
+        galleryInterval = setInterval(nextGallerySlide, 2000);
+      }
+    }
+
+    function stopGalleryTimer() {
+      if (galleryInterval) {
+        clearInterval(galleryInterval);
+        galleryInterval = null;
+      }
+    }
+
+    // Iniciar auto-rotación cada 2 segundos
+    startGalleryTimer();
+
+    const galleryWrapper = document.getElementById('gallery-wrapper');
+
+    new IntersectionObserver(([entry]) => {
+      galleryInView = entry.isIntersecting;
+      galleryInView ? startGalleryTimer() : stopGalleryTimer();
+    }).observe(galleryWrapper);
+
+    // Teclado: Enter/Espacio lleva la foto al frente; flechas navegan
+    galleryItems.forEach((item, i) => {
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); rotateGalleryTo(i); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); nextGallerySlide(); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); prevGallerySlide(); }
+      });
+    });
+
+    // AL PONER EL CURSOR: DETENER TOTALMENTE EL CONTEO
+    galleryWrapper.addEventListener('mouseenter', () => {
+      stopGalleryTimer();
+    });
+
+    // AL QUITAR EL CURSOR: REINICIAR EL CONTEO
+    galleryWrapper.addEventListener('mouseleave', () => {
+      startGalleryTimer();
+    });
+
+    // Deslizar con Mouse o Touch en la Galería
+    let isGalleryDragging = false;
+    let galleryStartX = 0;
+
+    galleryWrapper.addEventListener('pointerdown', (e) => {
+      isGalleryDragging = true;
+      galleryStartX = e.clientX;
+      stopGalleryTimer();
+    });
+
+    window.addEventListener('pointerup', (e) => {
+      if (!isGalleryDragging) return;
+      isGalleryDragging = false;
+      const diff = e.clientX - galleryStartX;
+      if (diff < -35) {
+        nextGallerySlide();
+      } else if (diff > 35) {
+        prevGallerySlide();
+      }
+      // Si el cursor ya no está sobre el wrapper, reiniciar
+      if (!galleryWrapper.matches(':hover')) {
+        startGalleryTimer();
+      }
+    });
+
+    // 3. Testimonios: Auto-Play cada 3s + Deslizar con Mouse/Touch
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const testimonialDots = document.getElementById('testimonial-dots').querySelectorAll('button');
+    let currentTestimonial = 0;
+
+    function showTestimonial(idx) {
+      testimonialSlides.forEach((slide, i) => {
+        if (i === idx) {
+          slide.classList.remove('hidden');
+        } else {
+          slide.classList.add('hidden');
+        }
+      });
+      testimonialDots.forEach((dot, i) => {
+        if (i === idx) {
+          dot.className = "w-6 h-2 rounded-full bg-brand-teal transition-all";
+        } else {
+          dot.className = "w-2 h-2 rounded-full bg-slate-300 transition-all";
+        }
+      });
+      currentTestimonial = idx;
+    }
+
+    function nextTestimonial() {
+      const nextIdx = (currentTestimonial + 1) % testimonialSlides.length;
+      showTestimonial(nextIdx);
+    }
+    function prevTestimonial() {
+      const prevIdx = (currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length;
+      showTestimonial(prevIdx);
+    }
+    function setTestimonial(idx) {
+      showTestimonial(idx);
+    }
+    showTestimonial(0);
+
+    let testimonialInterval = null;
+    function startTestimonialTimer() {
+      clearInterval(testimonialInterval);
+      testimonialInterval = null;
+      if (!reduceMotion && testimonialInView && !document.hidden) {
+        testimonialInterval = setInterval(nextTestimonial, 3000);
+      }
+    }
+    function stopTestimonialTimer() {
+      clearInterval(testimonialInterval);
+      testimonialInterval = null;
+    }
+    const testimonialWrapper = document.getElementById('testimonial-container');
+    startTestimonialTimer();
+
+    new IntersectionObserver(([entry]) => {
+      testimonialInView = entry.isIntersecting;
+      testimonialInView ? startTestimonialTimer() : stopTestimonialTimer();
+    }).observe(testimonialWrapper);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { stopGalleryTimer(); stopTestimonialTimer(); }
+      else { startGalleryTimer(); startTestimonialTimer(); }
+    });
+
+    let isTestimonialDragging = false;
+    let testimonialStartX = 0;
+
+    testimonialWrapper.addEventListener('pointerdown', (e) => {
+      isTestimonialDragging = true;
+      testimonialStartX = e.clientX;
+      stopTestimonialTimer();
+    });
+
+    window.addEventListener('pointerup', (e) => {
+      if (!isTestimonialDragging) return;
+      isTestimonialDragging = false;
+      const diff = e.clientX - testimonialStartX;
+      if (diff < -35) {
+        nextTestimonial();
+      } else if (diff > 35) {
+        prevTestimonial();
+      }
+      startTestimonialTimer();
+    });
+
+    testimonialWrapper.addEventListener('mouseenter', stopTestimonialTimer);
+    testimonialWrapper.addEventListener('mouseleave', () => {
+      if (!isTestimonialDragging) startTestimonialTimer();
+    });
+
+    // 4. Shadcn FAQ Accordion con Apertura/Cierre Lenta y Suave
+    function toggleShadcnFaq(id) {
+      const allContents = document.querySelectorAll('.shadcn-accordion-content');
+      const allIcons = document.querySelectorAll('[id^="shadcn-icon-"]');
+      const targetContent = document.getElementById(`shadcn-content-${id}`);
+      const targetIcon = document.getElementById(`shadcn-icon-${id}`);
+      const isAlreadyOpen = targetContent.classList.contains('is-open');
+
+      allContents.forEach(c => c.classList.remove('is-open'));
+      document.querySelectorAll('[aria-controls^="shadcn-content-"]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      allIcons.forEach(i => {
+        const iconTag = i.querySelector('i');
+        if (iconTag) {
+          iconTag.classList.remove('fa-minus');
+          iconTag.classList.add('fa-plus');
+        }
+      });
+
+      if (!isAlreadyOpen) {
+        targetContent.classList.add('is-open');
+        document.querySelector('[aria-controls="shadcn-content-' + id + '"]').setAttribute('aria-expanded', 'true');
+        const iconTag = targetIcon.querySelector('i');
+        if (iconTag) {
+          iconTag.classList.remove('fa-plus');
+          iconTag.classList.add('fa-minus');
+        }
+      }
+    }
+
+    // Formulario a WhatsApp con texto prellenado
+    function enviarMensajeWhatsApp(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const servicio = document.getElementById('servicio-interes').value;
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      const texto = `Hola Hospital UME, mi nombre es *${nombre}*.\nSolicito información / cita para: *${servicio}*.\nDetalles: ${mensaje}`;
+      const url = `https://wa.me/526565632887?text=${encodeURIComponent(texto)}`;
+      
+      window.open(url, '_blank');
+    }
+
+    // Consentimiento de cookies y avisos legales
+    document.addEventListener('DOMContentLoaded', function initConsent() {
+      const KEY = 'ume-cookies';
+      const bar = document.getElementById('cookie-bar');
+      const read = () => { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { return null; } };
+      const write = (v) => { try { localStorage.setItem(KEY, JSON.stringify(Object.assign({ ts: Date.now() }, v))); } catch (e) {} document.dispatchEvent(new CustomEvent('ume:consent', { detail: v })); };
+      const showBar = (on) => { if (!bar) return; bar.hidden = !on; document.body.classList.toggle('cookie-open', on); };
+      const open = (id) => {
+        const d = document.getElementById(id);
+        if (!d) return;
+        document.querySelectorAll('dialog[open]').forEach((x) => { if (x !== d) x.close(); });
+        if (d.showModal) d.showModal(); else d.setAttribute('open', '');
+      };
+      if (!read()) showBar(true);
+
+      document.addEventListener('click', (e) => {
+        const t = e.target;
+        const dl = t.closest('[data-dlg]');
+        if (dl) { e.preventDefault(); open(dl.dataset.dlg); return; }
+        if (t.closest('[data-cookie-settings]')) {
+          const c = read() || {};
+          document.getElementById('ck-an').checked = !!c.analytics;
+          document.getElementById('ck-mk').checked = !!c.marketing;
+          open('dlg-ckcfg');
+          return;
+        }
+        const ck = t.closest('[data-ck]');
+        if (ck) {
+          write(ck.dataset.ck === 'all' ? { analytics: true, marketing: true } : { analytics: false, marketing: false });
+          showBar(false);
+          return;
+        }
+        if (t.closest('[data-close]')) { t.closest('dialog').close(); return; }
+        if (t.tagName === 'DIALOG') {
+          const r = t.getBoundingClientRect();
+          if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) t.close();
+        }
+      });
+
+      const save = (all) => {
+        write(all ? { analytics: true, marketing: true } : { analytics: document.getElementById('ck-an').checked, marketing: document.getElementById('ck-mk').checked });
+        showBar(false);
+        document.getElementById('dlg-ckcfg').close();
+      };
+      const s1 = document.getElementById('ck-save');
+      const s2 = document.getElementById('ck-all');
+      if (s1) s1.addEventListener('click', () => save(false));
+      if (s2) s2.addEventListener('click', () => save(true));
+    });
+  </script>
+
+  <!-- ================= AVISOS LEGALES Y COOKIES ================= -->
+  <dialog class="legal-dlg" id="dlg-privacidad" aria-labelledby="dlg-privacidad-t"><div class="legal-head"><h2 id="dlg-privacidad-t">Aviso de privacidad</h2><button type="button" class="legal-close" data-close aria-label="Cerrar">✕</button></div><div class="legal-body"><p class="legal-date">Última actualización: 24 de octubre de 2026</p>
+<h3>1. Responsable del tratamiento de sus datos personales</h3>
+<p><mark class="ph">[Razón social o nombre completo del responsable]</mark>, con nombre comercial <b>Hospital UME</b> (en adelante, “Hospital UME”), con domicilio en Blvd. Independencia #841, Colonia Zaragoza, C.P. 32570, Ciudad Juárez, Chihuahua, México, es responsable del uso y protección de sus datos personales, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (en adelante, la “Ley”) y demás normativa aplicable. Para cualquier asunto de privacidad puede escribirnos a <a href="mailto:ume_841@hotmail.com">ume_841@hotmail.com</a> o al (656) 900 2248.</p>
+<h3>2. Datos personales que recabamos</h3>
+<p>Los datos se obtienen de forma directa cuando usted nos contacta por WhatsApp (incluido el formulario de este sitio, que solo prepara el mensaje y lo envía a través de WhatsApp; el sitio no almacena lo que usted escribe), teléfono, correo electrónico, redes sociales, plataformas de agenda o en nuestras instalaciones:</p>
+<ul><li><b>Identificación y contacto:</b> nombre, edad o fecha de nacimiento, teléfono, correo electrónico y, en su caso, domicilio.</li><li><b>Datos de la cita y de facturación:</b> motivo de consulta, fechas y horarios; datos fiscales si solicita factura.</li><li><b>Datos personales sensibles (salud):</b> antecedentes médicos, alergias, medicamentos, estudios, diagnósticos y fotografías clínicas. Estos datos se tratan únicamente con su consentimiento expreso y por personal obligado a guardar el secreto profesional.</li><li><b>Datos de navegación:</b> dirección IP, tipo de dispositivo y preferencias de cookies (consulte la Política de cookies).</li></ul>
+<h3>3. Finalidades del tratamiento</h3>
+<p><b>Finalidades necesarias</b> (sin ellas no podemos prestarle el servicio):</p>
+<ul><li>Agendar, confirmar y recordar sus citas.</li><li>Brindarle atención médica y hospitalaria, e integrar y conservar su expediente clínico conforme a la NOM-004-SSA3-2012.</li><li>Dar seguimiento a tratamientos y atender dudas, aclaraciones o quejas.</li><li>Cobro, facturación y cumplimiento de obligaciones legales, fiscales y sanitarias.</li></ul>
+<p><b>Finalidades adicionales</b> (puede negarse sin que ello afecte el servicio):</p>
+<ul><li>Enviarle información, promociones, noticias o recordatorios de bienestar.</li><li>Realizar encuestas de satisfacción y mejorar nuestros servicios.</li><li>Usar fotografías o testimonios con fines de difusión, solo con su autorización previa y por escrito.</li></ul>
+<p>Si no desea que sus datos se traten para las finalidades adicionales, escríbanos a <a href="mailto:ume_841@hotmail.com">ume_841@hotmail.com</a> indicando su nombre y la finalidad a la que se opone.</p>
+<h3>4. Transferencias y encargados</h3>
+<p>No compartimos sus datos personales con terceros sin su consentimiento, salvo en los casos previstos por la Ley, por ejemplo cuando lo soliciten autoridades sanitarias, judiciales o fiscales competentes. Podemos apoyarnos en proveedores que tratan datos por nuestra cuenta, sujetos a obligaciones de confidencialidad (laboratorios, plataformas de mensajería, servicios de mensajería, facturación, pagos y tecnología). Cualquier otra transferencia se hará solo con su consentimiento.</p>
+<h3>5. Derechos ARCO y revocación del consentimiento</h3>
+<p>Usted tiene derecho a <b>Acceder</b> a sus datos, <b>Rectificarlos</b> si son inexactos, <b>Cancelarlos</b> cuando considere que no se requieren o se tratan de forma indebida, y <b>Oponerse</b> a su tratamiento para fines específicos. También puede revocar su consentimiento y limitar el uso o la divulgación de sus datos. Para ejercerlos envíe su solicitud a <a href="mailto:ume_841@hotmail.com">ume_841@hotmail.com</a>; encuentra el detalle en el apartado <button type="button" class="legal-link" data-dlg="dlg-arco">Derechos ARCO (Habeas Data)</button>. Algunos datos, como el expediente clínico, deben conservarse por el plazo que exige la normativa sanitaria.</p>
+<h3>6. Limitación del uso o divulgación</h3>
+<p>Puede solicitar ser incluido en nuestro listado de exclusión para dejar de recibir comunicaciones promocionales, escribiendo a <a href="mailto:ume_841@hotmail.com">ume_841@hotmail.com</a>.</p>
+<h3>7. Menores de edad</h3>
+<p>La atención a menores de edad o personas en estado de interdicción se realiza con la presencia y el consentimiento de su padre, madre, tutor o representante legal, quien podrá ejercer los derechos descritos en este aviso.</p>
+<h3>8. Cookies y tecnologías similares</h3>
+<p>Este sitio utiliza almacenamiento local y servicios de terceros necesarios para su funcionamiento. Consulte la <button type="button" class="legal-link" data-dlg="dlg-cookies">Política de cookies</button> o <button type="button" class="legal-link" data-cookie-settings>configure sus preferencias</button>.</p>
+<h3>9. Cambios al aviso de privacidad</h3>
+<p>Podemos modificar este aviso por cambios legales, de nuestros servicios o prácticas. Publicaremos la versión vigente en este sitio web y en nuestras instalaciones.</p>
+<h3>10. Autoridad en materia de protección de datos</h3>
+<p>Si considera que su derecho a la protección de datos personales ha sido vulnerado, puede acudir ante la autoridad competente en materia de protección de datos personales en posesión de particulares (actualmente, la Secretaría Anticorrupción y Buen Gobierno).</p>
+<h3>11. Consentimiento</h3>
+<p>Al proporcionarnos sus datos personales y continuar con la solicitud de servicios, usted manifiesta haber leído este aviso. Para el tratamiento de datos personales sensibles le solicitaremos su consentimiento expreso por escrito o por medio electrónico.</p></div></dialog>
+  <dialog class="legal-dlg" id="dlg-cookies" aria-labelledby="dlg-cookies-t"><div class="legal-head"><h2 id="dlg-cookies-t">Política de cookies</h2><button type="button" class="legal-close" data-close aria-label="Cerrar">✕</button></div><div class="legal-body"><p class="legal-date">Última actualización: 24 de octubre de 2026</p>
+<h3>¿Qué son las cookies?</h3>
+<p>Son pequeños archivos o registros que un sitio web guarda en su navegador para recordar sus preferencias y hacer funcionar ciertas características. Esta política aplica al sitio web de Hospital UME y se complementa con el Aviso de privacidad.</p>
+<h3>Qué usamos en este sitio</h3>
+<div class="legal-table"><table><thead><tr><th>Elemento</th><th>Para qué sirve</th><th>Tipo</th><th>Duración</th></tr></thead><tbody>
+<tr><td><code>ume-cookies</code> (almacenamiento local)</td><td>Guarda su elección sobre cookies para no preguntarle de nuevo.</td><td>Necesaria</td><td>Hasta que la borre</td></tr>
+<tr><td>Google Fonts</td><td>Carga las tipografías del sitio. Google recibe su dirección IP al servirlas.</td><td>Servicio de tercero</td><td>Sesión</td></tr>
+<tr><td>Font Awesome (cdnjs)</td><td>Carga los iconos del sitio. El proveedor recibe su dirección IP.</td><td>Servicio de tercero</td><td>Sesión</td></tr>
+<tr><td>Google Maps</td><td>Muestra el mapa de ubicación. Google puede usar sus propias cookies e identificar su navegador.</td><td>Servicio de tercero</td><td>Según Google</td></tr>
+<tr><td>Matterport</td><td>Muestra el recorrido virtual 3D de las instalaciones. Matterport puede usar sus propias cookies.</td><td>Servicio de tercero</td><td>Según Matterport</td></tr>
+<tr><td>Enlaces a WhatsApp, Facebook e Instagram</td><td>Al abrirlos, esos sitios pueden usar sus propias cookies, regidas por sus políticas.</td><td>Terceros</td><td>Según cada sitio</td></tr>
+</tbody></table></div>
+<h3>Cookies analíticas y de marketing</h3>
+<p>Actualmente este sitio no utiliza cookies analíticas ni de publicidad. Si en el futuro se incorporan herramientas como Google Analytics o Meta Pixel, solo se activarán si usted las acepta en el panel de preferencias.</p>
+<h3>Cómo administrar sus preferencias</h3>
+<p>Puede cambiar su elección en cualquier momento con el botón <button type="button" class="legal-link" data-cookie-settings>Configurar cookies</button>. También puede bloquear o eliminar cookies desde la configuración de su navegador; algunas funciones, como el mapa o el recorrido 3D, podrían dejar de operar.</p>
+<h3>Contacto</h3>
+<p>Para dudas sobre esta política escriba a <a href="mailto:ume_841@hotmail.com">ume_841@hotmail.com</a>.</p></div></dialog>
+  <dialog class="legal-dlg" id="dlg-arco" aria-labelledby="dlg-arco-t"><div class="legal-head"><h2 id="dlg-arco-t">Derechos ARCO · Habeas Data</h2><button type="button" class="legal-close" data-close aria-label="Cerrar">✕</button></div><div class="legal-body"><p class="legal-date">Última actualización: 24 de octubre de 2026</p>
+<p>En México, el equivalente al “habeas data” son los <b>derechos ARCO</b>, reconocidos por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares. Usted puede ejercerlos de forma gratuita ante Hospital UME.</p>
+<h3>Sus derechos</h3>
+<ul><li><b>Acceso:</b> conocer qué datos personales tenemos y cómo los usamos.</li><li><b>Rectificación:</b> corregir datos inexactos o incompletos.</li><li><b>Cancelación:</b> solicitar que eliminemos sus datos cuando ya no se necesiten o se traten indebidamente, salvo los que debamos conservar por ley (por ejemplo, el expediente clínico).</li><li><b>Oposición:</b> negarse al uso de sus datos para fines específicos, como promociones.</li><li><b>Revocación del consentimiento</b> y <b>limitación del uso o divulgación</b> de sus datos.</li></ul>
+<h3>Cómo presentar su solicitud</h3>
+<p>Envíe un correo a <a href="mailto:ume_841@hotmail.com">ume_841@hotmail.com</a> con el asunto “Solicitud ARCO” e incluya:</p>
+<ol><li>Su nombre completo y un medio para responderle.</li><li>Copia de una identificación oficial (o de la de su representante, con carta poder).</li><li>La descripción clara del derecho que desea ejercer y de los datos involucrados.</li><li>Cualquier documento que facilite localizar su información.</li></ol>
+<p>Le responderemos dentro de los plazos que establece la Ley. Si la solicitud es procedente, se hará efectiva en el plazo legal correspondiente. El ejercicio de estos derechos es gratuito; solo podrían cobrarse costos justificados de envío o reproducción.</p>
+<h3>Responsable de atender su solicitud</h3>
+<p><mark class="ph">[Nombre del responsable o área de privacidad]</mark> · <a href="mailto:ume_841@hotmail.com">ume_841@hotmail.com</a> · (656) 900 2248 · Blvd. Independencia #841, Col. Zaragoza, C.P. 32570, Ciudad Juárez, Chihuahua.</p>
+<h3>¿No está conforme?</h3>
+<p>Si su solicitud no fue atendida o considera que sus derechos fueron vulnerados, puede acudir ante la autoridad competente en materia de protección de datos personales en posesión de particulares.</p>
+<p><a class="ume-btn ume-btn-dark" href="mailto:ume_841@hotmail.com?subject=Solicitud%20ARCO">Enviar solicitud ARCO <span>↗</span></a></p></div></dialog>
+  <dialog class="legal-dlg" id="dlg-ckcfg" aria-labelledby="dlg-ckcfg-t"><div class="legal-head"><h2 id="dlg-ckcfg-t">Preferencias de cookies</h2><button type="button" class="legal-close" data-close aria-label="Cerrar">✕</button></div><div class="legal-body"><p>Elija qué cookies acepta. Las necesarias siempre están activas porque permiten que el sitio funcione y recuerde esta elección.</p>
+<form class="ck-form" id="ck-form"><label class="ck-row"><span><b>Necesarias</b><small>Funcionamiento del sitio y registro de su preferencia.</small></span><input type="checkbox" checked disabled /></label>
+<label class="ck-row"><span><b>Analíticas</b><small>Estadísticas de uso para mejorar el sitio. Hoy no se utilizan.</small></span><input type="checkbox" id="ck-an" /></label>
+<label class="ck-row"><span><b>Marketing</b><small>Anuncios y medición de campañas. Hoy no se utilizan.</small></span><input type="checkbox" id="ck-mk" /></label>
+<div class="ck-actions"><button type="button" class="ume-btn ume-btn-dark" id="ck-save">Guardar preferencias</button><button type="button" class="ume-btn ume-btn-outline" id="ck-all">Aceptar todas</button></div></form></div></dialog>
+  <div class="cookie-bar" id="cookie-bar" role="region" aria-label="Aviso de cookies" hidden><p><b>Usamos cookies</b> para que el sitio funcione y recordar sus preferencias. No usamos cookies de publicidad. Conozca más en la <button type="button" class="legal-link" data-dlg="dlg-cookies">Política de cookies</button> y el <button type="button" class="legal-link" data-dlg="dlg-privacidad">Aviso de privacidad</button>.</p><div class="cookie-actions"><button type="button" class="ume-btn ume-btn-dark" data-ck="all">Aceptar</button><button type="button" class="ume-btn ume-btn-outline" data-ck="necessary">Solo necesarias</button><button type="button" class="legal-link" data-cookie-settings>Personalizar</button></div></div>
+
+</body>
+</html>
