@@ -25,7 +25,6 @@
   <meta name="twitter:description" content="Urgencias 24/7, quirófanos, maternidad y laboratorio. Tecnología avanzada, atención humana.">
   <meta name="twitter:image" content="https://hospitalume.com.mx/assets/images/og-image.jpg">
   <meta name="twitter:image:alt" content="Fachada de Hospital UME en Ciudad Juárez">
-  <link rel="preload" as="image" href="assets/images/fachada-ume-hero.webp" fetchpriority="high">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -527,13 +526,6 @@
       .soft-blur-title { opacity: 1; filter: none; transform: none; }
     }
 
-    /* ================= HERO COMPARE-REVEAL: texto UME ================= */
-    .hero-ume-text {
-      font-size: clamp(88px, 13vw, 230px);
-      letter-spacing: 0.04em;
-      color: #00a896;
-      text-shadow: 0 0 40px rgba(0, 168, 150, 0.55), 0 0 90px rgba(0, 168, 150, 0.25);
-    }
 
     /* ================= AVISOS LEGALES Y COOKIES ================= */
     .legal-nav { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 10px; }
@@ -616,16 +608,23 @@
     }
 
     /* ================= TARJETAS DE ESPECIALIDADES CON FOTO DE FONDO ================= */
-    .ume-card { padding: 0 !important; min-height: 440px; display: flex; flex-direction: column; justify-content: flex-end; background: #0a2540; }
+    .ume-card { padding: 0 !important; min-height: 470px; display: flex; flex-direction: column; justify-content: flex-end; background: #0a2540; }
     .ume-card-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .9s cubic-bezier(.16, 1, .3, 1); }
     .ume-card:hover .ume-card-bg { transform: scale(1.06); }
-    .ume-card-shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(7, 22, 38, .8) 0%, rgba(7, 22, 38, .28) 55%, rgba(7, 22, 38, .05) 100%); }
-    .ume-card-panel { position: relative; z-index: 2; margin: 14px; padding: 20px; border-radius: 1.1rem; background: rgba(7, 22, 38, .55); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, .14); }
+    .ume-card-shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(7, 22, 38, .3) 0%, rgba(7, 22, 38, 0) 55%); }
+    .ume-card-panel { position: relative; z-index: 2; margin: 14px; padding: 20px; border-radius: 1.1rem; background: rgba(7, 22, 38, .46); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, .18); }
     .ume-card .border-trail-svg { z-index: 3; }
-    .ume-card h3 { color: #fff; }
+    .ume-card h3 { color: #fff; text-shadow: 0 1px 8px rgba(0, 0, 0, .35); }
     .ume-card p { color: #e2e8f0; }
     .ume-card a[class*="text-brand-teal"] { color: #5eead4; }
     .ume-card a[class*="text-brand-teal"]:hover { color: #fff; }
+
+    .ume-seg { padding: 0 !important; display: flex; flex-direction: column; justify-content: flex-end; }
+    .ume-seg:hover .ume-card-bg { transform: scale(1.05); }
+    .ume-seg-shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(7, 22, 38, .25), rgba(7, 22, 38, 0) 55%); }
+    .ume-seg-panel { margin: 190px 14px 14px; padding: 28px; border-radius: 1.1rem; background: rgba(255, 255, 255, .88); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); box-shadow: 0 12px 32px -14px rgba(7, 22, 38, .45); }
+    @media (max-width: 639px) { .ume-seg-panel { margin-top: 150px; padding: 22px; } }
+    #tour3d { scroll-margin-top: 100px; }
 
     /* ================= AJUSTES MOVIL (<640px): dock, botones, pie de pagina ================= */
     @media (max-width: 639px) {
@@ -654,7 +653,6 @@
 
     @media (max-width: 767px) {
       .text-\[10px\], .text-\[11px\] { font-size: 12px; }
-      #hero-dark .tracking-\[0\.4em\] { letter-spacing: 0.28em; }
     }
   </style>
 
@@ -678,13 +676,13 @@
     <div class="max-w-6xl mx-auto dock-container rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between gap-2 border border-slate-200/60 shadow-2xl">
       
       <!-- Logotipo Oficial UME -->
-      <a href="#inicio" class="dock-item flex items-center gap-2 pl-1 flex-shrink-0">
+      <a href="#top" class="dock-item flex items-center gap-2 pl-1 flex-shrink-0">
         <img src="assets/images/logo-ume-scaled-e1776191801809.png" alt="Hospital UME" width="334" height="258" class="h-10 sm:h-11 w-auto object-contain">
       </a>
 
       <!-- Enlaces Centrales del Dock (Desktop) -->
       <nav aria-label="Navegación principal" class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium text-slate-700">
-        <a href="#inicio" class="dock-item px-3.5 py-1.5 rounded-full text-brand-teal font-semibold hover:bg-slate-100 transition">
+        <a href="#top" class="dock-item px-3.5 py-1.5 rounded-full text-brand-teal font-semibold hover:bg-slate-100 transition">
           <span>Inicio</span>
         </a>
         <a href="#nosotros" class="dock-item px-3.5 py-1.5 rounded-full hover:text-brand-teal hover:bg-slate-100 transition">
@@ -787,7 +785,7 @@
 
     <!-- Menú Desplegable Móvil Flotante -->
     <div id="dock-mobile-menu" class="hidden lg:hidden max-w-md mx-auto mt-2 bg-white/95 backdrop-blur-2xl rounded-3xl p-5 shadow-2xl border border-slate-200 space-y-3 transition-all">
-      <a href="#inicio" class="block text-slate-800 font-semibold py-1.5 hover:text-brand-teal">Inicio</a>
+      <a href="#top" class="block text-slate-800 font-semibold py-1.5 hover:text-brand-teal">Inicio</a>
       <a href="#nosotros" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Nosotros y Galería 3D</a>
       <a href="#especialidades" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Especialidades Médicas</a>
       <a href="#segmento" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Para Médicos y Pacientes</a>
@@ -809,49 +807,41 @@
 
   <main id="contenido">
 
-  <!-- ================= 1 & 5. BANNER HERO: IMAGEN 100% VÍVIDA Y ANIMATED TEXT (@designali-in) 1 SOLA VEZ ================= -->
-  <section id="inicio" class="relative overflow-hidden min-h-[620px] lg:min-h-[700px] bg-brand-navy text-white flex items-center max-lg:flex-col max-lg:justify-center">
-    
-    <!-- Imagen de Fachada en la Mitad Derecha: 100% Visible, Nítida y Luminosa -->
-    <div id="hero-compare" class="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none z-0 overflow-hidden max-lg:relative max-lg:inset-auto max-lg:order-last max-lg:z-10 max-lg:h-[340px] sm:max-lg:h-[420px] max-lg:w-[calc(100%-2rem)] max-lg:mb-10 max-lg:rounded-3xl max-lg:pointer-events-auto max-lg:shadow-2xl max-lg:ring-1 max-lg:ring-white/10" style="touch-action: pan-y;">
-      <img src="assets/images/fachada-ume-hero.webp" alt="Fachada de Hospital UME en Ciudad Juárez" width="1600" height="900" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center scale-100 brightness-105 contrast-105" style="object-position: 73% center;">\2
-      <!-- Capa oscura revelada por el cursor (@rmahammad/components/compare-reveal) -->
-      <div id="hero-dark" class="absolute inset-0" style="clip-path: inset(0 0 0 100%);" aria-hidden="true">
-        <img src="assets/images/fachada-ume-hero.webp" alt="" width="1600" height="900" decoding="async" class="w-full h-full object-cover object-center" style="object-position: 73% center; filter: brightness(.3) saturate(.7) contrast(1.1);">
-        <div class="absolute inset-0 bg-brand-navy/55"></div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-center select-none px-4">
-          <span class="hero-ume-text font-serif font-black leading-none">UME</span>
-          <span class="mt-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.4em] text-brand-teal">Unidad Médica Especializada</span>
-        </div>
+  <!-- ================= RECORRIDO VIRTUAL 360: LO PRIMERO QUE SE VE ================= -->
+  <section id="tour3d" class="bg-slate-950 text-white pt-1 pb-8 lg:pb-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 aspect-[4/5] sm:aspect-[16/10] lg:aspect-video w-full">
+        <iframe src="https://my.matterport.com/show/?m=KsifUcXmd7W&play=1&qs=1" allowfullscreen allow="xr-spatial-tracking" class="w-full h-full" title="Recorrido virtual 360° de Hospital UME"></iframe>
       </div>
-      <!-- Control deslizante -->
-      <div id="hero-handle" role="slider" tabindex="0" aria-label="Comparar fachada y versión oscura con el nombre UME" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"
-           class="flex absolute inset-y-0 z-20 pointer-events-auto items-center justify-center" style="left:97%; width:44px; margin-left:-22px;">
-        <span class="absolute inset-y-0 left-1/2 w-px bg-white/70"></span>
-        <span class="relative w-9 h-9 rounded-full bg-white/90 text-brand-navy shadow-lg flex items-center justify-center text-xs"><i class="fa-solid fa-arrows-left-right"></i></span>
+      <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+        <p class="text-slate-300 text-sm"><i class="fa-solid fa-vr-cardboard text-brand-teal mr-2"></i><strong class="text-white">Recorrido virtual oficial.</strong> Camina por nuestras instalaciones antes de tu cita.</p>
+        <a href="https://my.matterport.com/show/?m=KsifUcXmd7W" target="_blank" rel="noopener" class="hover-border-gradient">
+          <span class="hover-border-gradient-inner py-2.5 px-6 text-xs sm:text-sm">
+            <i class="fa-solid fa-up-right-from-square text-xs text-brand-cyan"></i>
+            <span>Ver en pantalla completa</span>
+          </span>
+        </a>
       </div>
-      <!-- El degradé corre únicamente en una franja angosta hacia la izquierda para la transición del fondo, dejando todo el edificio libre -->
-      <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-brand-navy to-transparent hidden lg:block"></div>
-      <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-brand-navy to-transparent lg:hidden"></div>
     </div>
+  </section>
 
-    <!-- Fondo de respaldo sólido en la mitad izquierda para el texto -->
-    <div class="absolute inset-y-0 left-0 w-full lg:w-1/2 bg-brand-navy z-0"></div>
-
+  <!-- ================= 1 & 5. BANNER HERO: IMAGEN 100% VÍVIDA Y ANIMATED TEXT (@designali-in) 1 SOLA VEZ ================= -->
+  <section id="inicio" class="relative overflow-hidden bg-brand-navy text-white flex items-center">
+    
     <!-- Patrón de puntos de fondo -->
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#00a896_1.5px,transparent_1.5px)] [background-size:24px_24px] pointer-events-none"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-14 lg:py-28 relative z-10 w-full">
-      <div class="max-w-2xl flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 relative z-10 w-full">
+      <div class="max-w-3xl mx-auto flex flex-col items-center gap-6 text-center">
         
         <!-- Badge Superior -->
-        <div class="order-3 lg:order-1 inline-flex items-center gap-2.5 bg-brand-teal/20 text-teal-300 border border-brand-teal/40 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-md">
+        <div class="inline-flex items-center gap-2.5 bg-brand-teal/20 text-teal-300 border border-brand-teal/40 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-md">
           <span class="w-2.5 h-2.5 rounded-full bg-brand-teal animate-ping"></span>
           <span>Desde 2008 en Ciudad Juárez · +16 Años de Confianza</span>
         </div>
 
         <!-- 5. Título H1 con Animated Text (@designali-in) que se mueve 1 SOLA VEZ -->
-        <h1 class="order-1 lg:order-2 text-3xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight tracking-tight drop-shadow-lg">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight tracking-tight drop-shadow-lg">
           <span class="animated-word animated-word-1">Tecnología</span>
           <span class="animated-word animated-word-2">avanzada,</span>
           <br>
@@ -861,19 +851,15 @@
           </span>
         </h1>
 
-        <!-- Recorrido virtual 360: a primera vista en celular y tableta (en escritorio va en su propia seccion) -->
-        <div id="tour3d-hero" class="order-2 lg:hidden w-full relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 aspect-[4/5] sm:aspect-[16/10]">
-          <iframe src="https://my.matterport.com/show/?m=KsifUcXmd7W&play=1&qs=1" allowfullscreen allow="xr-spatial-tracking" loading="lazy" class="w-full h-full" title="Recorrido virtual 360° de Hospital UME"></iframe>
-        </div>
 
 
         <!-- Párrafo Descriptivo -->
-        <p class="order-4 lg:order-3 text-slate-200 text-base sm:text-lg leading-relaxed font-normal drop-shadow">
+        <p class="max-w-2xl text-slate-200 text-base sm:text-lg leading-relaxed font-normal drop-shadow">
           En <strong>Hospital UME</strong> (Unidad Médica Especializada) cuidamos tu salud siempre contigo. Instalaciones hospitalarias modernas, quirófanos totalmente equipados, urgencias 24/7 y más de 30 especialistas médicos certificados cerca de ti.
         </p>
 
         <!-- Botones de Acción con Hover Border Gradient -->
-        <div class="order-5 lg:order-4 w-full flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+        <div class="w-full flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
           
           <a href="https://wa.me/526565632887?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20o%20cotizar%20un%20servicio%20en%20Hospital%20UME" target="_blank" rel="noopener" class="hover-border-gradient hover-border-gradient-whatsapp w-full sm:w-auto">
             <span class="hover-border-gradient-inner py-3.5 px-8 text-base">
@@ -891,7 +877,7 @@
         </div>
 
         <!-- Badges Rápidos con Iconos Animados Lucide -->
-        <div class="order-6 lg:order-5 w-full grid grid-cols-3 gap-3 sm:gap-4 pt-8 border-t border-white/15">
+        <div class="w-full max-w-2xl grid grid-cols-3 gap-3 sm:gap-4 pt-8 border-t border-white/15">
           
           <div class="flex flex-col sm:flex-row items-center gap-2.5">
             <div class="w-10 h-10 rounded-xl bg-brand-teal/20 text-teal-300 flex items-center justify-center flex-shrink-0">
@@ -952,10 +938,12 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         <!-- Tarjeta 1 con BORDER BEAM -->
-        <div class="border-beam-container p-8 sm:p-10 border border-slate-200/80 shadow-xl group">
+        <div class="border-beam-container ume-seg border border-slate-200/80 shadow-xl group">
+          <img class="ume-card-bg" src="assets/images/seg-pacientes.webp" alt="" width="1000" height="700" loading="lazy" decoding="async">
+          <div class="ume-seg-shade"></div>
           <div class="border-beam-glow"></div>
           
-          <div class="relative z-10">
+          <div class="relative z-10 ume-seg-panel">
             <div class="w-14 h-14 rounded-2xl bg-teal-50 text-brand-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-teal group-hover:text-white transition duration-300">
               <svg class="w-8 h-8 text-brand-teal group-hover:text-white transition-colors icon-pulse-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
@@ -995,10 +983,12 @@
         </div>
 
         <!-- Tarjeta 2 con BORDER BEAM -->
-        <div class="border-beam-container p-8 sm:p-10 border border-slate-200/80 shadow-xl group">
+        <div class="border-beam-container ume-seg border border-slate-200/80 shadow-xl group">
+          <img class="ume-card-bg" src="assets/images/seg-medicos.webp" alt="" width="1000" height="700" loading="lazy" decoding="async">
+          <div class="ume-seg-shade"></div>
           <div class="border-beam-glow"></div>
           
-          <div class="relative z-10">
+          <div class="relative z-10 ume-seg-panel">
             <div class="w-14 h-14 rounded-2xl bg-blue-50 text-brand-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-blue group-hover:text-white transition duration-300">
               <svg class="w-8 h-8 text-brand-blue group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/>
@@ -1284,37 +1274,30 @@
   </section>
 
   <!-- ================= 6. TOUR VIRTUAL 3D CON SOFT BLUR IN ================= -->
-  <section id="tour3d" class="max-lg:hidden py-20 bg-slate-950 text-white relative">
+  <section id="antes-ahora" class="py-20 bg-slate-950 text-white relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <div class="text-center max-w-3xl mx-auto mb-10">
         <div class="inline-flex items-center gap-2 bg-brand-teal/20 text-teal-300 px-4 py-1.5 rounded-full text-xs font-semibold mb-3 border border-brand-teal/30">
-          <i class="fa-solid fa-vr-cardboard"></i>
-          <span>Recorrido Virtual Oficial</span>
+          <i class="fa-solid fa-building"></i>
+          <span>Antes y Ahora</span>
         </div>
-        <!-- 6. Soft Blur In en Título -->
-        <h2 class="soft-blur-title text-3xl sm:text-4xl font-serif font-bold text-white">Explora Hospital UME en 360°</h2>
-        <p class="text-slate-300 mt-2 text-sm sm:text-base">Camina virtualmente por nuestras instalaciones, salas de espera, quirófanos y habitaciones antes de tu cita.</p>
+        <h2 class="soft-blur-title text-3xl sm:text-4xl font-serif font-bold text-white">Así ha crecido Hospital UME</h2>
+        <p class="text-slate-300 mt-2 text-sm sm:text-base">Desliza el cursor o el dedo sobre la imagen para comparar nuestra fachada antes y ahora.</p>
       </div>
 
-      <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 aspect-[4/5] sm:aspect-[16/10] lg:aspect-video w-full max-w-5xl mx-auto">
-        <iframe 
-          src="https://my.matterport.com/show/?m=KsifUcXmd7W&play=1&qs=1" 
-          frameborder="0" 
-          allowfullscreen 
-          allow="xr-spatial-tracking" loading="lazy"
-          class="w-full h-full"
-          title="Tour 3D Hospital UME">
-        </iframe>
-      </div>
-
-      <div class="mt-6 text-center">
-        <a href="https://my.matterport.com/show/?m=KsifUcXmd7W" target="_blank" rel="noopener" class="hover-border-gradient">
-          <span class="hover-border-gradient-inner py-2.5 px-6 text-xs sm:text-sm">
-            <i class="fa-solid fa-up-right-from-square text-xs text-brand-cyan"></i>
-            <span>Ver Tour en pantalla completa</span>
-          </span>
-        </a>
+      <div id="ba" class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 aspect-[4/3] sm:aspect-[16/10] lg:aspect-video w-full max-w-5xl mx-auto select-none" style="touch-action: pan-y; cursor: ew-resize;">
+        <img src="assets/images/fachada-ume-ahora.webp" alt="Fachada de Hospital UME ahora, con su nuevo logotipo" width="1600" height="900" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" style="object-position: 70% center;" draggable="false">
+        <div id="ba-before" class="absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+          <img src="assets/images/fachada-ume-antes.webp" alt="Fachada de Hospital UME antes" width="1600" height="900" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" style="object-position: 70% center;" draggable="false">
+        </div>
+        <span class="absolute top-4 left-4 z-10 bg-slate-900/75 text-white text-xs font-bold px-3.5 py-1.5 rounded-full backdrop-blur-sm">Antes</span>
+        <span class="absolute top-4 right-4 z-10 bg-brand-teal text-white text-xs font-bold px-3.5 py-1.5 rounded-full">Ahora</span>
+        <div id="ba-handle" role="slider" tabindex="0" aria-label="Comparar la fachada antes y ahora" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+             class="absolute inset-y-0 z-20 flex items-center justify-center" style="left:50%; width:44px; margin-left:-22px;">
+          <span class="absolute inset-y-0 left-1/2 w-px bg-white/80"></span>
+          <span class="relative w-10 h-10 rounded-full bg-white/95 text-brand-navy shadow-lg flex items-center justify-center text-xs"><i class="fa-solid fa-arrows-left-right"></i></span>
+        </div>
       </div>
 
     </div>
@@ -1851,7 +1834,7 @@
         <div class="space-y-3">
           <h4 class="text-white font-bold text-xs uppercase tracking-widest text-teal-300">Navegación</h4>
           <ul class="space-y-2.5 text-xs text-slate-300">
-            <li><a href="#inicio" class="hover:text-brand-cyan transition">Inicio</a></li>
+            <li><a href="#top" class="hover:text-brand-cyan transition">Inicio</a></li>
             <li><a href="#nosotros" class="hover:text-brand-cyan transition">Quiénes Somos y Galería</a></li>
             <li><a href="#especialidades" class="hover:text-brand-cyan transition">Especialidades Médicas</a></li>
             <li><a href="#segmento" class="hover:text-brand-cyan transition">Médicos y Pacientes</a></li>
@@ -1938,79 +1921,62 @@
     softBlurTitles.forEach(title => blurObserver.observe(title));
 
 
-    // Hero: comparador (compare-reveal). Al deslizar el cursor sobre la fachada se oscurece y aparece UME.
-    (function initHeroCompare() {
-      const hero = document.getElementById('inicio');
-      const box = document.getElementById('hero-compare');
-      const dark = document.getElementById('hero-dark');
-      const handle = document.getElementById('hero-handle');
-      if (!hero || !box || !dark || !handle) return;
 
+
+    // Antes y Ahora: comparador de fachada (cursor en escritorio, dedo en celular)
+    (function initBeforeAfter() {
+      const box = document.getElementById('ba');
+      const before = document.getElementById('ba-before');
+      const handle = document.getElementById('ba-handle');
+      if (!box || !before || !handle) return;
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      let pos = 100, target = 100, raf = null, userMoved = false;
+      let pos = 50, target = 50, raf = null, touched = false, dragging = false;
 
       function render() {
-        dark.style.clipPath = 'inset(0 0 0 ' + pos + '%)';
-        handle.style.left = Math.min(Math.max(pos, 3), 97) + '%';
+        before.style.clipPath = 'inset(0 ' + (100 - pos) + '% 0 0)';
+        handle.style.left = pos + '%';
         handle.setAttribute('aria-valuenow', String(Math.round(pos)));
       }
       function tick() {
-        pos += (target - pos) * (reduce ? 1 : 0.14);
+        pos += (target - pos) * (reduce ? 1 : 0.16);
         if (Math.abs(target - pos) < 0.05) pos = target;
         render();
         raf = pos === target ? null : requestAnimationFrame(tick);
       }
-      function setTarget(v) {
+      function go(v) {
         target = Math.max(0, Math.min(100, v));
         if (!raf) raf = requestAnimationFrame(tick);
       }
-
-      hero.addEventListener('pointermove', (e) => {
-        if (window.innerWidth < 1024) return;
+      function fromEvent(e) {
         const r = box.getBoundingClientRect();
-        const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
-        if (inside) {
-          userMoved = true;
-          setTarget(((e.clientX - r.left) / r.width) * 100);
-        } else if (userMoved) {
-          setTarget(100);
-        }
-      });
-      hero.addEventListener('pointerleave', () => { if (userMoved && window.innerWidth >= 1024) setTarget(100); });
-
-      // Móvil / tableta: tocar o arrastrar el dedo sobre la foto (la posición se queda donde la sueltas)
-      let dragging = false;
-      function setFromPointer(e) {
-        const r = box.getBoundingClientRect();
-        userMoved = true;
-        setTarget(((e.clientX - r.left) / r.width) * 100);
+        touched = true;
+        go(((e.clientX - r.left) / r.width) * 100);
       }
+
       box.addEventListener('pointerdown', (e) => {
-        if (window.innerWidth >= 1024) return;
-        dragging = true;
-        try { box.setPointerCapture(e.pointerId); } catch (err) {}
-        setFromPointer(e);
+        if (e.pointerType !== 'mouse') { dragging = true; try { box.setPointerCapture(e.pointerId); } catch (err) {} }
+        fromEvent(e);
       });
-      box.addEventListener('pointermove', (e) => {
-        if (dragging && window.innerWidth < 1024) setFromPointer(e);
-      });
+      box.addEventListener('pointermove', (e) => { if (e.pointerType === 'mouse' || dragging) fromEvent(e); });
       ['pointerup', 'pointercancel'].forEach((ev) => box.addEventListener(ev, () => { dragging = false; }));
 
       handle.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') { e.preventDefault(); userMoved = true; setTarget(target - 10); }
-        if (e.key === 'ArrowRight') { e.preventDefault(); userMoved = true; setTarget(target + 10); }
-        if (e.key === 'Home') { e.preventDefault(); userMoved = true; setTarget(0); }
-        if (e.key === 'End') { e.preventDefault(); userMoved = true; setTarget(100); }
+        const k = { ArrowLeft: -10, ArrowRight: 10 }[e.key];
+        if (k) { e.preventDefault(); touched = true; go(target + k); }
+        if (e.key === 'Home') { e.preventDefault(); touched = true; go(0); }
+        if (e.key === 'End') { e.preventDefault(); touched = true; go(100); }
       });
 
-      // Pista inicial: un barrido corto para que se note el efecto
-      if (!reduce) {
-        setTimeout(() => {
-          if (userMoved) return;
-          setTarget(55);
-          setTimeout(() => { if (!userMoved) setTarget(100); }, 1500);
-        }, 1400);
-      }
+      // Pista inicial al llegar a la seccion: un barrido corto
+      new IntersectionObserver((entries, obs) => {
+        if (!entries[0].isIntersecting) return;
+        obs.disconnect();
+        if (reduce || touched) return;
+        go(20);
+        setTimeout(() => { if (!touched) go(80); }, 900);
+        setTimeout(() => { if (!touched) go(50); }, 1900);
+      }, { threshold: 0.5 }).observe(box);
+
       render();
     })();
 
@@ -2567,16 +2533,6 @@
     }
 
 
-    // En celular el recorrido 360 esta en el inicio: los enlaces a "#tour3d" llevan alli
-    document.addEventListener('click', (e) => {
-      const a = e.target.closest('a[href="#tour3d"]');
-      const sec = document.getElementById('tour3d');
-      const hero = document.getElementById('tour3d-hero');
-      if (a && sec && hero && sec.offsetParent === null) {
-        e.preventDefault();
-        hero.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
 
     // Consentimiento de cookies y avisos legales
     document.addEventListener('DOMContentLoaded', function initConsent() {
