@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="Urgencias 24/7, quirófanos, maternidad y laboratorio. Tecnología avanzada, atención humana.">
   <meta name="twitter:image" content="https://hospitalume.com.mx/assets/images/og-image.jpg">
   <meta name="twitter:image:alt" content="Fachada de Hospital UME en Ciudad Juárez">
-  <link rel="preload" as="image" href="assets/images/foto%20de%20fachada.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/fachada-ume-hero.webp" fetchpriority="high">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -614,6 +614,19 @@
       /* Enlaces legales del pie */
       .legal-nav button { padding: 11px 0; }
     }
+
+    /* ================= TARJETAS DE ESPECIALIDADES CON FOTO DE FONDO ================= */
+    .ume-card { padding: 0 !important; min-height: 440px; display: flex; flex-direction: column; justify-content: flex-end; background: #0a2540; }
+    .ume-card-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .9s cubic-bezier(.16, 1, .3, 1); }
+    .ume-card:hover .ume-card-bg { transform: scale(1.06); }
+    .ume-card-shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(7, 22, 38, .8) 0%, rgba(7, 22, 38, .28) 55%, rgba(7, 22, 38, .05) 100%); }
+    .ume-card-panel { position: relative; z-index: 2; margin: 14px; padding: 20px; border-radius: 1.1rem; background: rgba(7, 22, 38, .55); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, .14); }
+    .ume-card .border-trail-svg { z-index: 3; }
+    .ume-card h3 { color: #fff; }
+    .ume-card p { color: #e2e8f0; }
+    .ume-card a[class*="text-brand-teal"] { color: #5eead4; }
+    .ume-card a[class*="text-brand-teal"]:hover { color: #fff; }
+
     /* ================= AJUSTES MOVIL (<640px): dock, botones, pie de pagina ================= */
     @media (max-width: 639px) {
       /* Dock: solo logo UME centrado + menu de tres lineas, con efecto de aparicion */
@@ -801,10 +814,10 @@
     
     <!-- Imagen de Fachada en la Mitad Derecha: 100% Visible, Nítida y Luminosa -->
     <div id="hero-compare" class="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none z-0 overflow-hidden max-lg:relative max-lg:inset-auto max-lg:order-last max-lg:z-10 max-lg:h-[340px] sm:max-lg:h-[420px] max-lg:w-[calc(100%-2rem)] max-lg:mb-10 max-lg:rounded-3xl max-lg:pointer-events-auto max-lg:shadow-2xl max-lg:ring-1 max-lg:ring-white/10" style="touch-action: pan-y;">
-      <img src="assets/images/foto de fachada.webp" alt="Fachada de Hospital UME en Ciudad Juárez" width="1600" height="900" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center scale-100 brightness-105 contrast-105">\2
+      <img src="assets/images/fachada-ume-hero.webp" alt="Fachada de Hospital UME en Ciudad Juárez" width="1600" height="900" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center scale-100 brightness-105 contrast-105" style="object-position: 73% center;">\2
       <!-- Capa oscura revelada por el cursor (@rmahammad/components/compare-reveal) -->
       <div id="hero-dark" class="absolute inset-0" style="clip-path: inset(0 0 0 100%);" aria-hidden="true">
-        <img src="assets/images/foto de fachada.webp" alt="" width="1600" height="900" decoding="async" class="w-full h-full object-cover object-center" style="filter: brightness(.3) saturate(.7) contrast(1.1);">
+        <img src="assets/images/fachada-ume-hero.webp" alt="" width="1600" height="900" decoding="async" class="w-full h-full object-cover object-center" style="object-position: 73% center; filter: brightness(.3) saturate(.7) contrast(1.1);">
         <div class="absolute inset-0 bg-brand-navy/55"></div>
         <div class="absolute inset-0 flex flex-col items-center justify-center text-center select-none px-4">
           <span class="hero-ume-text font-serif font-black leading-none">UME</span>
@@ -828,17 +841,17 @@
     <!-- Patrón de puntos de fondo -->
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#00a896_1.5px,transparent_1.5px)] [background-size:24px_24px] pointer-events-none"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10 w-full">
-      <div class="max-w-2xl space-y-6 text-center lg:text-left">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-14 lg:py-28 relative z-10 w-full">
+      <div class="max-w-2xl flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
         
         <!-- Badge Superior -->
-        <div class="inline-flex items-center gap-2.5 bg-brand-teal/20 text-teal-300 border border-brand-teal/40 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-md">
+        <div class="order-3 lg:order-1 inline-flex items-center gap-2.5 bg-brand-teal/20 text-teal-300 border border-brand-teal/40 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-md">
           <span class="w-2.5 h-2.5 rounded-full bg-brand-teal animate-ping"></span>
           <span>Desde 2008 en Ciudad Juárez · +16 Años de Confianza</span>
         </div>
 
         <!-- 5. Título H1 con Animated Text (@designali-in) que se mueve 1 SOLA VEZ -->
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight tracking-tight drop-shadow-lg">
+        <h1 class="order-1 lg:order-2 text-3xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight tracking-tight drop-shadow-lg">
           <span class="animated-word animated-word-1">Tecnología</span>
           <span class="animated-word animated-word-2">avanzada,</span>
           <br>
@@ -848,13 +861,19 @@
           </span>
         </h1>
 
+        <!-- Recorrido virtual 360: a primera vista en celular y tableta (en escritorio va en su propia seccion) -->
+        <div id="tour3d-hero" class="order-2 lg:hidden w-full relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 aspect-[4/5] sm:aspect-[16/10]">
+          <iframe src="https://my.matterport.com/show/?m=KsifUcXmd7W&play=1&qs=1" allowfullscreen allow="xr-spatial-tracking" loading="lazy" class="w-full h-full" title="Recorrido virtual 360° de Hospital UME"></iframe>
+        </div>
+
+
         <!-- Párrafo Descriptivo -->
-        <p class="text-slate-200 text-base sm:text-lg leading-relaxed font-normal drop-shadow">
+        <p class="order-4 lg:order-3 text-slate-200 text-base sm:text-lg leading-relaxed font-normal drop-shadow">
           En <strong>Hospital UME</strong> (Unidad Médica Especializada) cuidamos tu salud siempre contigo. Instalaciones hospitalarias modernas, quirófanos totalmente equipados, urgencias 24/7 y más de 30 especialistas médicos certificados cerca de ti.
         </p>
 
         <!-- Botones de Acción con Hover Border Gradient -->
-        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+        <div class="order-5 lg:order-4 w-full flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
           
           <a href="https://wa.me/526565632887?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20o%20cotizar%20un%20servicio%20en%20Hospital%20UME" target="_blank" rel="noopener" class="hover-border-gradient hover-border-gradient-whatsapp w-full sm:w-auto">
             <span class="hover-border-gradient-inner py-3.5 px-8 text-base">
@@ -872,7 +891,7 @@
         </div>
 
         <!-- Badges Rápidos con Iconos Animados Lucide -->
-        <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-8 border-t border-white/15">
+        <div class="order-6 lg:order-5 w-full grid grid-cols-3 gap-3 sm:gap-4 pt-8 border-t border-white/15">
           
           <div class="flex flex-col sm:flex-row items-center gap-2.5">
             <div class="w-10 h-10 rounded-xl bg-brand-teal/20 text-teal-300 flex items-center justify-center flex-shrink-0">
@@ -1046,7 +1065,7 @@
           
           <!-- Item 1: Fachada -->
           <div class="gallery-item" data-index="0" role="button" tabindex="0" aria-label="Ver foto 0 de la galeria" onclick="rotateGalleryTo(0)">
-            <img src="assets/images/foto de fachada.webp" alt="Fachada Hospital UME" width="1600" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            <img src="assets/images/fachada-ume-galeria.webp" alt="Fachada Hospital UME" width="1600" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
             <div class="absolute bottom-4 left-4 right-4 text-sm font-bold text-white drop-shadow">Fachada Principal · Cd. Juárez</div>
           </div>
@@ -1125,8 +1144,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         <!-- Tarjeta 1: Laboratorio Clínico -->
-        <div class="border-trail-card p-8 group">
+        <div class="border-trail-card ume-card group">
+          <img class="ume-card-bg" src="assets/images/esp-laboratorio.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <div class="ume-card-shade"></div>
           <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="ume-card-panel">
           <div class="w-14 h-14 rounded-2xl bg-teal-50 flex items-center justify-center mb-6">
             <svg class="w-8 h-8 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path class="icon-ecg-path" d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -1140,11 +1162,15 @@
             <span>Cotizar estudios de laboratorio</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
+          </div>
         </div>
 
         <!-- Tarjeta 2: Imagenología y Rayos X -->
-        <div class="border-trail-card p-8 group">
+        <div class="border-trail-card ume-card group">
+          <img class="ume-card-bg" src="assets/images/esp-imagenologia.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <div class="ume-card-shade"></div>
           <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="ume-card-panel">
           <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
             <svg class="w-8 h-8 text-brand-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
@@ -1161,11 +1187,15 @@
             <span>Solicitar estudio de imagen</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
+          </div>
         </div>
 
         <!-- Tarjeta 3: Atención Especializada -->
-        <div class="border-trail-card p-8 group">
+        <div class="border-trail-card ume-card group">
+          <img class="ume-card-bg" src="assets/images/esp-especializada.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <div class="ume-card-shade"></div>
           <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="ume-card-panel">
           <div class="w-14 h-14 rounded-2xl bg-indigo-50 flex items-center justify-center mb-6">
             <svg class="w-8 h-8 text-indigo-600 icon-pulse-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
@@ -1179,11 +1209,15 @@
             <span>Ver directorio médico</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
+          </div>
         </div>
 
         <!-- Tarjeta 4: Quirófanos y Cirugía -->
-        <div class="border-trail-card p-8 group">
+        <div class="border-trail-card ume-card group">
+          <img class="ume-card-bg" src="assets/images/esp-quirofanos.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <div class="ume-card-shade"></div>
           <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="ume-card-panel">
           <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6">
             <i class="fa-solid fa-scissors icon-scissor-cut text-2xl"></i>
           </div>
@@ -1195,11 +1229,15 @@
             <span>Cotizar cirugía programada</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
+          </div>
         </div>
 
         <!-- Tarjeta 5: Maternidad y Partos -->
-        <div class="border-trail-card p-8 group">
+        <div class="border-trail-card ume-card group">
+          <img class="ume-card-bg" src="assets/images/esp-maternidad.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <div class="ume-card-shade"></div>
           <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="ume-card-panel">
           <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center text-2xl mb-6">
             <svg class="w-8 h-8 text-rose-500 icon-pulse-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -1213,11 +1251,15 @@
             <span>Conocer paquetes de parto</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
+          </div>
         </div>
 
         <!-- Tarjeta 6: Urgencias 24 Horas -->
-        <div class="border-trail-card p-8 group">
+        <div class="border-trail-card ume-card group">
+          <img class="ume-card-bg" src="assets/images/esp-urgencias.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <div class="ume-card-shade"></div>
           <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="ume-card-panel">
           <div class="w-14 h-14 rounded-2xl bg-red-50 text-brand-emergency flex items-center justify-center text-2xl mb-6">
             <svg class="w-8 h-8 text-brand-emergency" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
@@ -1233,6 +1275,7 @@
             <i class="fa-solid fa-phone"></i>
             <span>Llamar a Urgencias: (656) 900 2248</span>
           </a>
+          </div>
         </div>
 
       </div>
@@ -1241,7 +1284,7 @@
   </section>
 
   <!-- ================= 6. TOUR VIRTUAL 3D CON SOFT BLUR IN ================= -->
-  <section id="tour3d" class="py-20 bg-slate-950 text-white relative">
+  <section id="tour3d" class="max-lg:hidden py-20 bg-slate-950 text-white relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-10">
@@ -2522,6 +2565,18 @@
       
       window.open(url, '_blank');
     }
+
+
+    // En celular el recorrido 360 esta en el inicio: los enlaces a "#tour3d" llevan alli
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href="#tour3d"]');
+      const sec = document.getElementById('tour3d');
+      const hero = document.getElementById('tour3d-hero');
+      if (a && sec && hero && sec.offsetParent === null) {
+        e.preventDefault();
+        hero.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
 
     // Consentimiento de cookies y avisos legales
     document.addEventListener('DOMContentLoaded', function initConsent() {
