@@ -55,7 +55,7 @@
     "medicalSpecialty": ["Obstetric","Surgical","Orthopedic","Emergency"]
   }
   </script>
-  <noscript><style>.soft-blur-title{opacity:1!important;filter:none!important;transform:none!important}</style></noscript>
+  <noscript><style>.soft-blur-title{opacity:1!important;filter:none!important;transform:none!important}.animated-word{opacity:1!important;animation:none!important}</style></noscript>
   
   <!-- Google Fonts: Inter & Roboto Slab -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -99,8 +99,9 @@
     }
     .animated-word {
       display: inline-block;
-      opacity: 0;
-      animation: animated-text-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 1;
+      /* backwards (no forwards): al terminar, el estado final es el normal y no bloquea el efecto del cursor */
+      animation: animated-text-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) backwards;
       animation-iteration-count: 1; /* SOLO 1 VEZ COMO FUE SOLICITADO */
     }
     .animated-word-1 { animation-delay: 0.15s; }
@@ -621,10 +622,20 @@
 
     .ume-seg { padding: 0 !important; display: flex; flex-direction: column; justify-content: flex-end; }
     .ume-seg:hover .ume-card-bg { transform: scale(1.05); }
-    .ume-seg-shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(7, 22, 38, .25), rgba(7, 22, 38, 0) 55%); }
-    .ume-seg-panel { margin: 190px 14px 14px; padding: 28px; border-radius: 1.1rem; background: rgba(255, 255, 255, .88); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); box-shadow: 0 12px 32px -14px rgba(7, 22, 38, .45); }
-    @media (max-width: 639px) { .ume-seg-panel { margin-top: 150px; padding: 22px; } }
+    .ume-seg-shade { display: none; }
+    .ume-seg-panel { margin: 230px 14px 14px; padding: 28px; border-radius: 1.1rem; background: rgba(255, 255, 255, .76); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); box-shadow: 0 8px 22px -14px rgba(7, 22, 38, .3); }
+    .ume-seg .ume-card-bg { filter: saturate(1.1) brightness(1.06); }
+    @media (max-width: 639px) { .ume-seg-panel { margin-top: 170px; padding: 22px; } }
     #tour3d { scroll-margin-top: 100px; }
+
+
+    /* ================= TITULO DEL INICIO: entra al verse + efecto con el cursor ================= */
+    .animated-word { animation-play-state: paused; transition: translate .35s cubic-bezier(.16, 1, .3, 1), scale .35s cubic-bezier(.16, 1, .3, 1), filter .35s ease, color .35s ease, text-shadow .35s ease; }
+    .title-in .animated-word { animation-play-state: running; }
+    .animated-word:hover, .animated-word.glow { translate: 0 -6px; scale: 1.04; }
+    .animated-word:not([class*="bg-clip-text"]):hover, .animated-word:not([class*="bg-clip-text"]).glow { color: #5eead4; text-shadow: 0 0 28px rgba(0, 168, 150, .8); }
+    .animated-word[class*="bg-clip-text"]:hover, .animated-word[class*="bg-clip-text"].glow { filter: drop-shadow(0 0 16px rgba(0, 168, 150, .85)) brightness(1.25); }
+    @media (hover: hover) { #hero-title .animated-word { cursor: default; } }
 
     /* ================= AJUSTES MOVIL (<640px): dock, botones, pie de pagina ================= */
     @media (max-width: 639px) {
@@ -841,7 +852,7 @@
         </div>
 
         <!-- 5. Título H1 con Animated Text (@designali-in) que se mueve 1 SOLA VEZ -->
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight tracking-tight drop-shadow-lg">
+        <h1 id="hero-title" class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight tracking-tight drop-shadow-lg">
           <span class="animated-word animated-word-1">Tecnología</span>
           <span class="animated-word animated-word-2">avanzada,</span>
           <br>
@@ -1922,6 +1933,27 @@
 
 
 
+
+
+    // Titulo del inicio: la animacion arranca cuando llega a la pantalla y luego un destello recorre las palabras
+    (function initHeroTitle() {
+      const t = document.getElementById('hero-title');
+      if (!t) return;
+      const words = [...t.querySelectorAll('.animated-word')];
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const start = () => {
+        t.classList.add('title-in');
+        if (reduce) return;
+        words.forEach((w, i) => {
+          setTimeout(() => w.classList.add('glow'), 1700 + i * 220);
+          setTimeout(() => w.classList.remove('glow'), 2300 + i * 220);
+        });
+      };
+      if (!('IntersectionObserver' in window)) { start(); return; }
+      new IntersectionObserver((entries, obs) => {
+        if (entries[0].isIntersecting) { obs.disconnect(); start(); }
+      }, { threshold: 0.6 }).observe(t);
+    })();
 
     // Antes y Ahora: comparador de fachada (cursor en escritorio, dedo en celular)
     (function initBeforeAfter() {
