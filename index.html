@@ -665,7 +665,7 @@
     .srv-details summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 6px 0; font-weight: 500; color: #1e293b; }
     .srv-details summary::-webkit-details-marker { display: none; }
     .srv-details summary:hover { color: #00a896; }
-    .srv-details[open] summary i { transform: rotate(180deg); }
+    .srv-details[open] > summary > i { transform: rotate(180deg); }
     .srv-m-list { margin: 4px 0 6px 6px; padding-left: 12px; border-left: 2px solid rgba(0, 168, 150, .3); display: flex; flex-direction: column; gap: 2px; }
     .srv-m-item { display: flex; align-items: center; gap: 10px; text-align: left; padding: 9px 4px; font-size: 14px; color: #334155; background: none; border: 0; cursor: pointer; }
     .srv-m-item i { color: #00a896; width: 18px; text-align: center; }
@@ -675,6 +675,57 @@
       .srv-hero { padding: 18px 20px; min-height: 170px; }
       .srv-body { padding: 18px 20px 24px; }
     }
+
+
+    /* ================= MENU "SERVICIOS": MORPH LIQUIDO + SUBMENU ================= */
+    #dropdown-especialidades-menu.hidden { display: block !important; visibility: hidden; pointer-events: none; transition: visibility 0s .45s; }
+    #dropdown-especialidades-menu:not(.hidden) { visibility: visible; }
+    .srv-menu { position: relative; width: 340px; transform-origin: 50% 0; opacity: 0; transform: translateY(-18px) scale(.55, .3); transition: transform .65s cubic-bezier(.34, 1.56, .64, 1), opacity .25s ease; }
+    #dropdown-especialidades-menu:not(.hidden) .srv-menu { opacity: 1; transform: none; }
+    .srv-goo { position: absolute; inset: 0; pointer-events: none; filter: url(#srv-goo) drop-shadow(0 24px 30px rgba(7, 22, 38, .38)); }
+    .srv-goo-main { position: absolute; inset: 0; background: #0b2238; border-radius: 30px; }
+    .srv-goo-fly { position: absolute; left: calc(100% + 6px); top: var(--ft, 0px); width: 320px; height: var(--fh, 0px); background: #0b2238; border-radius: 28px; opacity: 0; transform: translateX(-150px) scale(.35, .55); transform-origin: left center; transition: transform .6s cubic-bezier(.34, 1.56, .64, 1), top .55s cubic-bezier(.34, 1.35, .64, 1), height .55s cubic-bezier(.34, 1.35, .64, 1), opacity .2s ease; }
+    .srv-menu.fly-on .srv-goo-fly { opacity: 1; transform: none; }
+    .srv-main { position: relative; z-index: 1; padding: 12px; display: flex; flex-direction: column; gap: 2px; }
+    .srv-row { position: relative; display: flex; align-items: center; gap: 13px; width: 100%; padding: 11px 12px; border: 0; border-radius: 18px; background: transparent; color: #fff; text-align: left; cursor: pointer; transition: background .25s ease; }
+    #dropdown-especialidades-menu:not(.hidden) .srv-row { animation: srv-in .55s cubic-bezier(.16, 1, .3, 1) backwards; animation-delay: calc(var(--n) * 55ms + 140ms); }
+    .srv-row:hover, .srv-row.is-active, .srv-row:focus-visible { background: rgba(255, 255, 255, .08); }
+    .srv-row-ico { flex: none; width: 40px; height: 40px; border-radius: 14px; display: grid; place-items: center; background: rgba(0, 168, 150, .18); color: #5eead4; font-size: 16px; transition: background .25s, color .25s, transform .35s cubic-bezier(.34, 1.56, .64, 1); }
+    .srv-row:hover .srv-row-ico, .srv-row.is-active .srv-row-ico { background: #00a896; color: #fff; transform: scale(1.08) rotate(-4deg); }
+    .srv-row-txt { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+    .srv-row-title { font: 700 14.5px/1.25 'Inter', sans-serif; color: #fff; }
+    .srv-row small { font-size: 11.5px; color: #94a3b8; margin-top: 1px; }
+    .srv-row-arrow { font-size: 11px; color: #5eead4; opacity: .55; transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), opacity .25s; }
+    .srv-row:hover .srv-row-arrow, .srv-row.is-active .srv-row-arrow { opacity: 1; transform: translateX(4px); }
+    .srv-fly { position: absolute; z-index: 1; left: calc(100% + 6px); top: var(--ft, 0px); width: 320px; height: var(--fh, 0px); opacity: 0; pointer-events: none; transition: top .55s cubic-bezier(.34, 1.35, .64, 1), height .55s cubic-bezier(.34, 1.35, .64, 1), opacity .2s ease; }
+    .srv-menu.fly-on .srv-fly { opacity: 1; pointer-events: auto; transition-delay: 0s, 0s, .14s; }
+    .srv-pane { display: none; padding: 16px 14px 14px; }
+    .srv-pane.is-on { display: block; }
+    .srv-pane ul { list-style: none; margin: 0; padding: 0; }
+    .srv-pane-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 2px 8px 10px; margin-bottom: 6px; border-bottom: 1px solid rgba(255, 255, 255, .1); font: 700 11px 'Inter', sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #5eead4; }
+    .srv-pane-all { display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; padding: 4px 8px; border-radius: 999px; color: #fff; font: 600 11px 'Inter', sans-serif; letter-spacing: .04em; text-transform: none; cursor: pointer; transition: background .25s; }
+    .srv-pane-all:hover { background: rgba(255, 255, 255, .12); }
+    .srv-item { display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; border: 0; border-radius: 12px; background: none; color: #e2e8f0; font: 500 13.5px/1.3 'Inter', sans-serif; text-align: left; cursor: pointer; transition: background .2s, color .2s; }
+    .srv-item i { flex: none; font-size: 12px; color: #00a896; }
+    .srv-item:hover, .srv-item:focus-visible { background: rgba(255, 255, 255, .08); color: #fff; }
+    .srv-pane.is-on .srv-item { animation: srv-in .45s cubic-bezier(.16, 1, .3, 1) backwards; animation-delay: calc(var(--n) * 38ms + 90ms); }
+    @keyframes srv-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    /* Letras que ruedan al pasar el cursor */
+    .rl { display: inline-block; overflow: hidden; height: 1.3em; line-height: 1.3; vertical-align: top; }
+    .rl > b { display: block; font-weight: inherit; transition: transform .45s cubic-bezier(.16, 1, .3, 1); transition-delay: calc(var(--i) * 14ms); }
+    .rl > b::after { content: attr(data-c); display: block; color: #5eead4; }
+    .srv-row:hover .rl > b, .srv-row.is-active .rl > b, .srv-row:focus-visible .rl > b, .srv-item:hover .rl > b, .srv-item:focus-visible .rl > b { transform: translateY(-50%); }
+    .rw { display: inline-block; white-space: nowrap; }
+    /* Menu movil: grupos con sus servicios */
+    .srv-sub { margin: 0; }
+    .srv-sub > summary.srv-m-item { list-style: none; cursor: pointer; width: 100%; }
+    .srv-sub > summary::-webkit-details-marker { display: none; }
+    .srv-sub-chev { margin-left: auto; font-size: 10px; color: #94a3b8; transition: transform .25s; }
+    .srv-sub[open] .srv-sub-chev { transform: rotate(180deg); }
+    .srv-sub-list { margin: 0 0 6px 28px; padding-left: 12px; border-left: 2px solid rgba(0, 168, 150, .25); display: flex; flex-direction: column; }
+    .srv-sub-item { text-align: left; background: none; border: 0; padding: 8px 4px; font-size: 13.5px; color: #475569; cursor: pointer; }
+    .srv-sub-item:hover { color: #00a896; }
+    .srv-sub-all { align-self: flex-start; margin: 4px 0 2px; padding: 7px 12px; border: 0; border-radius: 999px; background: #0c2340; color: #fff; font: 600 12px 'Inter', sans-serif; cursor: pointer; }
 
     /* ================= AJUSTES MOVIL (<640px): dock, botones, pie de pagina ================= */
     @media (max-width: 639px) {
@@ -721,6 +772,13 @@
 
   <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
+  <svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false"><defs>
+    <filter id="srv-goo" x="-30%" y="-40%" width="270%" height="190%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"/>
+      <feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9"/>
+    </filter>
+  </defs></svg>
+
   <!-- ================= DOCK NAVBAR FLOTANTE (@ibelick/components/dock) ================= -->
   <header class="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6">
     <div class="max-w-6xl mx-auto dock-container rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between gap-2 border border-slate-200/60 shadow-2xl">
@@ -747,49 +805,112 @@
           </button>
           
           <div class="dropdown-bridge hidden" id="dropdown-especialidades-menu">
-            <div class="w-80 bg-white/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-100 p-3 py-2 space-y-1">
-              <button type="button" data-dlg="srv-hospitalarios" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
-                <i class="fa-solid fa-hospital text-brand-teal w-5 text-center text-sm"></i>
-                <div>
-                  <div class="text-sm font-bold text-brand-navy">Servicios Hospitalarios</div>
-                  <div class="text-[11px] text-slate-400 font-normal">8 servicios</div>
-                </div>
-              </button>
-              <button type="button" data-dlg="srv-especialidades" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
-                <i class="fa-solid fa-user-doctor text-brand-teal w-5 text-center text-sm"></i>
-                <div>
-                  <div class="text-sm font-bold text-brand-navy">Especialidades Médicas</div>
-                  <div class="text-[11px] text-slate-400 font-normal">7 servicios</div>
-                </div>
-              </button>
-              <button type="button" data-dlg="srv-imagen" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
-                <i class="fa-solid fa-x-ray text-brand-teal w-5 text-center text-sm"></i>
-                <div>
-                  <div class="text-sm font-bold text-brand-navy">Diagnóstico por Imagen</div>
-                  <div class="text-[11px] text-slate-400 font-normal">8 servicios</div>
-                </div>
-              </button>
-              <button type="button" data-dlg="srv-laboratorio" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
-                <i class="fa-solid fa-vial text-brand-teal w-5 text-center text-sm"></i>
-                <div>
-                  <div class="text-sm font-bold text-brand-navy">Laboratorio y Estudios</div>
-                  <div class="text-[11px] text-slate-400 font-normal">9 servicios</div>
-                </div>
-              </button>
-              <button type="button" data-dlg="srv-materna" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
-                <i class="fa-solid fa-baby text-brand-teal w-5 text-center text-sm"></i>
-                <div>
-                  <div class="text-sm font-bold text-brand-navy">Maternidad y Partos</div>
-                  <div class="text-[11px] text-slate-400 font-normal">5 servicios</div>
-                </div>
-              </button>
-              <button type="button" data-dlg="srv-otros" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
-                <i class="fa-solid fa-clipboard-check text-brand-teal w-5 text-center text-sm"></i>
-                <div>
-                  <div class="text-sm font-bold text-brand-navy">Otros Servicios</div>
-                  <div class="text-[11px] text-slate-400 font-normal">3 servicios</div>
-                </div>
-              </button>
+            <div class="srv-menu" id="srv-menu">
+              <div class="srv-goo" aria-hidden="true"><span class="srv-goo-main"></span><span class="srv-goo-fly"></span></div>
+              <div class="srv-main">
+          <button type="button" class="srv-row" data-srv="hospitalarios" data-dlg="srv-hospitalarios" style="--n:0" aria-haspopup="true">
+            <span class="srv-row-ico"><i class="fa-solid fa-hospital"></i></span>
+            <span class="srv-row-txt"><span class="roll srv-row-title">Servicios Hospitalarios</span><small>8 servicios</small></span>
+            <i class="fa-solid fa-chevron-right srv-row-arrow" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="srv-row" data-srv="especialidades" data-dlg="srv-especialidades" style="--n:1" aria-haspopup="true">
+            <span class="srv-row-ico"><i class="fa-solid fa-user-doctor"></i></span>
+            <span class="srv-row-txt"><span class="roll srv-row-title">Especialidades Médicas</span><small>7 servicios</small></span>
+            <i class="fa-solid fa-chevron-right srv-row-arrow" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="srv-row" data-srv="imagen" data-dlg="srv-imagen" style="--n:2" aria-haspopup="true">
+            <span class="srv-row-ico"><i class="fa-solid fa-x-ray"></i></span>
+            <span class="srv-row-txt"><span class="roll srv-row-title">Diagnóstico por Imagen</span><small>8 servicios</small></span>
+            <i class="fa-solid fa-chevron-right srv-row-arrow" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="srv-row" data-srv="laboratorio" data-dlg="srv-laboratorio" style="--n:3" aria-haspopup="true">
+            <span class="srv-row-ico"><i class="fa-solid fa-vial"></i></span>
+            <span class="srv-row-txt"><span class="roll srv-row-title">Laboratorio y Estudios</span><small>9 servicios</small></span>
+            <i class="fa-solid fa-chevron-right srv-row-arrow" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="srv-row" data-srv="materna" data-dlg="srv-materna" style="--n:4" aria-haspopup="true">
+            <span class="srv-row-ico"><i class="fa-solid fa-baby"></i></span>
+            <span class="srv-row-txt"><span class="roll srv-row-title">Maternidad y Partos</span><small>5 servicios</small></span>
+            <i class="fa-solid fa-chevron-right srv-row-arrow" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="srv-row" data-srv="otros" data-dlg="srv-otros" style="--n:5" aria-haspopup="true">
+            <span class="srv-row-ico"><i class="fa-solid fa-clipboard-check"></i></span>
+            <span class="srv-row-txt"><span class="roll srv-row-title">Otros Servicios</span><small>3 servicios</small></span>
+            <i class="fa-solid fa-chevron-right srv-row-arrow" aria-hidden="true"></i>
+          </button>
+              </div>
+              <div class="srv-fly">
+        <div class="srv-pane" data-for="hospitalarios" role="group" aria-label="Servicios Hospitalarios">
+          <div class="srv-pane-head"><span>Servicios Hospitalarios</span><button type="button" class="srv-pane-all" data-dlg="srv-hospitalarios">Ver todo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
+          <ul>
+              <li><button type="button" class="srv-item" data-dlg="srv-hospitalarios" style="--n:0"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Urgencias médicas 24 horas</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-hospitalarios" style="--n:1"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Hospitalización de pacientes adultos</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-hospitalarios" style="--n:2"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Atención hospitalaria pediátrica</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-hospitalarios" style="--n:3"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Terapia intensiva</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-hospitalarios" style="--n:4"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Quirófanos equipados</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-hospitalarios" style="--n:5"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Procedimientos quirúrgicos</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-hospitalarios" style="--n:6"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Atención y vigilancia de enfermería</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-hospitalarios" style="--n:7"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Monitoreo de pacientes hospitalizados</span></button></li>
+          </ul>
+        </div>
+        <div class="srv-pane" data-for="especialidades" role="group" aria-label="Especialidades Médicas">
+          <div class="srv-pane-head"><span>Especialidades Médicas</span><button type="button" class="srv-pane-all" data-dlg="srv-especialidades">Ver todo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
+          <ul>
+              <li><button type="button" class="srv-item" data-dlg="srv-especialidades" style="--n:0"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Medicina interna</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-especialidades" style="--n:1"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Cardiología</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-especialidades" style="--n:2"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Ginecología y obstetricia</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-especialidades" style="--n:3"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Pediatría</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-especialidades" style="--n:4"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Ortopedia y traumatología</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-especialidades" style="--n:5"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Cirugía general</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-especialidades" style="--n:6"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Dermatología</span></button></li>
+          </ul>
+        </div>
+        <div class="srv-pane" data-for="imagen" role="group" aria-label="Diagnóstico por Imagen">
+          <div class="srv-pane-head"><span>Diagnóstico por Imagen</span><button type="button" class="srv-pane-all" data-dlg="srv-imagen">Ver todo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
+          <ul>
+              <li><button type="button" class="srv-item" data-dlg="srv-imagen" style="--n:0"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Resonancia magnética (RM)</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-imagen" style="--n:1"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Tomografía computarizada (TAC)</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-imagen" style="--n:2"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Rayos X</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-imagen" style="--n:3"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Ultrasonido general</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-imagen" style="--n:4"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Ultrasonido obstétrico</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-imagen" style="--n:5"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Ultrasonido de mama</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-imagen" style="--n:6"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Resonancia magnética de mama</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-imagen" style="--n:7"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Resonancia magnética cardíaca</span></button></li>
+          </ul>
+        </div>
+        <div class="srv-pane" data-for="laboratorio" role="group" aria-label="Laboratorio y Estudios">
+          <div class="srv-pane-head"><span>Laboratorio y Estudios</span><button type="button" class="srv-pane-all" data-dlg="srv-laboratorio">Ver todo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
+          <ul>
+              <li><button type="button" class="srv-item" data-dlg="srv-laboratorio" style="--n:0"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Laboratorio clínico</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-laboratorio" style="--n:1"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Biometría hemática</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-laboratorio" style="--n:2"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Química sanguínea</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-laboratorio" style="--n:3"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Perfil de lípidos</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-laboratorio" style="--n:4"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Perfil prenatal</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-laboratorio" style="--n:5"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Perfil de salud general</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-laboratorio" style="--n:6"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Estudios preoperatorios</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-laboratorio" style="--n:7"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Enzimas cardíacas</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-laboratorio" style="--n:8"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Electrocardiograma (EKG)</span></button></li>
+          </ul>
+        </div>
+        <div class="srv-pane" data-for="materna" role="group" aria-label="Maternidad y Partos">
+          <div class="srv-pane-head"><span>Maternidad y Partos</span><button type="button" class="srv-pane-all" data-dlg="srv-materna">Ver todo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
+          <ul>
+              <li><button type="button" class="srv-item" data-dlg="srv-materna" style="--n:0"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Atención de parto normal</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-materna" style="--n:1"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Cesárea</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-materna" style="--n:2"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Valoración y seguimiento del embarazo</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-materna" style="--n:3"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Ultrasonido obstétrico</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-materna" style="--n:4"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Atención hospitalaria materna</span></button></li>
+          </ul>
+        </div>
+        <div class="srv-pane" data-for="otros" role="group" aria-label="Otros Servicios">
+          <div class="srv-pane-head"><span>Otros Servicios</span><button type="button" class="srv-pane-all" data-dlg="srv-otros">Ver todo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
+          <ul>
+              <li><button type="button" class="srv-item" data-dlg="srv-otros" style="--n:0"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Valoración preoperatoria</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-otros" style="--n:1"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Endoscopia</span></button></li>
+              <li><button type="button" class="srv-item" data-dlg="srv-otros" style="--n:2"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span class="roll">Consultorios médicos equipados disponibles para especialistas</span></button></li>
+          </ul>
+        </div>
+              </div>
             </div>
           </div>
         </div>
@@ -847,12 +968,82 @@
       <details class="srv-details">
         <summary><span>Servicios</span><i class="fa-solid fa-chevron-down text-[10px]"></i></summary>
         <div class="srv-m-list">
-          <button type="button" data-dlg="srv-hospitalarios" class="srv-m-item"><i class="fa-solid fa-hospital"></i><span>Servicios Hospitalarios</span></button>
-          <button type="button" data-dlg="srv-especialidades" class="srv-m-item"><i class="fa-solid fa-user-doctor"></i><span>Especialidades Médicas</span></button>
-          <button type="button" data-dlg="srv-imagen" class="srv-m-item"><i class="fa-solid fa-x-ray"></i><span>Diagnóstico por Imagen</span></button>
-          <button type="button" data-dlg="srv-laboratorio" class="srv-m-item"><i class="fa-solid fa-vial"></i><span>Laboratorio y Estudios</span></button>
-          <button type="button" data-dlg="srv-materna" class="srv-m-item"><i class="fa-solid fa-baby"></i><span>Maternidad y Partos</span></button>
-          <button type="button" data-dlg="srv-otros" class="srv-m-item"><i class="fa-solid fa-clipboard-check"></i><span>Otros Servicios</span></button>
+        <details class="srv-sub">
+          <summary class="srv-m-item"><i class="fa-solid fa-hospital"></i><span>Servicios Hospitalarios</span><i class="fa-solid fa-chevron-down srv-sub-chev"></i></summary>
+          <div class="srv-sub-list">
+            <button type="button" class="srv-sub-item" data-dlg="srv-hospitalarios">Urgencias médicas 24 horas</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-hospitalarios">Hospitalización de pacientes adultos</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-hospitalarios">Atención hospitalaria pediátrica</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-hospitalarios">Terapia intensiva</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-hospitalarios">Quirófanos equipados</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-hospitalarios">Procedimientos quirúrgicos</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-hospitalarios">Atención y vigilancia de enfermería</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-hospitalarios">Monitoreo de pacientes hospitalizados</button>
+            <button type="button" class="srv-sub-all" data-dlg="srv-hospitalarios">Ver todo <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </details>
+        <details class="srv-sub">
+          <summary class="srv-m-item"><i class="fa-solid fa-user-doctor"></i><span>Especialidades Médicas</span><i class="fa-solid fa-chevron-down srv-sub-chev"></i></summary>
+          <div class="srv-sub-list">
+            <button type="button" class="srv-sub-item" data-dlg="srv-especialidades">Medicina interna</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-especialidades">Cardiología</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-especialidades">Ginecología y obstetricia</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-especialidades">Pediatría</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-especialidades">Ortopedia y traumatología</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-especialidades">Cirugía general</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-especialidades">Dermatología</button>
+            <button type="button" class="srv-sub-all" data-dlg="srv-especialidades">Ver todo <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </details>
+        <details class="srv-sub">
+          <summary class="srv-m-item"><i class="fa-solid fa-x-ray"></i><span>Diagnóstico por Imagen</span><i class="fa-solid fa-chevron-down srv-sub-chev"></i></summary>
+          <div class="srv-sub-list">
+            <button type="button" class="srv-sub-item" data-dlg="srv-imagen">Resonancia magnética (RM)</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-imagen">Tomografía computarizada (TAC)</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-imagen">Rayos X</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-imagen">Ultrasonido general</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-imagen">Ultrasonido obstétrico</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-imagen">Ultrasonido de mama</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-imagen">Resonancia magnética de mama</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-imagen">Resonancia magnética cardíaca</button>
+            <button type="button" class="srv-sub-all" data-dlg="srv-imagen">Ver todo <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </details>
+        <details class="srv-sub">
+          <summary class="srv-m-item"><i class="fa-solid fa-vial"></i><span>Laboratorio y Estudios</span><i class="fa-solid fa-chevron-down srv-sub-chev"></i></summary>
+          <div class="srv-sub-list">
+            <button type="button" class="srv-sub-item" data-dlg="srv-laboratorio">Laboratorio clínico</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-laboratorio">Biometría hemática</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-laboratorio">Química sanguínea</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-laboratorio">Perfil de lípidos</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-laboratorio">Perfil prenatal</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-laboratorio">Perfil de salud general</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-laboratorio">Estudios preoperatorios</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-laboratorio">Enzimas cardíacas</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-laboratorio">Electrocardiograma (EKG)</button>
+            <button type="button" class="srv-sub-all" data-dlg="srv-laboratorio">Ver todo <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </details>
+        <details class="srv-sub">
+          <summary class="srv-m-item"><i class="fa-solid fa-baby"></i><span>Maternidad y Partos</span><i class="fa-solid fa-chevron-down srv-sub-chev"></i></summary>
+          <div class="srv-sub-list">
+            <button type="button" class="srv-sub-item" data-dlg="srv-materna">Atención de parto normal</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-materna">Cesárea</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-materna">Valoración y seguimiento del embarazo</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-materna">Ultrasonido obstétrico</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-materna">Atención hospitalaria materna</button>
+            <button type="button" class="srv-sub-all" data-dlg="srv-materna">Ver todo <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </details>
+        <details class="srv-sub">
+          <summary class="srv-m-item"><i class="fa-solid fa-clipboard-check"></i><span>Otros Servicios</span><i class="fa-solid fa-chevron-down srv-sub-chev"></i></summary>
+          <div class="srv-sub-list">
+            <button type="button" class="srv-sub-item" data-dlg="srv-otros">Valoración preoperatoria</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-otros">Endoscopia</button>
+            <button type="button" class="srv-sub-item" data-dlg="srv-otros">Consultorios médicos equipados disponibles para especialistas</button>
+            <button type="button" class="srv-sub-all" data-dlg="srv-otros">Ver todo <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </details>
         </div>
       </details>
       <a href="#segmento" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Para Médicos y Pacientes</a>
@@ -1994,6 +2185,100 @@
       new IntersectionObserver((entries, obs) => {
         if (entries[0].isIntersecting) { obs.disconnect(); start(); }
       }, { threshold: 0.6 }).observe(t);
+    })();
+
+
+    // Menu Servicios del muelle: letras que ruedan + submenu que brota de cada grupo
+    (function initSrvMenu() {
+      const menu = document.getElementById('srv-menu');
+      const bridge = document.getElementById('dropdown-especialidades-menu');
+      if (!menu || !bridge) return;
+      const rows = [...menu.querySelectorAll('.srv-row')];
+      const panes = [...menu.querySelectorAll('.srv-pane')];
+      const fly = menu.querySelector('.srv-fly');
+      const mainEl = menu.querySelector('.srv-main');
+      const NBSP = String.fromCharCode(160);
+      let closeT = null;
+
+      // Texto con letras que ruedan (el texto original queda como aria-label)
+      menu.querySelectorAll('.roll').forEach((el) => {
+        const txt = el.textContent;
+        el.setAttribute('aria-label', txt);
+        el.textContent = '';
+        let i = 0;
+        txt.split(' ').forEach((word, w, all) => {
+          // cada palabra es un bloque que no se parte; el salto de linea ocurre solo entre palabras
+          const rw = document.createElement('span');
+          rw.className = 'rw';
+          rw.setAttribute('aria-hidden', 'true');
+          [...word].forEach((ch) => {
+            const s = document.createElement('span');
+            s.className = 'rl';
+            const b = document.createElement('b');
+            b.dataset.c = ch;
+            b.textContent = ch;
+            b.style.setProperty('--i', i++);
+            s.appendChild(b);
+            rw.appendChild(s);
+          });
+          el.appendChild(rw);
+          if (w < all.length - 1) { el.appendChild(document.createTextNode(' ')); i++; }
+        });
+      });
+
+      function show(row) {
+        clearTimeout(closeT);
+        const key = row.dataset.srv;
+        panes.forEach((p) => p.classList.toggle('is-on', p.dataset.for === key));
+        rows.forEach((r) => r.classList.toggle('is-active', r === row));
+        const pane = panes.find((p) => p.dataset.for === key);
+        const h = pane.offsetHeight;
+        const maxTop = Math.max(0, mainEl.offsetHeight - h + 90);
+        const top = Math.max(0, Math.min(row.offsetTop - 8, maxTop));
+        menu.style.setProperty('--ft', top + 'px');
+        menu.style.setProperty('--fh', h + 'px');
+        menu.classList.add('fly-on');
+      }
+      function hideSoon() {
+        clearTimeout(closeT);
+        closeT = setTimeout(() => {
+          menu.classList.remove('fly-on');
+          rows.forEach((r) => r.classList.remove('is-active'));
+        }, 280);
+      }
+
+      rows.forEach((r) => {
+        r.addEventListener('mouseenter', () => show(r));
+        r.addEventListener('focus', () => show(r));
+        r.addEventListener('mouseleave', hideSoon);
+        r.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            show(r);
+            const first = panes.find((p) => p.classList.contains('is-on')).querySelector('.srv-item');
+            if (first) first.focus();
+          } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            const i = rows.indexOf(r) + (e.key === 'ArrowDown' ? 1 : -1);
+            rows[(i + rows.length) % rows.length].focus();
+          }
+        });
+      });
+      fly.addEventListener('mouseenter', () => clearTimeout(closeT));
+      fly.addEventListener('mouseleave', hideSoon);
+      fly.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          const r = rows.find((x) => x.classList.contains('is-active'));
+          if (r) r.focus();
+        }
+      });
+      // Al cerrarse el menu se esconde tambien el submenu
+      new MutationObserver(() => {
+        if (bridge.classList.contains('hidden')) {
+          menu.classList.remove('fly-on');
+          rows.forEach((r) => r.classList.remove('is-active'));
+        }
+      }).observe(bridge, { attributes: true, attributeFilter: ['class'] });
     })();
 
     // Antes y Ahora: comparador de fachada (cursor en escritorio, dedo en celular)
