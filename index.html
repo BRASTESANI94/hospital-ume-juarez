@@ -52,7 +52,7 @@
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
       "opens": "00:00", "closes": "23:59"
     },
-    "medicalSpecialty": ["Obstetric","Surgical","Orthopedic","Emergency"]
+    "medicalSpecialty": ["PrimaryCare","Cardiovascular","Gynecologic","Obstetric","Pediatric","Musculoskeletal","Surgical","Dermatology","Emergency","Radiography","LaboratoryScience"]
   }
   </script>
   <noscript><style>.soft-blur-title{opacity:1!important;filter:none!important;transform:none!important}.animated-word{opacity:1!important;animation:none!important}</style></noscript>
@@ -637,6 +637,45 @@
     .animated-word[class*="bg-clip-text"]:hover, .animated-word[class*="bg-clip-text"].glow { filter: drop-shadow(0 0 16px rgba(0, 168, 150, .85)) brightness(1.25); }
     @media (hover: hover) { #hero-title .animated-word { cursor: default; } }
 
+
+    /* ================= VENTANAS FLOTANTES DE SERVICIOS ================= */
+    .srv-dlg { width: min(780px, calc(100% - 24px)); }
+    .srv-dlg[open] { animation: srv-pop .38s cubic-bezier(.16, 1, .3, 1); }
+    @keyframes srv-pop { from { opacity: 0; transform: translateY(22px) scale(.97); } to { opacity: 1; transform: none; } }
+    .srv-hero { position: relative; flex: none; min-height: 200px; display: flex; align-items: flex-end; padding: 24px 30px; background: linear-gradient(to top, rgba(7, 22, 38, .82), rgba(7, 22, 38, .08) 72%), var(--bg) center / cover; color: #fff; }
+    .srv-hero h2 { font: 700 clamp(24px, 4vw, 34px)/1.1 'Roboto Slab', serif; color: #fff; margin: 0; text-shadow: 0 2px 12px rgba(0, 0, 0, .35); }
+    .srv-hero p { color: #e2e8f0; font-size: 14px; margin: 8px 0 0; max-width: 540px; }
+    .srv-kicker { display: inline-block; font: 700 11px 'Inter', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #5eead4; margin-bottom: 6px; }
+    .srv-close { position: absolute; top: 14px; right: 14px; background: rgba(255, 255, 255, .92); }
+    .srv-body { padding: 22px 30px 28px; }
+    .legal-body .srv-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; list-style: none; padding: 0; margin: 12px 0 0; }
+    .srv-list li { display: flex; gap: 10px; align-items: flex-start; margin: 0; padding: 11px 13px; border: 1px solid #e2e8f0; border-radius: .85rem; background: #f8fafc; font-size: 14px; line-height: 1.4; color: #0f172a; transition: border-color .2s, background .2s, transform .2s; }
+    .srv-list li:hover { border-color: #00a896; background: #f0fdfa; transform: translateY(-1px); }
+    .srv-list i { color: #00a896; margin-top: 3px; }
+    .srv-note { margin: 16px 0 0; padding: 11px 14px; border-radius: .85rem; background: #ecfeff; color: #0e7490; font-size: 13px; }
+    .srv-note i { margin-right: 6px; }
+    .srv-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .srv-cta .ume-btn { text-decoration: none; }
+    .legal-body .srv-cta a.ume-btn-dark { color: #fff; text-decoration: none; }
+    .ume-card { cursor: pointer; }
+    .ume-card:focus-visible { outline-offset: 4px; }
+    .ume-card .srv-more { color: #5eead4; transition: gap .25s; }
+    .ume-card:hover .srv-more { gap: .9rem; color: #fff; }
+    /* Menu de servicios en celular */
+    .srv-details summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 6px 0; font-weight: 500; color: #1e293b; }
+    .srv-details summary::-webkit-details-marker { display: none; }
+    .srv-details summary:hover { color: #00a896; }
+    .srv-details[open] summary i { transform: rotate(180deg); }
+    .srv-m-list { margin: 4px 0 6px 6px; padding-left: 12px; border-left: 2px solid rgba(0, 168, 150, .3); display: flex; flex-direction: column; gap: 2px; }
+    .srv-m-item { display: flex; align-items: center; gap: 10px; text-align: left; padding: 9px 4px; font-size: 14px; color: #334155; background: none; border: 0; cursor: pointer; }
+    .srv-m-item i { color: #00a896; width: 18px; text-align: center; }
+    .srv-m-item:hover { color: #00a896; }
+    @media (max-width: 560px) {
+      .legal-body .srv-list { grid-template-columns: 1fr; }
+      .srv-hero { padding: 18px 20px; min-height: 170px; }
+      .srv-body { padding: 18px 20px 24px; }
+    }
+
     /* ================= AJUSTES MOVIL (<640px): dock, botones, pie de pagina ================= */
     @media (max-width: 639px) {
       /* Dock: solo logo UME centrado + menu de tres lineas, con efecto de aparicion */
@@ -703,47 +742,54 @@
         <!-- Dropdown Especialidades con Puente Invisible y Toggle Estable -->
         <div class="relative" id="dropdown-especialidades-container">
           <button id="btn-especialidades" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-especialidades-menu" class="dock-item px-3.5 py-1.5 rounded-full hover:text-brand-teal hover:bg-slate-100 transition flex items-center gap-1.5 focus:outline-none">
-            <span>Especialidades</span>
+            <span>Servicios</span>
             <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform duration-200" id="icon-especialidades"></i>
           </button>
           
           <div class="dropdown-bridge hidden" id="dropdown-especialidades-menu">
-            <div class="w-72 bg-white/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-100 p-3 py-2 space-y-1">
-              <a href="#especialidades" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal text-xs font-semibold">
-                <i class="fa-solid fa-stethoscope text-brand-teal w-5 text-center text-sm"></i>
+            <div class="w-80 bg-white/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-100 p-3 py-2 space-y-1">
+              <button type="button" data-dlg="srv-hospitalarios" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
+                <i class="fa-solid fa-hospital text-brand-teal w-5 text-center text-sm"></i>
                 <div>
-                  <div class="text-sm font-bold text-brand-navy">Consulta de Especialidad</div>
-                  <div class="text-[11px] text-slate-400 font-normal">+30 Médicos certificados</div>
+                  <div class="text-sm font-bold text-brand-navy">Servicios Hospitalarios</div>
+                  <div class="text-[11px] text-slate-400 font-normal">8 servicios</div>
                 </div>
-              </a>
-              <a href="#especialidades" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal text-xs font-semibold">
+              </button>
+              <button type="button" data-dlg="srv-especialidades" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
+                <i class="fa-solid fa-user-doctor text-brand-teal w-5 text-center text-sm"></i>
+                <div>
+                  <div class="text-sm font-bold text-brand-navy">Especialidades Médicas</div>
+                  <div class="text-[11px] text-slate-400 font-normal">7 servicios</div>
+                </div>
+              </button>
+              <button type="button" data-dlg="srv-imagen" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
+                <i class="fa-solid fa-x-ray text-brand-teal w-5 text-center text-sm"></i>
+                <div>
+                  <div class="text-sm font-bold text-brand-navy">Diagnóstico por Imagen</div>
+                  <div class="text-[11px] text-slate-400 font-normal">8 servicios</div>
+                </div>
+              </button>
+              <button type="button" data-dlg="srv-laboratorio" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
+                <i class="fa-solid fa-vial text-brand-teal w-5 text-center text-sm"></i>
+                <div>
+                  <div class="text-sm font-bold text-brand-navy">Laboratorio y Estudios</div>
+                  <div class="text-[11px] text-slate-400 font-normal">9 servicios</div>
+                </div>
+              </button>
+              <button type="button" data-dlg="srv-materna" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
                 <i class="fa-solid fa-baby text-brand-teal w-5 text-center text-sm"></i>
                 <div>
                   <div class="text-sm font-bold text-brand-navy">Maternidad y Partos</div>
-                  <div class="text-[11px] text-slate-400 font-normal">Paquetes todo incluido</div>
+                  <div class="text-[11px] text-slate-400 font-normal">5 servicios</div>
                 </div>
-              </a>
-              <a href="#especialidades" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal text-xs font-semibold">
-                <i class="fa-solid fa-hospital-user text-brand-teal w-5 text-center text-sm"></i>
+              </button>
+              <button type="button" data-dlg="srv-otros" class="w-full text-left flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal">
+                <i class="fa-solid fa-clipboard-check text-brand-teal w-5 text-center text-sm"></i>
                 <div>
-                  <div class="text-sm font-bold text-brand-navy">Cirugía General</div>
-                  <div class="text-[11px] text-slate-400 font-normal">Quirófanos equipados</div>
+                  <div class="text-sm font-bold text-brand-navy">Otros Servicios</div>
+                  <div class="text-[11px] text-slate-400 font-normal">3 servicios</div>
                 </div>
-              </a>
-              <a href="#especialidades" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal text-xs font-semibold">
-                <i class="fa-solid fa-vial-virus text-brand-teal w-5 text-center text-sm"></i>
-                <div>
-                  <div class="text-sm font-bold text-brand-navy">Laboratorio Clínico</div>
-                  <div class="text-[11px] text-slate-400 font-normal">Entrega rápida de análisis</div>
-                </div>
-              </a>
-              <a href="#especialidades" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50 transition text-slate-700 hover:text-brand-teal text-xs font-semibold">
-                <i class="fa-solid fa-x-ray text-brand-teal w-5 text-center text-sm"></i>
-                <div>
-                  <div class="text-sm font-bold text-brand-navy">Imagenología y Rayos X</div>
-                  <div class="text-[11px] text-slate-400 font-normal">Diagnóstico de precisión</div>
-                </div>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -798,7 +844,17 @@
     <div id="dock-mobile-menu" class="hidden lg:hidden max-w-md mx-auto mt-2 bg-white/95 backdrop-blur-2xl rounded-3xl p-5 shadow-2xl border border-slate-200 space-y-3 transition-all">
       <a href="#top" class="block text-slate-800 font-semibold py-1.5 hover:text-brand-teal">Inicio</a>
       <a href="#nosotros" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Nosotros y Galería 3D</a>
-      <a href="#especialidades" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Especialidades Médicas</a>
+      <details class="srv-details">
+        <summary><span>Servicios</span><i class="fa-solid fa-chevron-down text-[10px]"></i></summary>
+        <div class="srv-m-list">
+          <button type="button" data-dlg="srv-hospitalarios" class="srv-m-item"><i class="fa-solid fa-hospital"></i><span>Servicios Hospitalarios</span></button>
+          <button type="button" data-dlg="srv-especialidades" class="srv-m-item"><i class="fa-solid fa-user-doctor"></i><span>Especialidades Médicas</span></button>
+          <button type="button" data-dlg="srv-imagen" class="srv-m-item"><i class="fa-solid fa-x-ray"></i><span>Diagnóstico por Imagen</span></button>
+          <button type="button" data-dlg="srv-laboratorio" class="srv-m-item"><i class="fa-solid fa-vial"></i><span>Laboratorio y Estudios</span></button>
+          <button type="button" data-dlg="srv-materna" class="srv-m-item"><i class="fa-solid fa-baby"></i><span>Maternidad y Partos</span></button>
+          <button type="button" data-dlg="srv-otros" class="srv-m-item"><i class="fa-solid fa-clipboard-check"></i><span>Otros Servicios</span></button>
+        </div>
+      </details>
       <a href="#segmento" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Para Médicos y Pacientes</a>
       <a href="#tour3d" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Tour Virtual 3D</a>
       <a href="#testimonios" class="block text-slate-800 font-medium py-1.5 hover:text-brand-teal">Testimonios</a>
@@ -1139,143 +1195,127 @@
         <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Nuestra Oferta Médica</span>
         <!-- 6. Soft Blur In en Título -->
         <h2 class="soft-blur-title text-3xl sm:text-4xl font-serif font-bold text-brand-navy mt-1">Servicios Médicos de la Mejor Calidad, Cerca de Ti</h2>
-        <p class="text-slate-600 mt-2 text-sm sm:text-base">Tarjetas interactivas con tecnología de diagnóstico y atención integral.</p>
+        <p class="text-slate-600 mt-2 text-sm sm:text-base">Haz clic en una tarjeta para ver todo lo que atendemos en cada área.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Tarjeta 1: Laboratorio Clínico -->
-        <div class="border-trail-card ume-card group">
-          <img class="ume-card-bg" src="assets/images/esp-laboratorio.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
-          <div class="ume-card-shade"></div>
-          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
-          <div class="ume-card-panel">
-          <div class="w-14 h-14 rounded-2xl bg-teal-50 flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-brand-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path class="icon-ecg-path" d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-brand-navy mb-2">Laboratorio Clínico</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
-            Pruebas y análisis clínicos completos con entrega ágil y confiable. Perfiles hormonales, metabólicos, pruebas de coagulación y rutina.
-          </p>
-          <a href="https://wa.me/526565632887?text=Hola,%20deseo%20información%20sobre%20análisis%20de%20laboratorio" target="_blank" rel="noopener" class="text-brand-teal font-semibold text-sm inline-flex items-center gap-2 hover:text-brand-navy transition">
-            <span>Cotizar estudios de laboratorio</span>
-            <i class="fa-solid fa-arrow-right text-xs"></i>
-          </a>
-          </div>
-        </div>
-
-        <!-- Tarjeta 2: Imagenología y Rayos X -->
-        <div class="border-trail-card ume-card group">
-          <img class="ume-card-bg" src="assets/images/esp-imagenologia.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
-          <div class="ume-card-shade"></div>
-          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
-          <div class="ume-card-panel">
-          <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-brand-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="2" x2="12" y2="22"/>
-              <line x1="2" y1="12" x2="22" y2="12"/>
-              <circle cx="12" cy="12" r="4" class="text-brand-teal animate-ping opacity-75"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-brand-navy mb-2">Imagenología y Rayos X</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
-            Diagnóstico por imagen de alta definición: Rayos X digitales, ultrasonido obstétrico y Doppler para evaluaciones oportunas.
-          </p>
-          <a href="https://wa.me/526565632887?text=Hola,%20deseo%20información%20sobre%20rayos%20X%20o%20ultrasonido" target="_blank" rel="noopener" class="text-brand-teal font-semibold text-sm inline-flex items-center gap-2 hover:text-brand-navy transition">
-            <span>Solicitar estudio de imagen</span>
-            <i class="fa-solid fa-arrow-right text-xs"></i>
-          </a>
-          </div>
-        </div>
-
-        <!-- Tarjeta 3: Atención Especializada -->
-        <div class="border-trail-card ume-card group">
-          <img class="ume-card-bg" src="assets/images/esp-especializada.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
-          <div class="ume-card-shade"></div>
-          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
-          <div class="ume-card-panel">
-          <div class="w-14 h-14 rounded-2xl bg-indigo-50 flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-indigo-600 icon-pulse-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-brand-navy mb-2">Atención Especializada</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
-            Más de 30 médicos especialistas en ginecología, pediatría, medicina interna, cardiología, traumatología y urología.
-          </p>
-          <a href="https://wa.me/526565632887?text=Hola,%20deseo%20agendar%20cita%20con%20un%20médico%20especialista" target="_blank" rel="noopener" class="text-brand-teal font-semibold text-sm inline-flex items-center gap-2 hover:text-brand-navy transition">
-            <span>Ver directorio médico</span>
-            <i class="fa-solid fa-arrow-right text-xs"></i>
-          </a>
-          </div>
-        </div>
-
-        <!-- Tarjeta 4: Quirófanos y Cirugía -->
-        <div class="border-trail-card ume-card group">
-          <img class="ume-card-bg" src="assets/images/esp-quirofanos.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
-          <div class="ume-card-shade"></div>
-          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
-          <div class="ume-card-panel">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6">
-            <i class="fa-solid fa-scissors icon-scissor-cut text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-brand-navy mb-2">Quirófanos y Cirugía</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
-            Cirugía laparoscópica y tradicional para vesícula, hernias, apéndice y procedimientos ambulatorios con máxima seguridad.
-          </p>
-          <a href="https://wa.me/526565632887?text=Hola,%20deseo%20cotizar%20una%20cirugía" target="_blank" rel="noopener" class="text-brand-teal font-semibold text-sm inline-flex items-center gap-2 hover:text-brand-navy transition">
-            <span>Cotizar cirugía programada</span>
-            <i class="fa-solid fa-arrow-right text-xs"></i>
-          </a>
-          </div>
-        </div>
-
-        <!-- Tarjeta 5: Maternidad y Partos -->
-        <div class="border-trail-card ume-card group">
-          <img class="ume-card-bg" src="assets/images/esp-maternidad.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
-          <div class="ume-card-shade"></div>
-          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
-          <div class="ume-card-panel">
-          <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center text-2xl mb-6">
-            <svg class="w-8 h-8 text-rose-500 icon-pulse-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-brand-navy mb-2">Maternidad y Partos</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
-            El nacimiento de tu bebé con calidez humana. Paquetes de parto humanizado y cesárea todo incluido con atención neonatal.
-          </p>
-          <a href="https://wa.me/526565632887?text=Hola,%20deseo%20conocer%20los%20paquetes%20de%20maternidad" target="_blank" rel="noopener" class="text-brand-teal font-semibold text-sm inline-flex items-center gap-2 hover:text-brand-navy transition">
-            <span>Conocer paquetes de parto</span>
-            <i class="fa-solid fa-arrow-right text-xs"></i>
-          </a>
-          </div>
-        </div>
-
-        <!-- Tarjeta 6: Urgencias 24 Horas -->
-        <div class="border-trail-card ume-card group">
+        <!-- Tarjeta 1: Servicios Hospitalarios -->
+        <div class="border-trail-card ume-card group" data-dlg="srv-hospitalarios" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver los servicios de Servicios Hospitalarios">
           <img class="ume-card-bg" src="assets/images/esp-urgencias.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
           <div class="ume-card-shade"></div>
           <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
           <div class="ume-card-panel">
           <div class="w-14 h-14 rounded-2xl bg-red-50 text-brand-emergency flex items-center justify-center text-2xl mb-6">
-            <svg class="w-8 h-8 text-brand-emergency" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
-              <line x1="12" y1="12" x2="12" y2="4" class="icon-clock-hand text-red-600 stroke-[2.5]"/>
-            </svg>
+            <i class="fa-solid fa-hospital text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold text-brand-navy mb-2">Urgencias 24 Horas</h3>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Servicios Hospitalarios</h3>
           <p class="text-slate-600 text-sm leading-relaxed mb-6">
-            Atención médica de urgencia ininterrumpida los 365 días del año. Médicos de guardia permanente y sala de estabilización.
+            Urgencias 24 horas, hospitalización, terapia intensiva, quirófanos y enfermería con monitoreo constante.
           </p>
-          <a href="tel:6569002248" class="text-brand-emergency font-bold text-sm inline-flex items-center gap-2 hover:underline">
-            <i class="fa-solid fa-phone"></i>
-            <span>Llamar a Urgencias: (656) 900 2248</span>
-          </a>
+          <span class="srv-more text-brand-teal font-semibold text-sm inline-flex items-center gap-2">
+            <span>Ver qué atendemos</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </span>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2: Especialidades Médicas -->
+        <div class="border-trail-card ume-card group" data-dlg="srv-especialidades" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver los servicios de Especialidades Médicas">
+          <img class="ume-card-bg" src="assets/images/esp-especializada.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <div class="ume-card-shade"></div>
+          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="ume-card-panel">
+          <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-user-doctor text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Especialidades Médicas</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Medicina interna, cardiología, ginecología y obstetricia, pediatría, ortopedia, cirugía general y dermatología.
+          </p>
+          <span class="srv-more text-brand-teal font-semibold text-sm inline-flex items-center gap-2">
+            <span>Ver qué atendemos</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </span>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3: Diagnóstico por Imagen -->
+        <div class="border-trail-card ume-card group" data-dlg="srv-imagen" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver los servicios de Diagnóstico por Imagen">
+          <img class="ume-card-bg" src="assets/images/esp-imagenologia.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <div class="ume-card-shade"></div>
+          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="ume-card-panel">
+          <div class="w-14 h-14 rounded-2xl bg-blue-50 text-brand-blue flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-x-ray text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Diagnóstico por Imagen</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Resonancia magnética, tomografía, rayos X y ultrasonido general, obstétrico y de mama.
+          </p>
+          <span class="srv-more text-brand-teal font-semibold text-sm inline-flex items-center gap-2">
+            <span>Ver qué atendemos</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </span>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4: Laboratorio y Estudios -->
+        <div class="border-trail-card ume-card group" data-dlg="srv-laboratorio" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver los servicios de Laboratorio y Estudios">
+          <img class="ume-card-bg" src="assets/images/esp-laboratorio.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <div class="ume-card-shade"></div>
+          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="ume-card-panel">
+          <div class="w-14 h-14 rounded-2xl bg-teal-50 text-brand-teal flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-vial text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Laboratorio y Estudios</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Laboratorio clínico, perfiles de salud y prenatal, estudios preoperatorios, enzimas cardíacas y electrocardiograma.
+          </p>
+          <span class="srv-more text-brand-teal font-semibold text-sm inline-flex items-center gap-2">
+            <span>Ver qué atendemos</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </span>
+          </div>
+        </div>
+
+        <!-- Tarjeta 5: Maternidad y Partos -->
+        <div class="border-trail-card ume-card group" data-dlg="srv-materna" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver los servicios de Maternidad y Partos">
+          <img class="ume-card-bg" src="assets/images/esp-maternidad.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <div class="ume-card-shade"></div>
+          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="ume-card-panel">
+          <div class="w-14 h-14 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-baby text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Maternidad y Partos</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Parto normal, cesárea, seguimiento del embarazo, ultrasonido obstétrico y atención hospitalaria materna.
+          </p>
+          <span class="srv-more text-brand-teal font-semibold text-sm inline-flex items-center gap-2">
+            <span>Ver qué atendemos</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </span>
+          </div>
+        </div>
+
+        <!-- Tarjeta 6: Otros Servicios -->
+        <div class="border-trail-card ume-card group" data-dlg="srv-otros" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver los servicios de Otros Servicios">
+          <img class="ume-card-bg" src="assets/images/esp-quirofanos.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <div class="ume-card-shade"></div>
+          <svg class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
+          <div class="ume-card-panel">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-clipboard-check text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Otros Servicios</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Valoración preoperatoria, endoscopia y consultorios médicos equipados para especialistas.
+          </p>
+          <span class="srv-more text-brand-teal font-semibold text-sm inline-flex items-center gap-2">
+            <span>Ver qué atendemos</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </span>
           </div>
         </div>
 
@@ -1858,11 +1898,12 @@
         <div class="space-y-3">
           <h4 class="text-white font-bold text-xs uppercase tracking-widest text-teal-300">Servicios</h4>
           <ul class="space-y-2.5 text-xs text-slate-300">
-            <li><a href="#especialidades" class="hover:text-brand-cyan transition">Urgencias Médicas 24/7</a></li>
-            <li><a href="#especialidades" class="hover:text-brand-cyan transition">Quirófanos y Cirugía Laparoscópica</a></li>
-            <li><a href="#especialidades" class="hover:text-brand-cyan transition">Maternidad y Partos</a></li>
-            <li><a href="#especialidades" class="hover:text-brand-cyan transition">Laboratorio de Análisis Clínicos</a></li>
-            <li><a href="#especialidades" class="hover:text-brand-cyan transition">Imagenología y Rayos X</a></li>
+            <li><a href="#especialidades" data-dlg="srv-hospitalarios" class="hover:text-brand-cyan transition">Servicios Hospitalarios</a></li>
+            <li><a href="#especialidades" data-dlg="srv-especialidades" class="hover:text-brand-cyan transition">Especialidades Médicas</a></li>
+            <li><a href="#especialidades" data-dlg="srv-imagen" class="hover:text-brand-cyan transition">Diagnóstico por Imagen</a></li>
+            <li><a href="#especialidades" data-dlg="srv-laboratorio" class="hover:text-brand-cyan transition">Laboratorio y Estudios</a></li>
+            <li><a href="#especialidades" data-dlg="srv-materna" class="hover:text-brand-cyan transition">Maternidad y Partos</a></li>
+            <li><a href="#especialidades" data-dlg="srv-otros" class="hover:text-brand-cyan transition">Otros Servicios</a></li>
             <li><a href="#segmento" class="hover:text-brand-cyan transition">Renta de Quirófanos para Especialistas</a></li>
           </ul>
         </div>
@@ -2584,7 +2625,15 @@
       document.addEventListener('click', (e) => {
         const t = e.target;
         const dl = t.closest('[data-dlg]');
-        if (dl) { e.preventDefault(); open(dl.dataset.dlg); return; }
+        if (dl) {
+          e.preventDefault();
+          open(dl.dataset.dlg);
+          // cierra los menus del muelle si estaban abiertos
+          if (typeof setEspOpen === 'function') setEspOpen(false);
+          const mm = document.getElementById('dock-mobile-menu');
+          if (mm && !mm.classList.contains('hidden')) document.getElementById('dock-mobile-toggle').click();
+          return;
+        }
         if (t.closest('[data-cookie-settings]')) {
           const c = read() || {};
           document.getElementById('ck-an').checked = !!c.analytics;
@@ -2610,12 +2659,178 @@
         showBar(false);
         document.getElementById('dlg-ckcfg').close();
       };
+
+      // Tarjetas de servicios: Enter o Espacio abren su ventana
+      document.querySelectorAll('.ume-card[data-dlg]').forEach((c) => {
+        c.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); c.click(); }
+        });
+      });
+
       const s1 = document.getElementById('ck-save');
       const s2 = document.getElementById('ck-all');
       if (s1) s1.addEventListener('click', () => save(false));
       if (s2) s2.addEventListener('click', () => save(true));
     });
   </script>
+
+
+  <!-- ================= VENTANAS FLOTANTES DE SERVICIOS ================= -->
+  <dialog class="legal-dlg srv-dlg" id="srv-hospitalarios" aria-labelledby="srv-hospitalarios-t">
+    <div class="srv-hero" style="--bg: url('assets/images/esp-urgencias.webp');">
+      <button type="button" class="legal-close srv-close" data-close aria-label="Cerrar">✕</button>
+      <div>
+        <span class="srv-kicker">Hospital UME</span>
+        <h2 id="srv-hospitalarios-t">Servicios Hospitalarios</h2>
+        <p>Atención hospitalaria completa, con urgencias abiertas las 24 horas del día, todos los días del año.</p>
+      </div>
+    </div>
+    <div class="legal-body srv-body">
+      <h3>Qué atendemos</h3>
+      <ul class="srv-list">
+        <li><i class="fa-solid fa-circle-check"></i><span>Urgencias médicas 24 horas</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Hospitalización de pacientes adultos</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Atención hospitalaria pediátrica</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Terapia intensiva</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Quirófanos equipados</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Procedimientos quirúrgicos</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Atención y vigilancia de enfermería</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Monitoreo de pacientes hospitalizados</span></li>
+      </ul>
+      <div class="srv-cta">
+        <a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=Hola,%20quisiera%20información%20sobre%20los%20servicios%20hospitalarios%20de%20Hospital%20UME" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;Consultar por WhatsApp</a>
+        <a class="ume-btn ume-btn-outline" href="tel:6569002248"><i class="fa-solid fa-phone"></i>&nbsp;(656) 900 2248</a>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="legal-dlg srv-dlg" id="srv-especialidades" aria-labelledby="srv-especialidades-t">
+    <div class="srv-hero" style="--bg: url('assets/images/esp-especializada.webp');">
+      <button type="button" class="legal-close srv-close" data-close aria-label="Cerrar">✕</button>
+      <div>
+        <span class="srv-kicker">Hospital UME</span>
+        <h2 id="srv-especialidades-t">Especialidades Médicas</h2>
+        <p>Consulta con médicos especialistas en consultorios equipados.</p>
+      </div>
+    </div>
+    <div class="legal-body srv-body">
+      <h3>Qué atendemos</h3>
+      <ul class="srv-list">
+        <li><i class="fa-solid fa-circle-check"></i><span>Medicina interna</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Cardiología</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Ginecología y obstetricia</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Pediatría</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Ortopedia y traumatología</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Cirugía general</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Dermatología</span></li>
+      </ul>
+      <p class="srv-note"><i class="fa-solid fa-circle-info"></i> Consulta por WhatsApp o teléfono la disponibilidad y los horarios de cada especialista.</p>
+      <div class="srv-cta">
+        <a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=Hola,%20quisiera%20agendar%20una%20consulta%20con%20un%20especialista%20en%20Hospital%20UME" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;Consultar por WhatsApp</a>
+        <a class="ume-btn ume-btn-outline" href="tel:6569002248"><i class="fa-solid fa-phone"></i>&nbsp;(656) 900 2248</a>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="legal-dlg srv-dlg" id="srv-imagen" aria-labelledby="srv-imagen-t">
+    <div class="srv-hero" style="--bg: url('assets/images/esp-imagenologia.webp');">
+      <button type="button" class="legal-close srv-close" data-close aria-label="Cerrar">✕</button>
+      <div>
+        <span class="srv-kicker">Hospital UME</span>
+        <h2 id="srv-imagen-t">Diagnóstico por Imagen</h2>
+        <p>Estudios de imagen con tecnología de alta definición para diagnósticos oportunos.</p>
+      </div>
+    </div>
+    <div class="legal-body srv-body">
+      <h3>Qué atendemos</h3>
+      <ul class="srv-list">
+        <li><i class="fa-solid fa-circle-check"></i><span>Resonancia magnética (RM)</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Tomografía computarizada (TAC)</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Rayos X</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Ultrasonido general</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Ultrasonido obstétrico</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Ultrasonido de mama</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Resonancia magnética de mama</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Resonancia magnética cardíaca</span></li>
+      </ul>
+      <div class="srv-cta">
+        <a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=Hola,%20quisiera%20información%20sobre%20estudios%20de%20diagnóstico%20por%20imagen%20en%20Hospital%20UME" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;Consultar por WhatsApp</a>
+        <a class="ume-btn ume-btn-outline" href="tel:6569002248"><i class="fa-solid fa-phone"></i>&nbsp;(656) 900 2248</a>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="legal-dlg srv-dlg" id="srv-laboratorio" aria-labelledby="srv-laboratorio-t">
+    <div class="srv-hero" style="--bg: url('assets/images/esp-laboratorio.webp');">
+      <button type="button" class="legal-close srv-close" data-close aria-label="Cerrar">✕</button>
+      <div>
+        <span class="srv-kicker">Hospital UME</span>
+        <h2 id="srv-laboratorio-t">Laboratorio y Estudios</h2>
+        <p>Análisis clínicos y estudios diagnósticos con resultados confiables.</p>
+      </div>
+    </div>
+    <div class="legal-body srv-body">
+      <h3>Qué atendemos</h3>
+      <ul class="srv-list">
+        <li><i class="fa-solid fa-circle-check"></i><span>Laboratorio clínico</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Biometría hemática</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Química sanguínea</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Perfil de lípidos</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Perfil prenatal</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Perfil de salud general</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Estudios preoperatorios</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Enzimas cardíacas</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Electrocardiograma (EKG)</span></li>
+      </ul>
+      <div class="srv-cta">
+        <a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=Hola,%20quisiera%20información%20sobre%20estudios%20de%20laboratorio%20en%20Hospital%20UME" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;Consultar por WhatsApp</a>
+        <a class="ume-btn ume-btn-outline" href="tel:6569002248"><i class="fa-solid fa-phone"></i>&nbsp;(656) 900 2248</a>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="legal-dlg srv-dlg" id="srv-materna" aria-labelledby="srv-materna-t">
+    <div class="srv-hero" style="--bg: url('assets/images/esp-maternidad.webp');">
+      <button type="button" class="legal-close srv-close" data-close aria-label="Cerrar">✕</button>
+      <div>
+        <span class="srv-kicker">Hospital UME</span>
+        <h2 id="srv-materna-t">Maternidad y Partos</h2>
+        <p>Acompañamiento durante el embarazo y atención segura en el nacimiento de tu bebé.</p>
+      </div>
+    </div>
+    <div class="legal-body srv-body">
+      <h3>Qué atendemos</h3>
+      <ul class="srv-list">
+        <li><i class="fa-solid fa-circle-check"></i><span>Atención de parto normal</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Cesárea</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Valoración y seguimiento del embarazo</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Ultrasonido obstétrico</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Atención hospitalaria materna</span></li>
+      </ul>
+      <div class="srv-cta">
+        <a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=Hola,%20quisiera%20información%20sobre%20maternidad%20y%20partos%20en%20Hospital%20UME" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;Consultar por WhatsApp</a>
+        <a class="ume-btn ume-btn-outline" href="tel:6569002248"><i class="fa-solid fa-phone"></i>&nbsp;(656) 900 2248</a>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="legal-dlg srv-dlg" id="srv-otros" aria-labelledby="srv-otros-t">
+    <div class="srv-hero" style="--bg: url('assets/images/esp-quirofanos.webp');">
+      <button type="button" class="legal-close srv-close" data-close aria-label="Cerrar">✕</button>
+      <div>
+        <span class="srv-kicker">Hospital UME</span>
+        <h2 id="srv-otros-t">Otros Servicios</h2>
+        <p>Servicios complementarios para pacientes y para médicos especialistas.</p>
+      </div>
+    </div>
+    <div class="legal-body srv-body">
+      <h3>Qué atendemos</h3>
+      <ul class="srv-list">
+        <li><i class="fa-solid fa-circle-check"></i><span>Valoración preoperatoria</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Endoscopia</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Consultorios médicos equipados disponibles para especialistas</span></li>
+      </ul>
+      <div class="srv-cta">
+        <a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=Hola,%20quisiera%20información%20sobre%20otros%20servicios%20de%20Hospital%20UME" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;Consultar por WhatsApp</a>
+        <a class="ume-btn ume-btn-outline" href="tel:6569002248"><i class="fa-solid fa-phone"></i>&nbsp;(656) 900 2248</a>
+      </div>
+    </div>
+  </dialog>
 
   <!-- ================= AVISOS LEGALES Y COOKIES ================= -->
   <dialog class="legal-dlg" id="dlg-privacidad" aria-labelledby="dlg-privacidad-t"><div class="legal-head"><h2 id="dlg-privacidad-t">Aviso de privacidad</h2><button type="button" class="legal-close" data-close aria-label="Cerrar">✕</button></div><div class="legal-body"><p class="legal-date">Última actualización: 24 de octubre de 2026</p>
