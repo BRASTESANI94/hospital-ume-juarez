@@ -452,6 +452,12 @@
     }
     .shadcn-accordion-inner {
       overflow: hidden;
+      padding-top: 0 !important; /* el espacio superior va en ::before: cerrada mide 0 px de alto */
+    }
+    .shadcn-accordion-inner::before {
+      content: "";
+      display: block;
+      height: 0.75rem;
     }
 
     /* ================= 3. LOCATION MAP 3D COMPONENT (@dev.shejanmahamud/components/expanded-map - Joly UI) ================= */
