@@ -771,23 +771,61 @@
       .srv-area figure.dos { height: 260px; }
     }
 
-    .mvv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .mvv-card { background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .16); border-radius: 1.4rem; padding: 26px 26px 28px; backdrop-filter: blur(6px); }
-    .mvv-card h3 { font: 700 22px/1.2 'Roboto Slab', serif; color: #fff; margin: 0 0 10px; }
-    .mvv-card p { color: #e2e8f0; font-size: 15px; line-height: 1.65; margin: 0; }
-    .mvv-card .mvv-ico { width: 46px; height: 46px; border-radius: 14px; background: rgba(0, 168, 150, .25); color: #5eead4; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 14px; }
-    .mvv-valores { grid-column: 1 / -1; }
-    .mvv-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 14px; padding: 0; list-style: none; }
-    .mvv-chips li { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: rgba(0, 168, 150, .22); border: 1px solid rgba(94, 234, 212, .45); color: #fff; font-weight: 700; font-size: 15px; }
-    .mvv-chips i { color: #5eead4; font-size: 13px; }
-    @media (max-width: 767px) { .mvv-grid { grid-template-columns: 1fr; } }
+    /* Mision, vision y valores: tarjetas oscuras; la definicion se despliega al pasar el cursor por el titulo */
+    .vel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .vel-card { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 34px; min-height: 340px; padding: 28px; border-radius: 1.6rem; border: 1px solid rgba(255, 255, 255, .14); overflow: hidden; cursor: pointer;
+      background: repeating-linear-gradient(135deg, rgba(255, 255, 255, .035) 0 1px, transparent 1px 7px), linear-gradient(180deg, #0b1626, #08111d);
+      transition: border-color .4s, transform .5s cubic-bezier(.16, 1, .3, 1), box-shadow .5s; }
+    .vel-card::after { content: ""; position: absolute; inset: auto -20% -45% -20%; height: 70%; background: radial-gradient(closest-side, rgba(0, 168, 150, .35), transparent); opacity: 0; transition: opacity .5s; pointer-events: none; }
+    .vel-card:hover, .vel-card:focus-within, .vel-card.is-open { border-color: rgba(94, 234, 212, .65); transform: translateY(-4px); box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
+    .vel-card:hover::after, .vel-card:focus-within::after, .vel-card.is-open::after { opacity: 1; }
+    .vel-ico { width: 56px; height: 56px; border-radius: 16px; background: rgba(255, 255, 255, .09); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 22px; transition: background .4s, color .4s, transform .5s cubic-bezier(.34, 1.56, .64, 1); }
+    .vel-card:hover .vel-ico, .vel-card:focus-within .vel-ico, .vel-card.is-open .vel-ico { background: #00a896; transform: rotate(-6deg) scale(1.08); }
+    .vel-body { position: relative; z-index: 1; }
+    .vel-kicker { margin: 0 0 8px; font: 500 11px/1.5 ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; letter-spacing: .2em; text-transform: uppercase; color: #8fa3bd; }
+    .vel-title { margin: 0; font: 800 clamp(30px, 4vw, 42px)/1 'Roboto Slab', serif; text-transform: uppercase; letter-spacing: .01em; color: #fff; }
+    .vel-btn { all: unset; display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; }
+    .vel-btn:focus-visible { outline: 2px solid #5eead4; outline-offset: 6px; border-radius: 8px; }
+    .vel-btn i { font-size: 16px; color: #5eead4; transition: transform .45s cubic-bezier(.34, 1.56, .64, 1); }
+    .vel-card:hover .vel-btn i, .vel-card:focus-within .vel-btn i, .vel-card.is-open .vel-btn i { transform: rotate(135deg); }
+    .vel-def { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .55s cubic-bezier(.16, 1, .3, 1), opacity .45s ease; }
+    .vel-def > div { overflow: hidden; }
+    .vel-def p { margin: 16px 0 0; color: #e2e8f0; font-size: 15.5px; line-height: 1.65; transform: translateY(10px); transition: transform .55s cubic-bezier(.16, 1, .3, 1); }
+    .vel-card:hover .vel-def, .vel-card:focus-within .vel-def, .vel-card.is-open .vel-def { grid-template-rows: 1fr; opacity: 1; }
+    .vel-card:hover .vel-def p, .vel-card:focus-within .vel-def p, .vel-card.is-open .vel-def p { transform: none; }
+    @media (max-width: 899px) { .vel-grid { grid-template-columns: 1fr; } .vel-card { min-height: 220px; gap: 24px; } }
+    @media (prefers-reduced-motion: reduce) { .vel-card, .vel-ico, .vel-def, .vel-def p, .vel-btn i { transition: none; } }
 
-    .dir-groups { display: grid; gap: 22px; }
-    .dir-group h3 { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #0e7490; margin: 0 0 10px; }
-    .dir-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .dir-chip { min-height: 44px; padding: 8px 16px; border-radius: 999px; border: 1px solid #cbd5e1; background: #fff; color: #0f172a; font-size: 14px; font-weight: 600; cursor: pointer; transition: border-color .2s, background .2s, transform .2s, color .2s; }
-    .dir-chip:hover { border-color: #00a896; background: #f0fdfa; transform: translateY(-1px); }
-    .dir-chip[aria-pressed="true"] { background: #0c2340; border-color: #0c2340; color: #fff; }
+    /* Directorio: barra con menu flotante (estilo navbar-menu) */
+    .dnav-wrap { position: relative; max-width: 980px; margin: 0 auto; }
+    .dnav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; padding: 6px; border-radius: 999px; background: #050b14; border: 1px solid rgba(255, 255, 255, .14); box-shadow: 0 18px 50px rgba(5, 11, 20, .28); }
+    .dnav-item { display: inline-flex; align-items: center; gap: 9px; min-height: 48px; padding: 10px 22px; border: 0; border-radius: 999px; background: transparent; color: #cbd5e1; font: 600 15px 'Inter', sans-serif; cursor: pointer; transition: background .3s, color .3s; }
+    .dnav-item i { color: #5eead4; font-size: 14px; }
+    .dnav-item:hover, .dnav-item.is-on { background: rgba(0, 168, 150, .22); color: #fff; }
+    .dnav-item.has-sel::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #5eead4; box-shadow: 0 0 10px #5eead4; }
+    .dnav-item:focus-visible { outline: 2px solid #5eead4; outline-offset: 2px; }
+    .dnav-pop { position: absolute; top: calc(100% + 14px); left: 0; z-index: 20; width: 520px; max-width: 100%; transform-origin: top center; opacity: 0; transform: translateY(10px) scale(.9);
+      transition: opacity .25s ease, transform .45s cubic-bezier(.34, 1.4, .64, 1), left .4s cubic-bezier(.16, 1, .3, 1), width .4s cubic-bezier(.16, 1, .3, 1); }
+    .dnav-pop.is-open { opacity: 1; transform: none; }
+    .dnav-pop[hidden] { display: none; }
+    .dnav-pop-in { padding: 18px; border-radius: 1.4rem; background: #08111d; border: 1px solid rgba(255, 255, 255, .16); box-shadow: 0 30px 80px rgba(2, 6, 23, .5); }
+    .dnav-sub[hidden] { display: none; }
+    .dnav-sub-t { margin: 0 0 12px; padding: 0 8px; font: 600 11px/1.4 ui-monospace, Menlo, Consolas, monospace; letter-spacing: .18em; text-transform: uppercase; color: #8fa3bd; }
+    .dnav-sub ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; }
+    .dnav-sub.is-on ul li, .dnav-pop.is-open .dnav-sub:not([hidden]) li { animation: dnav-li .45s cubic-bezier(.16, 1, .3, 1) backwards; }
+    .dnav-sub li:nth-child(2) { animation-delay: .03s; } .dnav-sub li:nth-child(3) { animation-delay: .06s; } .dnav-sub li:nth-child(4) { animation-delay: .09s; } .dnav-sub li:nth-child(5) { animation-delay: .12s; } .dnav-sub li:nth-child(6) { animation-delay: .15s; } .dnav-sub li:nth-child(n+7) { animation-delay: .18s; }
+    @keyframes dnav-li { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    .dnav-link { display: flex; width: 100%; align-items: center; gap: 10px; min-height: 44px; padding: 8px 12px; border: 0; border-radius: .9rem; background: transparent; color: #e2e8f0; font: 500 14.5px 'Inter', sans-serif; text-align: left; cursor: pointer; transition: background .25s, color .25s, transform .25s; }
+    .dnav-link i { font-size: 10px; color: #5eead4; transition: transform .25s; }
+    .dnav-link:hover, .dnav-link:focus-visible { background: rgba(0, 168, 150, .22); color: #fff; transform: translateX(3px); outline: none; }
+    .dnav-link:hover i { transform: translateX(3px); }
+    @media (max-width: 767px) {
+      .dnav { display: grid; grid-template-columns: 1fr 1fr; border-radius: 1.6rem; }
+      .dnav-item { justify-content: center; padding: 10px 12px; font-size: 14px; text-align: center; }
+      .dnav-pop { position: relative; top: auto; left: 0 !important; width: 100% !important; margin-top: 12px; }
+      .dnav-sub ul { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) { .dnav-pop { transition: opacity .15s; transform: none; } .dnav-sub li { animation: none !important; } }
     .dir-panel { margin-top: 26px; background: #fff; border: 1px solid #e2e8f0; border-radius: 1.4rem; padding: 24px 26px; box-shadow: 0 10px 30px rgba(15, 23, 42, .06); }
     .dir-panel h3 { font: 700 22px/1.2 'Roboto Slab', serif; color: #0c2340; margin: 0 0 8px; }
     .dir-panel p { margin: 0 0 14px; color: #475569; font-size: 14.5px; line-height: 1.6; }
@@ -804,8 +842,13 @@
       .legal-close, .srv-close { width: 44px; height: 44px; }
       #expanded-controls-toolbar button, #btn-expand-map { width: 44px !important; height: 44px !important; }
     }
+    @media (min-width: 1024px) {
+      header nav .dock-item, header nav .dock-item span, header .dock-container .hover-border-gradient-inner { white-space: nowrap; }
+    }
     @media (min-width: 1024px) and (max-width: 1279px) {
-      header nav .dock-item { white-space: nowrap; padding-left: .55rem; padding-right: .55rem; font-size: 12.5px; }
+      header nav .dock-item { padding-left: .55rem; padding-right: .55rem; font-size: 12.5px; }
+    }
+    @media (min-width: 1024px) and (max-width: 1439px) {
       header .dock-container a[href^="tel:"] { display: none; }
     }
 
@@ -1018,9 +1061,6 @@
 
         <a href="#directorio" class="dock-item px-3.5 py-1.5 rounded-full hover:text-brand-teal hover:bg-slate-100 transition">
           <span>Directorio</span>
-        </a>
-        <a href="#segmento" class="dock-item px-3.5 py-1.5 rounded-full hover:text-brand-teal hover:bg-slate-100 transition">
-          <span>Médicos y Pacientes</span>
         </a>
         <a href="#tour3d" class="dock-item px-3.5 py-1.5 rounded-full hover:text-brand-teal hover:bg-slate-100 transition flex items-center gap-1.5">
           <i class="fa-solid fa-cube text-brand-teal text-xs"></i>
@@ -1286,7 +1326,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-7">
         <span class="text-teal-300 font-semibold text-xs tracking-widest uppercase">Video institucional</span>
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-2">Recorre Hospital UME en 360°</h2>
+        <h2 class="soft-blur-title text-2xl sm:text-3xl font-serif font-bold text-white mt-2">Recorre Hospital UME en 360°</h2>
       </div>
       <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 aspect-[4/5] sm:aspect-[16/10] lg:aspect-video w-full">
         <iframe src="https://my.matterport.com/show/?m=KsifUcXmd7W&play=1&qs=1" allowfullscreen allow="xr-spatial-tracking" class="w-full h-full" title="Recorrido virtual 360° de Hospital UME"></iframe>
@@ -1466,21 +1506,21 @@
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Especialidades y médicos</span>
         <h2 class="soft-blur-title text-3xl sm:text-4xl font-serif font-bold text-brand-navy mt-1">Directorio por especialidad</h2>
-        <p class="text-slate-600 mt-2 text-sm sm:text-base">Elige una especialidad para ver a los médicos que la atienden y cómo solicitar tu cita.</p>
+        <p class="text-slate-600 mt-2 text-sm sm:text-base">Pasa el cursor por un grupo y elige la especialidad que buscas.</p>
       </div>
 
-      <div class="dir-groups" id="dir-groups"></div>
+      <div class="dnav-wrap" id="dnav"></div>
 
       <div class="dir-panel" id="dir-panel" aria-live="polite">
         <h3>Selecciona una especialidad</h3>
-        <p>Aquí aparecerán los médicos de cada especialidad, con su foto cuando la hayan autorizado. Para cualquier duda, escríbenos o llámanos.</p>
+        <p>Elige un grupo y después la especialidad que buscas. Para cualquier duda, escríbenos o llámanos.</p>
         <div class="dir-cta">
           <a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20especialistas%20de%20Hospital%20UME" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;WhatsApp (656) 563 2887</a>
           <a class="ume-btn ume-btn-outline" href="tel:6569002248"><i class="fa-solid fa-phone"></i>&nbsp;(656) 900 2248</a>
         </div>
       </div>
       <!-- data-pendiente: padrón vigente de médicos, fotos autorizadas, horarios y extensiones por área (UME no los ha validado) -->
-      <script type="application/json" id="directorio-data">{"version": "2026-11-04", "fuente": "Currículo hospitalario de UME (pág. 8). Los nombres de médicos se agregan solo cuando UME entregue el padrón vigente y autorice su foto.", "grupos": [{"nombre": "Medicina y diagnóstico clínico", "especialidades": [{"id": "medicina-general", "nombre": "Medicina general", "medicos": []}, {"id": "medicina-interna", "nombre": "Medicina interna", "medicos": []}, {"id": "cardiologia", "nombre": "Cardiología", "medicos": []}, {"id": "angiologia", "nombre": "Angiología", "medicos": []}, {"id": "nefrologia", "nombre": "Nefrología", "medicos": []}, {"id": "neurologia", "nombre": "Neurología", "medicos": []}, {"id": "reumatologia", "nombre": "Reumatología", "medicos": []}, {"id": "oncologia", "nombre": "Oncología", "medicos": []}, {"id": "dermatologia", "nombre": "Dermatología", "medicos": []}, {"id": "nutricion", "nombre": "Nutrición", "medicos": []}, {"id": "psicologia", "nombre": "Psicología", "medicos": []}]}, {"nombre": "Cirugía y procedimientos", "especialidades": [{"id": "cirugia-general", "nombre": "Cirugía general", "medicos": []}, {"id": "cirugia-cardiotoracica", "nombre": "Cirugía cardiotorácica", "medicos": []}, {"id": "ortopedia-y-traumatologia", "nombre": "Ortopedia y traumatología", "medicos": []}, {"id": "otorrinolaringologia", "nombre": "Otorrinolaringología", "medicos": []}, {"id": "urologia", "nombre": "Urología", "medicos": []}]}, {"nombre": "Mujer, embarazo y niñez", "especialidades": [{"id": "ginecologia", "nombre": "Ginecología", "medicos": []}, {"id": "obstetricia", "nombre": "Obstetricia", "medicos": []}, {"id": "pediatria-y-neonatologia", "nombre": "Pediatría y neonatología", "medicos": []}]}, {"nombre": "Apoyo hospitalario", "especialidades": [{"id": "medicina-intensiva", "nombre": "Medicina intensiva", "medicos": []}, {"id": "radiologia-e-imagen", "nombre": "Radiología e imagen", "medicos": []}, {"id": "hemodialisis", "nombre": "Hemodiálisis", "medicos": []}]}]}</script>
+      <script type="application/json" id="directorio-data">{"version": "2026-11-04", "fuente": "Currículo hospitalario de UME (pág. 8). Los nombres de médicos se agregan solo cuando UME entregue el padrón vigente y autorice su foto.", "grupos": [{"nombre": "Medicina y diagnóstico clínico", "especialidades": [{"id": "medicina-general", "nombre": "Medicina general", "medicos": []}, {"id": "medicina-interna", "nombre": "Medicina interna", "medicos": []}, {"id": "cardiologia", "nombre": "Cardiología", "medicos": []}, {"id": "angiologia", "nombre": "Angiología", "medicos": []}, {"id": "nefrologia", "nombre": "Nefrología", "medicos": []}, {"id": "neurologia", "nombre": "Neurología", "medicos": []}, {"id": "reumatologia", "nombre": "Reumatología", "medicos": []}, {"id": "oncologia", "nombre": "Oncología", "medicos": []}, {"id": "dermatologia", "nombre": "Dermatología", "medicos": []}, {"id": "nutricion", "nombre": "Nutrición", "medicos": []}, {"id": "psicologia", "nombre": "Psicología", "medicos": []}], "corto": "Medicina"}, {"nombre": "Cirugía y procedimientos", "especialidades": [{"id": "cirugia-general", "nombre": "Cirugía general", "medicos": []}, {"id": "cirugia-cardiotoracica", "nombre": "Cirugía cardiotorácica", "medicos": []}, {"id": "ortopedia-y-traumatologia", "nombre": "Ortopedia y traumatología", "medicos": []}, {"id": "otorrinolaringologia", "nombre": "Otorrinolaringología", "medicos": []}, {"id": "urologia", "nombre": "Urología", "medicos": []}], "corto": "Cirugía"}, {"nombre": "Mujer, embarazo y niñez", "especialidades": [{"id": "ginecologia", "nombre": "Ginecología", "medicos": []}, {"id": "obstetricia", "nombre": "Obstetricia", "medicos": []}, {"id": "pediatria-y-neonatologia", "nombre": "Pediatría y neonatología", "medicos": []}], "corto": "Mujer y niñez"}, {"nombre": "Apoyo hospitalario", "especialidades": [{"id": "medicina-intensiva", "nombre": "Medicina intensiva", "medicos": []}, {"id": "radiologia-e-imagen", "nombre": "Radiología e imagen", "medicos": []}, {"id": "hemodialisis", "nombre": "Hemodiálisis", "medicos": []}], "corto": "Apoyo hospitalario"}]}</script>
     </div>
   </section>
 
@@ -1636,30 +1676,33 @@
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="text-teal-300 font-semibold text-xs tracking-widest uppercase bg-teal-950/60 border border-teal-500/30 px-3.5 py-1 rounded-full">Nosotros</span>
         <h2 class="soft-blur-title text-3xl sm:text-4xl font-serif font-bold text-white mt-3">Misión, visión y valores</h2>
+        <p class="text-slate-300 mt-2 text-sm sm:text-base">Pasa el cursor por cada título para conocer su definición.</p>
       </div>
 
-      <div class="mvv-grid mb-16">
-        <article class="mvv-card">
-          <div class="mvv-ico" aria-hidden="true"><i class="fa-solid fa-bullseye"></i></div>
-          <h3>Misión</h3>
-          <p>Dar atención médica de costo accesible, con niveles de tecnología adecuada, y dirigida a un sector más vulnerable de la población juarense.</p>
+      <div class="vel-grid mb-16" id="vel-grid">
+        <article class="vel-card" tabindex="-1">
+          <div class="vel-ico" aria-hidden="true"><i class="fa-solid fa-bullseye"></i></div>
+          <div class="vel-body">
+            <p class="vel-kicker">Por qué existimos</p>
+            <h3 class="vel-title"><button type="button" class="vel-btn" aria-expanded="false" aria-controls="vel-mision"><span>Misión</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button></h3>
+            <div class="vel-def" id="vel-mision" role="region" aria-label="Misión"><div><p>Dar atención médica de costo accesible, con niveles de tecnología adecuada, y dirigida a un sector más vulnerable de la población juarense.</p></div></div>
+          </div>
         </article>
-        <article class="mvv-card">
-          <div class="mvv-ico" aria-hidden="true"><i class="fa-solid fa-eye"></i></div>
-          <h3>Visión</h3>
-          <p>Consolidarnos como una institución hospitalaria en constante renovación de tecnología que permita una atención integral en cada uno de los servicios que ofrecemos.</p>
+        <article class="vel-card" tabindex="-1">
+          <div class="vel-ico" aria-hidden="true"><i class="fa-solid fa-eye"></i></div>
+          <div class="vel-body">
+            <p class="vel-kicker">Hacia dónde vamos</p>
+            <h3 class="vel-title"><button type="button" class="vel-btn" aria-expanded="false" aria-controls="vel-vision"><span>Visión</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button></h3>
+            <div class="vel-def" id="vel-vision" role="region" aria-label="Visión"><div><p>Consolidarnos como una institución hospitalaria en constante renovación de tecnología que permita una atención integral en cada uno de los servicios que ofrecemos.</p></div></div>
+          </div>
         </article>
-        <article class="mvv-card mvv-valores">
-          <div class="mvv-ico" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
-          <h3>Valores</h3>
-          <ul class="mvv-chips">
-            <li><i class="fa-solid fa-check"></i>Excelencia</li>
-            <li><i class="fa-solid fa-check"></i>Empatía</li>
-            <li><i class="fa-solid fa-check"></i>Innovación</li>
-            <li><i class="fa-solid fa-check"></i>Respeto</li>
-            <li><i class="fa-solid fa-check"></i>Compromiso</li>
-          </ul>
-          <p>En nuestro hospital brindamos atención con excelencia, empatía, innovación, respeto y compromiso, garantizando salud integral y bienestar para nuestros pacientes y comunidad.</p>
+        <article class="vel-card" tabindex="-1">
+          <div class="vel-ico" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
+          <div class="vel-body">
+            <p class="vel-kicker">Excelencia · Empatía · Innovación · Respeto · Compromiso</p>
+            <h3 class="vel-title"><button type="button" class="vel-btn" aria-expanded="false" aria-controls="vel-valores"><span>Valores</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button></h3>
+            <div class="vel-def" id="vel-valores" role="region" aria-label="Valores"><div><p>En nuestro hospital brindamos atención con excelencia, empatía, innovación, respeto y compromiso, garantizando salud integral y bienestar para nuestros pacientes y comunidad.</p></div></div>
+          </div>
         </article>
       </div>
 
@@ -3190,37 +3233,102 @@
   <script>
     (function () {
       const datos = document.getElementById('directorio-data');
-      const grupos = document.getElementById('dir-groups');
+      const wrap = document.getElementById('dnav');
       const panel = document.getElementById('dir-panel');
-      if (!datos || !grupos || !panel) return;
+      if (!datos || !wrap || !panel) return;
       let data;
       try { data = JSON.parse(datos.textContent); } catch (e) { return; }
       const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-      grupos.innerHTML = data.grupos.map((g) =>
-        '<div class="dir-group"><h3>' + esc(g.nombre) + '</h3><div class="dir-chips">' +
-        g.especialidades.map((e) => '<button type="button" class="dir-chip" data-esp="' + esc(e.id) + '" aria-pressed="false">' + esc(e.nombre) + '</button>').join('') +
-        '</div></div>').join('');
+      const ICONOS = ['fa-stethoscope', 'fa-kit-medical', 'fa-person-pregnant', 'fa-hospital'];
       const todas = data.grupos.flatMap((g) => g.especialidades);
-      grupos.addEventListener('click', (ev) => {
-        const b = ev.target.closest('.dir-chip');
+      wrap.innerHTML =
+        '<div class="dnav" role="group" aria-label="Grupos de especialidades">' +
+        data.grupos.map((g, i) => '<button type="button" class="dnav-item" data-g="' + i + '" aria-expanded="false" aria-controls="dnav-pop"><i class="fa-solid ' + ICONOS[i % ICONOS.length] + '" aria-hidden="true"></i><span>' + esc(g.corto || g.nombre) + '</span></button>').join('') +
+        '</div><div class="dnav-pop" id="dnav-pop" role="region" aria-label="Especialidades" hidden><div class="dnav-pop-in">' +
+        data.grupos.map((g, i) => '<div class="dnav-sub" data-g="' + i + '" hidden><p class="dnav-sub-t">' + esc(g.nombre) + '</p><ul>' +
+          g.especialidades.map((e) => '<li><button type="button" class="dnav-link" data-esp="' + esc(e.id) + '"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span>' + esc(e.nombre) + '</span></button></li>').join('') +
+          '</ul></div>').join('') + '</div></div>';
+
+      const items = [...wrap.querySelectorAll('.dnav-item')];
+      const pop = wrap.querySelector('.dnav-pop');
+      const subs = [...pop.querySelectorAll('.dnav-sub')];
+      const movil = window.matchMedia('(max-width: 767px)');
+      let cur = -1, closeT = null, hideT = null;
+
+      function colocar(i) {
+        if (movil.matches) { pop.style.left = ''; pop.style.width = ''; return; }
+        const wr = wrap.getBoundingClientRect(), r = items[i].getBoundingClientRect();
+        const w = Math.min(520, wr.width);
+        pop.style.width = w + 'px';
+        pop.style.left = Math.max(0, Math.min(r.left - wr.left + r.width / 2 - w / 2, wr.width - w)) + 'px';
+      }
+      function abrir(i) {
+        clearTimeout(closeT); clearTimeout(hideT);
+        const estabaAbierto = cur >= 0;
+        cur = i;
+        items.forEach((b, k) => { b.setAttribute('aria-expanded', k === i ? 'true' : 'false'); b.classList.toggle('is-on', k === i); });
+        subs.forEach((s, k) => { s.hidden = k !== i; });
+        pop.hidden = false;
+        colocar(i);
+        if (!estabaAbierto) { void pop.offsetWidth; }
+        pop.classList.add('is-open');
+      }
+      function cerrar() {
+        cur = -1;
+        items.forEach((b) => { b.setAttribute('aria-expanded', 'false'); b.classList.remove('is-on'); });
+        pop.classList.remove('is-open');
+        hideT = setTimeout(() => { if (cur < 0) pop.hidden = true; }, 260);
+      }
+      items.forEach((b, i) => {
+        b.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') abrir(i); });
+        b.addEventListener('click', () => { cur === i ? cerrar() : abrir(i); });
+      });
+      wrap.addEventListener('pointerenter', () => clearTimeout(closeT));
+      wrap.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') closeT = setTimeout(cerrar, 280); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && cur >= 0) { const b = items[cur]; cerrar(); b.focus(); } });
+      document.addEventListener('click', (e) => { if (cur >= 0 && !wrap.contains(e.target)) cerrar(); });
+      window.addEventListener('resize', () => { if (cur >= 0) colocar(cur); });
+
+      pop.addEventListener('click', (ev) => {
+        const b = ev.target.closest('.dnav-link');
         if (!b) return;
         const esp = todas.find((e) => e.id === b.dataset.esp);
         if (!esp) return;
-        grupos.querySelectorAll('.dir-chip').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
-        const medicos = (esp.medicos || []);
+        const gi = data.grupos.findIndex((g) => g.especialidades.includes(esp));
+        items.forEach((x, k) => x.classList.toggle('has-sel', k === gi));
+        const medicos = esp.medicos || [];
         const lista = medicos.length
           ? '<ul class="dir-docs">' + medicos.map((m) => '<li class="dir-doc">' +
               (m.foto ? '<img src="' + esc(m.foto) + '" alt="' + esc(m.nombre) + '" loading="lazy">' : '<span class="dir-ini" aria-hidden="true">' + esc(m.nombre.replace(/^(Dra?\.|Lic\.)\s*/i, '').charAt(0)) + '</span>') +
               '<div><b>' + esc(m.nombre) + '</b><span>' + esc(esp.nombre) + '</span></div></li>').join('') + '</ul>'
-          : '<p>Estamos preparando la ficha de los médicos de esta especialidad. Mientras tanto, consulta su disponibilidad con nuestro equipo.</p>';
+          : '<p>Consulta la disponibilidad con nuestro equipo.</p>';
         const msg = encodeURIComponent('Hola, quisiera información sobre ' + esp.nombre + ' en Hospital UME');
         panel.innerHTML = '<h3>' + esc(esp.nombre) + '</h3>' + lista +
           '<div class="dir-cta"><a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=' + msg + '" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;Preguntar por WhatsApp</a>' +
           '<a class="ume-btn ume-btn-outline" href="tel:6569002248"><i class="fa-solid fa-phone"></i>&nbsp;(656) 900 2248</a></div>';
+        cerrar();
+        if (movil.matches) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       });
     })();
   </script>
 
+  <script>
+    // Mision, vision y valores: la definicion se despliega con el cursor; en pantallas tactiles, con un toque
+    (function () {
+      const cards = [...document.querySelectorAll('.vel-card')];
+      cards.forEach((card) => {
+        const btn = card.querySelector('.vel-btn');
+        const sync = () => btn.setAttribute('aria-expanded', card.classList.contains('is-open') || card.matches(':hover') ? 'true' : 'false');
+        card.addEventListener('mouseenter', sync);
+        card.addEventListener('mouseleave', sync);
+        card.addEventListener('click', () => {
+          const abrir = !card.classList.contains('is-open');
+          cards.forEach((c) => { c.classList.remove('is-open'); c.querySelector('.vel-btn').setAttribute('aria-expanded', 'false'); });
+          if (abrir) { card.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
+        });
+      });
+    })();
+  </script>
 
   <!-- ================= VENTANAS FLOTANTES DE SERVICIOS ================= -->
   <dialog class="legal-dlg srv-dlg" id="srv-hospitalarios" aria-labelledby="srv-hospitalarios-t">
@@ -3420,10 +3528,9 @@
   </dialog>
 
   <!-- ================= AVISOS LEGALES Y COOKIES ================= -->
-  <dialog class="legal-dlg" id="dlg-privacidad" aria-labelledby="dlg-privacidad-t"><div class="legal-head"><h2 id="dlg-privacidad-t">Aviso de privacidad</h2><button type="button" class="legal-close" data-close aria-label="Cerrar">✕</button></div><div class="legal-body"><p class="legal-date">Última actualización: 24 de octubre de 2026</p>
+  <dialog class="legal-dlg" id="dlg-privacidad" aria-labelledby="dlg-privacidad-t"><div class="legal-head"><h2 id="dlg-privacidad-t">Aviso de privacidad</h2><button type="button" class="legal-close" data-close aria-label="Cerrar">✕</button></div><div class="legal-body"><p class="legal-date">Última actualización: 4 de noviembre de 2026</p>
 <h3>1. Responsable del tratamiento de sus datos personales</h3>
-<p class="srv-note"><i class="fa-solid fa-circle-info"></i> Documento en revisión: Dirección de Hospital UME y su asesoría jurídica confirmarán el responsable del tratamiento y el procedimiento antes de su versión final.</p>
-<p><mark class="ph">[Razón social o nombre completo del responsable]</mark>, con nombre comercial <b>Hospital UME</b> (en adelante, “Hospital UME”), con domicilio en Blvd. Independencia #841, Colonia Zaragoza, C.P. 32570, Ciudad Juárez, Chihuahua, México, es responsable del uso y protección de sus datos personales, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (en adelante, la “Ley”) y demás normativa aplicable. Para cualquier asunto de privacidad puede escribirnos a <a href="mailto:rh@hospitalume.mx">rh@hospitalume.mx</a> o al (656) 900 2248.</p>
+<p><b>Grupo Integral de Medicina Primaria, S. de R.L. de C.V.</b>, con nombre comercial <b>Hospital UME</b> (en adelante, “Hospital UME”), con domicilio en Blvd. Independencia #841, Colonia Zaragoza, C.P. 32570, Ciudad Juárez, Chihuahua, México, es responsable del uso y protección de sus datos personales, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (en adelante, la “Ley”) y demás normativa aplicable. Para cualquier asunto de privacidad puede escribirnos a <a href="mailto:rh@hospitalume.mx">rh@hospitalume.mx</a> o al (656) 900 2248.</p>
 <h3>2. Datos personales que recabamos</h3>
 <p>Los datos se obtienen de forma directa cuando usted nos contacta por WhatsApp (incluido el formulario de este sitio, que solo prepara el mensaje y lo envía a través de WhatsApp; el sitio no almacena lo que usted escribe), teléfono, correo electrónico, redes sociales, plataformas de agenda o en nuestras instalaciones:</p>
 <ul><li><b>Identificación y contacto:</b> nombre, edad o fecha de nacimiento, teléfono, correo electrónico y, en su caso, domicilio.</li><li><b>Datos de la cita y de facturación:</b> motivo de consulta, fechas y horarios; datos fiscales si solicita factura.</li><li><b>Datos personales sensibles (salud):</b> antecedentes médicos, alergias, medicamentos, estudios, diagnósticos y fotografías clínicas. Estos datos se tratan únicamente con su consentimiento expreso y por personal obligado a guardar el secreto profesional.</li><li><b>Datos de navegación:</b> dirección IP, tipo de dispositivo y preferencias de cookies (consulte la Política de cookies).</li></ul>
@@ -3476,7 +3583,7 @@
 <ol><li>Su nombre completo y un medio para responderle.</li><li>Copia de una identificación oficial (o de la de su representante, con carta poder).</li><li>La descripción clara del derecho que desea ejercer y de los datos involucrados.</li><li>Cualquier documento que facilite localizar su información.</li></ol>
 <p>Le responderemos dentro de los plazos que establece la Ley. Si la solicitud es procedente, se hará efectiva en el plazo legal correspondiente. El ejercicio de estos derechos es gratuito; solo podrían cobrarse costos justificados de envío o reproducción.</p>
 <h3>Responsable de atender su solicitud</h3>
-<p><mark class="ph">[Nombre del responsable o área de privacidad]</mark> · <a href="mailto:rh@hospitalume.mx">rh@hospitalume.mx</a> · (656) 900 2248 · Blvd. Independencia #841, Col. Zaragoza, C.P. 32570, Ciudad Juárez, Chihuahua.</p>
+<p><b>Área de privacidad y datos personales de Hospital UME</b> (Grupo Integral de Medicina Primaria, S. de R.L. de C.V.) · <a href="mailto:rh@hospitalume.mx">rh@hospitalume.mx</a> · (656) 900 2248 · Blvd. Independencia #841, Col. Zaragoza, C.P. 32570, Ciudad Juárez, Chihuahua.</p>
 <h3>¿No está conforme?</h3>
 <p>Si su solicitud no fue atendida o considera que sus derechos fueron vulnerados, puede acudir ante la autoridad competente en materia de protección de datos personales en posesión de particulares.</p>
 <p><a class="ume-btn ume-btn-dark" href="mailto:rh@hospitalume.mx?subject=Solicitud%20ARCO">Enviar solicitud ARCO <span>↗</span></a></p></div></dialog>
