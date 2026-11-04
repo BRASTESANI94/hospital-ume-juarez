@@ -870,6 +870,38 @@
       .dnav-prev { display: none; }
     }
 
+
+    /* ================= FORMULARIO DE CONTACTO (estilo tarjeta de registro) ================= */
+    .ume-form { position: relative; overflow: hidden; background: #fff; border: 1px solid #e2e8f0; border-radius: 1.6rem; padding: 32px 30px 26px; box-shadow: 0 25px 60px rgba(15, 23, 42, .10); }
+    .ume-form::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, #028090, #38bdf8, #028090); }
+    .ume-form-head { display: flex; gap: 14px; align-items: center; margin-bottom: 20px; }
+    .ume-form-ico { flex: none; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, #028090, #0c2340); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 21px; box-shadow: 0 10px 24px rgba(2, 128, 144, .35); }
+    .ume-form-head h3 { font: 700 23px/1.2 'Roboto Slab', serif; color: #0c2340; margin: 0; }
+    .ume-form-head p { margin: 3px 0 0; color: #64748b; font-size: 14px; }
+    .ume-form-quick { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 50px; border: 1px solid #cbd5e1; border-radius: .95rem; background: #fff; color: #0f172a; font-weight: 600; font-size: 15px; transition: border-color .25s, background .25s, transform .25s; }
+    .ume-form-quick:hover { border-color: #25d366; background: #f0fdf4; transform: translateY(-1px); }
+    .ume-form-or { display: flex; align-items: center; gap: 12px; margin: 18px 0; color: #94a3b8; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; }
+    .ume-form-or::before, .ume-form-or::after { content: ""; flex: 1; height: 1px; background: #e2e8f0; }
+    .ume-field { margin-bottom: 16px; }
+    .ume-field label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: #334155; }
+    .ume-input { position: relative; }
+    .ume-input > i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 15px; transition: color .2s; pointer-events: none; }
+    .ume-input.ta > i { top: 17px; transform: none; }
+    .ume-input input, .ume-input select, .ume-input textarea { width: 100%; min-height: 50px; padding: 12px 14px 12px 44px; border: 1px solid #cbd5e1; border-radius: .95rem; background: #f8fafc; color: #0f172a; font: 500 15px 'Inter', sans-serif; transition: border-color .2s, box-shadow .2s, background .2s; }
+    .ume-input textarea { resize: vertical; min-height: 96px; }
+    .ume-input input:focus, .ume-input select:focus, .ume-input textarea:focus { outline: none; border-color: #028090; background: #fff; box-shadow: 0 0 0 4px rgba(2, 128, 144, .16); }
+    .ume-input:focus-within > i { color: #028090; }
+    .ume-check { display: flex; gap: 10px; align-items: flex-start; margin: 4px 0 18px; font-size: 13px; line-height: 1.5; color: #475569; cursor: pointer; }
+    .ume-check input { flex: none; width: 18px; height: 18px; margin-top: 2px; accent-color: #028090; }
+    .ume-check button { all: unset; color: #0e7490; font-weight: 600; text-decoration: underline; cursor: pointer; }
+    .ume-check button:focus-visible { outline: 2px solid #028090; outline-offset: 2px; border-radius: 4px; }
+    .ume-form-submit { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 54px; border: 0; border-radius: 1rem; background: linear-gradient(135deg, #028090, #0c2340); color: #fff; font: 700 15px 'Inter', sans-serif; cursor: pointer; box-shadow: 0 14px 30px rgba(12, 35, 64, .28); transition: transform .25s, box-shadow .25s; }
+    .ume-form-submit:hover { transform: translateY(-2px); box-shadow: 0 18px 38px rgba(12, 35, 64, .34); }
+    .ume-form-submit:focus-visible { outline: 3px solid #5eead4; outline-offset: 3px; }
+    .ume-form-note { margin: 12px 0 0; text-align: center; font-size: 12px; color: #64748b; }
+    .ume-form-foot { margin: 16px 0 0; padding-top: 16px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 14px; color: #475569; }
+    @media (max-width: 480px) { .ume-form { padding: 28px 20px 22px; } }
+
     /* ================= AJUSTES DE LA AUDITORIA ================= */
     @media (pointer: coarse), (max-width: 1023px) {
       .legal-close, .srv-close { width: 44px; height: 44px; }
@@ -1558,6 +1590,253 @@
   </section>
 
 
+  <!-- ================= 3 & 6. CONTACTO Y MAPA EXPANDIBLE (@dev.shejanmahamud/components/expanded-map) ================= -->
+  <section id="contacto" class="py-20 bg-brand-graybg border-t border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Formulario de Contacto -->
+        <div class="lg:col-span-6 space-y-6">
+          <div>
+            <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Estamos a tu servicio</span>
+            <!-- 6. Soft Blur In en Título -->
+            <h2 class="soft-blur-title text-3xl font-serif font-bold text-brand-navy mt-1">Contacto y Agendamiento</h2>
+            <p class="text-slate-500 text-sm mt-2">Envíanos un mensaje para programar tu cita o recibir información personalizada.</p>
+          </div>
+
+          <div class="ume-form">
+            <div class="ume-form-head">
+              <span class="ume-form-ico" aria-hidden="true"><i class="fa-solid fa-calendar-check"></i></span>
+              <div>
+                <h3>Agenda tu cita</h3>
+                <p>Cuéntanos qué necesitas y te respondemos por WhatsApp.</p>
+              </div>
+            </div>
+
+            <a class="ume-form-quick" href="https://wa.me/526565632887?text=Hola,%20me%20gustar%C3%ADa%20agendar%20una%20cita%20o%20pedir%20informes%20en%20Hospital%20UME" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp text-xl text-emerald-500" aria-hidden="true"></i>
+              <span>Escribir directo por WhatsApp</span>
+            </a>
+            <div class="ume-form-or"><span>o llena el formulario</span></div>
+
+            <form onsubmit="enviarMensajeWhatsApp(event)" class="relative z-10">
+              <div class="ume-field">
+                <label for="nombre">Nombre completo</label>
+                <div class="ume-input">
+                  <i class="fa-regular fa-user" aria-hidden="true"></i>
+                  <input type="text" id="nombre" placeholder="Ej. Carlos Mendoza" autocomplete="name" required>
+                </div>
+              </div>
+
+              <div class="ume-field">
+                <label for="servicio-interes">Servicio o especialidad de interés</label>
+                <div class="ume-input">
+                  <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+                  <select id="servicio-interes">
+                    <option value="Consulta con Médico Especialista">Consulta con médico especialista</option>
+                    <option value="Estudios de Resonancia o Tomografía">Estudios de resonancia o tomografía</option>
+                    <option value="Paquetes de Maternidad (Parto/Cesárea)">Paquetes de maternidad (parto/cesárea)</option>
+                    <option value="Cotización de Cirugía Programada">Cotización de cirugía programada</option>
+                    <option value="Laboratorio Clínico o Rayos X">Laboratorio clínico o rayos X</option>
+                    <option value="Renta de Quirófanos (Para Médicos)">Renta de quirófanos (para médicos)</option>
+                    <option value="Información General">Información general</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="ume-field">
+                <label for="mensaje">Mensaje o detalles de tu consulta</label>
+                <div class="ume-input ta">
+                  <i class="fa-regular fa-comment-dots" aria-hidden="true"></i>
+                  <textarea id="mensaje" rows="3" maxlength="500" placeholder="¿Cuándo te gustaría acudir o qué dudas tienes?" required></textarea>
+                </div>
+              </div>
+
+              <label class="ume-check">
+                <input type="checkbox" id="acepta-aviso" required>
+                <span>He leído y acepto el <button type="button" data-dlg="dlg-privacidad">Aviso de privacidad</button>.</span>
+              </label>
+
+              <button type="submit" class="ume-form-submit">
+                <i class="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i>
+                <span>Enviar solicitud</span>
+                <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+              </button>
+              <p class="ume-form-note"><i class="fa-solid fa-lock" aria-hidden="true"></i> Este sitio no guarda lo que escribes: solo prepara tu mensaje de WhatsApp.</p>
+            </form>
+            <p class="ume-form-foot">¿Prefieres llamar? <a href="tel:6569002248" class="font-bold text-brand-navy hover:underline">(656) 900 2248</a></p>
+          </div>
+        </div>
+
+        <!-- 3. COMPONENTE LOCATION MAP 3D (@dev.shejanmahamud/components/expanded-map - Estilo Google Maps Oficial) -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <!-- Encabezado con Coordenadas y Estado -->
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Ubicación Estratégica</span>
+              <h3 class="soft-blur-title text-2xl sm:text-3xl font-serif font-bold text-brand-navy">Hospital UME</h3>
+            </div>
+            <div class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 px-3.5 py-1 rounded-full text-xs font-bold shadow-sm">
+              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
+              <span>Abierto 24 Horas · Urgencias</span>
+            </div>
+          </div>
+
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Blvd. Independencia #841, Colonia Zaragoza, C.P. 32570, Ciudad Juárez, Chihuahua.<br>
+            <span class="text-xs text-slate-400">Teléfono: <strong class="text-slate-700">(656) 900 2248</strong> · Ambulancia directa: <strong class="text-slate-700">(656) 660 9734</strong></span>
+          </p>
+
+          <!-- Componente LocationMap 3D (Siempre visible, mapa oficial embebido de Google Maps, tilt 3D y expansión 3D interactiva) -->
+          <div class="location-map-perspective relative w-full" id="location-map-wrapper">
+            
+            <div id="location-map-card" class="location-map-card location-map-preserve-3d relative w-full h-[360px] rounded-3xl overflow-hidden border border-slate-200/90 bg-[#f4f3f0] shadow-xl hover:shadow-2xl cursor-pointer">
+              
+              <!-- Reflejo / Glare Interactivo que sigue el cursor -->
+              <div id="location-map-glare" class="pointer-events-none absolute inset-0 z-30 opacity-0 transition-opacity duration-300"></div>
+
+              <!-- Plano del Mapa en 3D & Cuadrícula de Tiles Oficiales de Google Maps (Siempre Visible) -->
+              <div id="location-map-plane" class="absolute inset-0 overflow-hidden transition-transform duration-500 origin-center bg-[#f4f3f0]">
+                <iframe id="map-frame" title="Mapa de Hospital UME en Google Maps"
+                        src="https://maps.google.com/maps?q=31.674995574143438,-106.35334712437877&z=16&t=m&hl=es&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        class="absolute inset-0 w-full h-full border-0" style="pointer-events:none;"></iframe>
+
+                <!-- Degradados suaves para legibilidad de controles manteniendo el mapa nítido y claro -->
+                <div class="pointer-events-none absolute inset-x-0 top-0 h-24 z-10 bg-gradient-to-b from-white/70 via-white/20 to-transparent"></div>
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 z-10 bg-gradient-to-t from-white/85 via-white/30 to-transparent"></div>
+              </div>
+
+              <!-- Pin 3D Flotante en el Centro del Mapa (Hospital UME - Estilo Oficial Google Maps con H) -->
+              <div id="location-map-pin" class="hidden pointer-events-none absolute top-1/2 left-1/2 z-20 transition-all duration-500" style="transform: translate(-50%, -100%) translateZ(40px);">
+                <div class="relative flex flex-col items-center">
+                  
+                  <!-- Anillos de Radar Pulsante en la base -->
+                  <div class="absolute -bottom-1 flex items-center justify-center">
+                    <span class="absolute w-12 h-12 rounded-full bg-red-500/35 animate-ping"></span>
+                    <span class="absolute w-20 h-20 rounded-full bg-brand-teal/25 animate-pulse"></span>
+                    <div class="w-8 h-2 rounded-full bg-slate-900/35 blur-[2px]"></div>
+                  </div>
+
+                  <!-- Ícono del Pin Oficial de Google Maps con H Hospitalaria -->
+                  <div class="relative z-10 drop-shadow-xl flex items-center justify-center transition-transform hover:scale-110">
+                    <svg aria-hidden="true" focusable="false" width="36" height="46" viewBox="0 0 36 46" fill="none" class="filter drop-shadow-md">
+                      <path d="M18 0C8.06 0 0 8.06 0 18C0 31.5 18 46 18 46C18 46 36 31.5 36 18C36 8.06 27.94 0 18 0Z" fill="#EA4335"/>
+                      <circle cx="18" cy="17" r="10" fill="#FFFFFF"/>
+                      <path d="M14 12V22M22 12V22M14 17H22" stroke="#EA4335" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+
+                  <!-- Etiqueta Oficial estilo Google Maps -->
+                  <div class="mt-1 bg-white/95 border border-slate-200/90 text-slate-800 text-[11px] font-bold px-3 py-0.5 rounded-full shadow-md whitespace-nowrap flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span>Hospital UME</span>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- HUD Superior Flotante en 3D (translateZ 30px) -->
+              <div class="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none" style="transform: translateZ(30px);">
+                
+                <!-- Badge de Coordenadas con Pin de Google Maps -->
+                <div class="inline-flex items-center gap-2 bg-white/95 backdrop-blur-md border border-slate-200 text-slate-800 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold shadow-md">
+                  <i class="fa-solid fa-location-dot text-red-500 text-xs"></i>
+                  <span>31.6750° N, 106.3533° W</span>
+                </div>
+
+                <!-- Botones Superiores (Modo 3D y Expandir) -->
+                <div class="flex items-center gap-2 pointer-events-auto">
+                  <button id="btn-toggle-3d" type="button" class="inline-flex items-center gap-1.5 bg-white/95 hover:bg-slate-50 backdrop-blur-md border border-slate-200 hover:border-brand-teal text-slate-800 px-3.5 py-1.5 rounded-full text-xs font-bold transition shadow-md">
+                    <i class="fa-solid fa-cube text-xs text-brand-teal"></i>
+                    <span id="btn-3d-text">Vista 3D</span>
+                  </button>
+
+                  <button aria-label="Expandir Mapa" id="btn-expand-map" type="button" class="w-8 h-8 rounded-full bg-white/95 hover:bg-slate-50 backdrop-blur-md border border-slate-200 text-slate-700 flex items-center justify-center text-xs transition shadow-md" title="Expandir Mapa">
+                    <i class="fa-solid fa-expand text-xs" id="icon-expand-map"></i>
+                  </button>
+                </div>
+
+              </div>
+
+              <!-- Barra de Controles Flotante Estilo Google Maps (Visible cuando se expande) -->
+              <div id="expanded-controls-toolbar" class="hidden absolute top-16 right-4 z-20 flex flex-col gap-2 pointer-events-auto" style="transform: translateZ(30px);">
+                <!-- Zoom In -->
+                <button aria-label="Acercar (+)" id="btn-zoom-in" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-slate-700 flex items-center justify-center text-xs transition shadow-md font-bold" title="Acercar (+)">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+                <!-- Zoom Out -->
+                <button aria-label="Alejar (-)" id="btn-zoom-out" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-slate-700 flex items-center justify-center text-xs transition shadow-md font-bold" title="Alejar (-)">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <!-- Centrar en UME -->
+                <button aria-label="Centrar en Hospital UME" id="btn-recenter" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-brand-teal flex items-center justify-center text-xs transition shadow-md" title="Centrar en Hospital UME">
+                  <i class="fa-solid fa-crosshairs"></i>
+                </button>
+                <!-- Cambiar Capa (Google Roadmap / Satélite Híbrido) -->
+                <button aria-label="Alternar Mapa Calles / Satélite Híbrido" id="btn-toggle-layer" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-blue-600 flex items-center justify-center text-xs transition shadow-md" title="Alternar Mapa Calles / Satélite Híbrido">
+                  <i class="fa-solid fa-layer-group"></i>
+                </button>
+              </div>
+
+              <!-- Panel Inferior Flotante en 3D Estilo Tarjeta Google Maps (translateZ 35px) -->
+              <div class="absolute bottom-4 left-4 right-4 z-20 pointer-events-none" style="transform: translateZ(35px);">
+                <div class="p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  
+                  <div class="space-y-0.5">
+                    <div class="flex items-center gap-2">
+                      <h4 class="text-sm font-bold text-slate-900 tracking-wide flex items-center gap-1.5">
+                        <i class="fa-brands fa-google text-red-500 text-xs"></i>
+                        Hospital UME
+                      </h4>
+                      <span class="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-bold">Abierto 24 Horas</span>
+                    </div>
+                    <p class="text-xs text-slate-600">Blvd. Independencia #841, Col. Zaragoza · Ciudad Juárez</p>
+                    <!-- Línea de Subrayado Gradiente Google Red & Brand Teal -->
+                    <div class="h-0.5 w-36 bg-gradient-to-r from-red-500 via-brand-teal to-transparent rounded-full mt-1.5"></div>
+                  </div>
+
+                  <!-- Botón / Indicador de Expansión -->
+                  <div class="pointer-events-auto flex items-center gap-2">
+                    <span id="click-hint-badge" class="text-xs text-slate-700 flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm transition font-semibold">
+                      <i class="fa-solid fa-cube text-brand-teal text-xs"></i>
+                      <span id="click-hint-text">Clic para expandir en 3D</span>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Botones Oficiales Directos Waze & Google Maps -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            
+            <a href="https://maps.app.goo.gl/vA4GtZa2F8LFgPiVA?g_st=ic" target="_blank" rel="noopener" class="hover-border-gradient w-full">
+              <span class="hover-border-gradient-inner py-3 px-4 text-xs sm:text-sm font-bold w-full justify-center">
+                <i class="fa-brands fa-google text-blue-400 text-base"></i>
+                <span>Cómo llegar · Google Maps</span>
+              </span>
+            </a>
+
+            <a href="https://waze.com/ul?ll=31.674995574143438,-106.35334712437877&navigate=yes" target="_blank" rel="noopener" class="hover-border-gradient w-full">
+              <span class="hover-border-gradient-inner py-3 px-4 text-xs sm:text-sm font-bold w-full justify-center">
+                <i class="fa-brands fa-waze text-cyan-400 text-base"></i>
+                <span>Cómo llegar en Waze</span>
+              </span>
+            </a>
+
+          </div>
+
+        </div></div>
+
+    </div>
+  </section>
+
   <!-- ================= 6. SECCIÓN SEGMENTADA CON SOFT BLUR IN (@educalvolpz) ================= -->
   <section id="segmento" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2074,230 +2353,6 @@
     </div>
   </section>
 
-  <!-- ================= 3 & 6. CONTACTO Y MAPA EXPANDIBLE (@dev.shejanmahamud/components/expanded-map) ================= -->
-  <section id="contacto" class="py-20 bg-brand-graybg border-t border-slate-200/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Formulario de Contacto -->
-        <div class="lg:col-span-6 space-y-6">
-          <div>
-            <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Estamos a tu servicio</span>
-            <!-- 6. Soft Blur In en Título -->
-            <h2 class="soft-blur-title text-3xl font-serif font-bold text-brand-navy mt-1">Contacto y Agendamiento</h2>
-            <p class="text-slate-500 text-sm mt-2">Envíanos un mensaje para programar tu cita o recibir información personalizada.</p>
-          </div>
-
-          <div class="border-beam-container p-8 border border-slate-200 shadow-xl">
-            <div class="border-beam-glow"></div>
-            <form onsubmit="enviarMensajeWhatsApp(event)" class="relative z-10 space-y-5">
-              
-              <div>
-                <label for="nombre" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Nombre Completo</label>
-                <div class="relative">
-                  <i class="fa-regular fa-user absolute left-4 top-3.5 text-slate-400"></i>
-                  <input type="text" id="nombre" placeholder="Ej. Carlos Mendoza" required class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition bg-white">
-                </div>
-              </div>
-
-              <div>
-                <label for="servicio-interes" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Servicio o Especialidad de Interés</label>
-                <div class="relative">
-                  <i class="fa-solid fa-stethoscope absolute left-4 top-3.5 text-slate-400"></i>
-                  <select id="servicio-interes" class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition bg-white text-slate-700">
-                    <option value="Consulta con Médico Especialista">Consulta con Médico Especialista</option>
-                    <option value="Paquetes de Maternidad (Parto/Cesárea)">Paquetes de Maternidad (Parto/Cesárea)</option>
-                    <option value="Cotización de Cirugía Programada">Cotización de Cirugía Programada</option>
-                    <option value="Laboratorio Clínico o Rayos X">Laboratorio Clínico o Rayos X</option>
-                    <option value="Renta de Quirófanos (Para Médicos)">Renta de Quirófanos (Para Médicos)</option>
-                    <option value="Información General">Información General</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label for="mensaje" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Mensaje o Detalles de tu Consulta</label>
-                <textarea id="mensaje" rows="3" maxlength="500" placeholder="¿Cuándo te gustaría acudir o qué dudas tienes?" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition bg-white"></textarea>
-              </div>
-
-              <button type="submit" class="hover-border-gradient hover-border-gradient-whatsapp w-full">
-                <span class="hover-border-gradient-inner py-3.5 px-6 text-sm font-bold w-full justify-center">
-                  <i class="fa-brands fa-whatsapp text-xl text-emerald-400"></i>
-                  <span>Enviar Solicitud a WhatsApp</span>
-                </span>
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <!-- 3. COMPONENTE LOCATION MAP 3D (@dev.shejanmahamud/components/expanded-map - Estilo Google Maps Oficial) -->
-        <div class="lg:col-span-6 space-y-6">
-          
-          <!-- Encabezado con Coordenadas y Estado -->
-          <div class="flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <span class="text-brand-teal font-semibold text-xs tracking-widest uppercase">Ubicación Estratégica</span>
-              <h3 class="soft-blur-title text-2xl sm:text-3xl font-serif font-bold text-brand-navy">Hospital UME</h3>
-            </div>
-            <div class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 px-3.5 py-1 rounded-full text-xs font-bold shadow-sm">
-              <i class="fa-solid fa-circle-check text-[10px] text-emerald-500"></i>
-              <span>Abierto 24 Horas · Urgencias</span>
-            </div>
-          </div>
-
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Blvd. Independencia #841, Colonia Zaragoza, C.P. 32570, Ciudad Juárez, Chihuahua.<br>
-            <span class="text-xs text-slate-400">Teléfono: <strong class="text-slate-700">(656) 900 2248</strong> · Ambulancia directa: <strong class="text-slate-700">(656) 660 9734</strong></span>
-          </p>
-
-          <!-- Componente LocationMap 3D (Siempre visible, mapa oficial embebido de Google Maps, tilt 3D y expansión 3D interactiva) -->
-          <div class="location-map-perspective relative w-full" id="location-map-wrapper">
-            
-            <div id="location-map-card" class="location-map-card location-map-preserve-3d relative w-full h-[360px] rounded-3xl overflow-hidden border border-slate-200/90 bg-[#f4f3f0] shadow-xl hover:shadow-2xl cursor-pointer">
-              
-              <!-- Reflejo / Glare Interactivo que sigue el cursor -->
-              <div id="location-map-glare" class="pointer-events-none absolute inset-0 z-30 opacity-0 transition-opacity duration-300"></div>
-
-              <!-- Plano del Mapa en 3D & Cuadrícula de Tiles Oficiales de Google Maps (Siempre Visible) -->
-              <div id="location-map-plane" class="absolute inset-0 overflow-hidden transition-transform duration-500 origin-center bg-[#f4f3f0]">
-                <iframe id="map-frame" title="Mapa de Hospital UME en Google Maps"
-                        src="https://maps.google.com/maps?q=31.674995574143438,-106.35334712437877&z=16&t=m&hl=es&output=embed"
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        class="absolute inset-0 w-full h-full border-0" style="pointer-events:none;"></iframe>
-
-                <!-- Degradados suaves para legibilidad de controles manteniendo el mapa nítido y claro -->
-                <div class="pointer-events-none absolute inset-x-0 top-0 h-24 z-10 bg-gradient-to-b from-white/70 via-white/20 to-transparent"></div>
-                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 z-10 bg-gradient-to-t from-white/85 via-white/30 to-transparent"></div>
-              </div>
-
-              <!-- Pin 3D Flotante en el Centro del Mapa (Hospital UME - Estilo Oficial Google Maps con H) -->
-              <div id="location-map-pin" class="hidden pointer-events-none absolute top-1/2 left-1/2 z-20 transition-all duration-500" style="transform: translate(-50%, -100%) translateZ(40px);">
-                <div class="relative flex flex-col items-center">
-                  
-                  <!-- Anillos de Radar Pulsante en la base -->
-                  <div class="absolute -bottom-1 flex items-center justify-center">
-                    <span class="absolute w-12 h-12 rounded-full bg-red-500/35 animate-ping"></span>
-                    <span class="absolute w-20 h-20 rounded-full bg-brand-teal/25 animate-pulse"></span>
-                    <div class="w-8 h-2 rounded-full bg-slate-900/35 blur-[2px]"></div>
-                  </div>
-
-                  <!-- Ícono del Pin Oficial de Google Maps con H Hospitalaria -->
-                  <div class="relative z-10 drop-shadow-xl flex items-center justify-center transition-transform hover:scale-110">
-                    <svg aria-hidden="true" focusable="false" width="36" height="46" viewBox="0 0 36 46" fill="none" class="filter drop-shadow-md">
-                      <path d="M18 0C8.06 0 0 8.06 0 18C0 31.5 18 46 18 46C18 46 36 31.5 36 18C36 8.06 27.94 0 18 0Z" fill="#EA4335"/>
-                      <circle cx="18" cy="17" r="10" fill="#FFFFFF"/>
-                      <path d="M14 12V22M22 12V22M14 17H22" stroke="#EA4335" stroke-width="2.5" stroke-linecap="round"/>
-                    </svg>
-                  </div>
-
-                  <!-- Etiqueta Oficial estilo Google Maps -->
-                  <div class="mt-1 bg-white/95 border border-slate-200/90 text-slate-800 text-[11px] font-bold px-3 py-0.5 rounded-full shadow-md whitespace-nowrap flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                    <span>Hospital UME</span>
-                  </div>
-
-                </div>
-              </div>
-
-              <!-- HUD Superior Flotante en 3D (translateZ 30px) -->
-              <div class="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none" style="transform: translateZ(30px);">
-                
-                <!-- Badge de Coordenadas con Pin de Google Maps -->
-                <div class="inline-flex items-center gap-2 bg-white/95 backdrop-blur-md border border-slate-200 text-slate-800 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold shadow-md">
-                  <i class="fa-solid fa-location-dot text-red-500 text-xs"></i>
-                  <span>31.6750° N, 106.3533° W</span>
-                </div>
-
-                <!-- Botones Superiores (Modo 3D y Expandir) -->
-                <div class="flex items-center gap-2 pointer-events-auto">
-                  <button id="btn-toggle-3d" type="button" class="inline-flex items-center gap-1.5 bg-white/95 hover:bg-slate-50 backdrop-blur-md border border-slate-200 hover:border-brand-teal text-slate-800 px-3.5 py-1.5 rounded-full text-xs font-bold transition shadow-md">
-                    <i class="fa-solid fa-cube text-xs text-brand-teal"></i>
-                    <span id="btn-3d-text">Vista 3D</span>
-                  </button>
-
-                  <button aria-label="Expandir Mapa" id="btn-expand-map" type="button" class="w-8 h-8 rounded-full bg-white/95 hover:bg-slate-50 backdrop-blur-md border border-slate-200 text-slate-700 flex items-center justify-center text-xs transition shadow-md" title="Expandir Mapa">
-                    <i class="fa-solid fa-expand text-xs" id="icon-expand-map"></i>
-                  </button>
-                </div>
-
-              </div>
-
-              <!-- Barra de Controles Flotante Estilo Google Maps (Visible cuando se expande) -->
-              <div id="expanded-controls-toolbar" class="hidden absolute top-16 right-4 z-20 flex flex-col gap-2 pointer-events-auto" style="transform: translateZ(30px);">
-                <!-- Zoom In -->
-                <button aria-label="Acercar (+)" id="btn-zoom-in" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-slate-700 flex items-center justify-center text-xs transition shadow-md font-bold" title="Acercar (+)">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
-                <!-- Zoom Out -->
-                <button aria-label="Alejar (-)" id="btn-zoom-out" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-slate-700 flex items-center justify-center text-xs transition shadow-md font-bold" title="Alejar (-)">
-                  <i class="fa-solid fa-minus"></i>
-                </button>
-                <!-- Centrar en UME -->
-                <button aria-label="Centrar en Hospital UME" id="btn-recenter" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-brand-teal flex items-center justify-center text-xs transition shadow-md" title="Centrar en Hospital UME">
-                  <i class="fa-solid fa-crosshairs"></i>
-                </button>
-                <!-- Cambiar Capa (Google Roadmap / Satélite Híbrido) -->
-                <button aria-label="Alternar Mapa Calles / Satélite Híbrido" id="btn-toggle-layer" type="button" class="w-8 h-8 rounded-lg bg-white/95 hover:bg-slate-50 border border-slate-200 text-blue-600 flex items-center justify-center text-xs transition shadow-md" title="Alternar Mapa Calles / Satélite Híbrido">
-                  <i class="fa-solid fa-layer-group"></i>
-                </button>
-              </div>
-
-              <!-- Panel Inferior Flotante en 3D Estilo Tarjeta Google Maps (translateZ 35px) -->
-              <div class="absolute bottom-4 left-4 right-4 z-20 pointer-events-none" style="transform: translateZ(35px);">
-                <div class="p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  
-                  <div class="space-y-0.5">
-                    <div class="flex items-center gap-2">
-                      <h4 class="text-sm font-bold text-slate-900 tracking-wide flex items-center gap-1.5">
-                        <i class="fa-brands fa-google text-red-500 text-xs"></i>
-                        Hospital UME
-                      </h4>
-                      <span class="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-bold">Abierto 24 Horas</span>
-                    </div>
-                    <p class="text-xs text-slate-600">Blvd. Independencia #841, Col. Zaragoza · Ciudad Juárez</p>
-                    <!-- Línea de Subrayado Gradiente Google Red & Brand Teal -->
-                    <div class="h-0.5 w-36 bg-gradient-to-r from-red-500 via-brand-teal to-transparent rounded-full mt-1.5"></div>
-                  </div>
-
-                  <!-- Botón / Indicador de Expansión -->
-                  <div class="pointer-events-auto flex items-center gap-2">
-                    <span id="click-hint-badge" class="text-xs text-slate-700 flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm transition font-semibold">
-                      <i class="fa-solid fa-cube text-brand-teal text-xs"></i>
-                      <span id="click-hint-text">Clic para expandir en 3D</span>
-                    </span>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          <!-- Botones Oficiales Directos Waze & Google Maps -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-            
-            <a href="https://maps.app.goo.gl/vA4GtZa2F8LFgPiVA?g_st=ic" target="_blank" rel="noopener" class="hover-border-gradient w-full">
-              <span class="hover-border-gradient-inner py-3 px-4 text-xs sm:text-sm font-bold w-full justify-center">
-                <i class="fa-brands fa-google text-blue-400 text-base"></i>
-                <span>Cómo llegar · Google Maps</span>
-              </span>
-            </a>
-
-            <a href="https://waze.com/ul?ll=31.674995574143438,-106.35334712437877&navigate=yes" target="_blank" rel="noopener" class="hover-border-gradient w-full">
-              <span class="hover-border-gradient-inner py-3 px-4 text-xs sm:text-sm font-bold w-full justify-center">
-                <i class="fa-brands fa-waze text-cyan-400 text-base"></i>
-                <span>Cómo llegar en Waze</span>
-              </span>
-            </a>
-
-          </div>
-
-        </div></div>
-
-    </div>
-  </section>
 
   </main>
 
@@ -3218,6 +3273,7 @@
       const url = `https://wa.me/526565632887?text=${encodeURIComponent(texto)}`;
       
       window.open(url, '_blank');
+      e.target.reset();
     }
 
 
