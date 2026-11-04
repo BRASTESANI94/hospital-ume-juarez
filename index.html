@@ -746,8 +746,8 @@
     .ume-hero-shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(7, 22, 38, .60), rgba(7, 22, 38, .22) 40%, rgba(7, 22, 38, .80)); }
     @media (max-width: 639px) { .ume-hero-shade { background: linear-gradient(to bottom, rgba(7, 22, 38, .66), rgba(7, 22, 38, .42) 45%, rgba(7, 22, 38, .84)); } }
     .ume-hero-logo { background: rgba(255, 255, 255, .95); border-radius: 1.25rem; padding: .7rem 1.3rem; box-shadow: 0 18px 50px rgba(0, 0, 0, .38); animation: ume-logo-in .9s cubic-bezier(.16, 1, .3, 1) both; }
-    .ume-hero-logo img { height: 66px; width: auto; display: block; }
-    @media (min-width: 640px) { .ume-hero-logo img { height: 92px; } }
+    .ume-hero-logo img { height: 70px; width: auto; display: block; }
+    @media (min-width: 640px) { .ume-hero-logo img { height: 100px; } }
     @keyframes ume-logo-in { from { opacity: 0; transform: translateY(14px) scale(.96); } to { opacity: 1; transform: none; } }
     @media (prefers-reduced-motion: reduce) { .ume-hero-logo { animation: none; } }
 
@@ -975,7 +975,7 @@
       
       <!-- Logotipo Oficial UME -->
       <a href="#top" class="dock-item flex items-center gap-2 pl-1 flex-shrink-0">
-        <img src="assets/images/logo-ume-scaled-e1776191801809.png" alt="Hospital UME" width="334" height="258" class="h-10 sm:h-11 w-auto object-contain">
+        <img src="assets/images/logo-ume.webp" alt="Hospital UME" width="560" height="239" class="h-10 sm:h-11 w-auto object-contain">
       </a>
 
       <!-- Enlaces Centrales del Dock (Desktop) -->
@@ -1030,7 +1030,7 @@
           </button>
           <button type="button" class="srv-row" data-srv="ambulancia" data-dlg="srv-ambulancia" style="--n:6" aria-haspopup="true">
             <span class="srv-row-ico"><i class="fa-solid fa-truck-medical"></i></span>
-            <span class="srv-row-txt"><span class="roll srv-row-title">Ambulancia</span><small>Línea directa</small></span>
+            <span class="srv-row-txt"><span class="roll srv-row-title">Ambulancia</span><small>24 horas · Línea directa</small></span>
             <i class="fa-solid fa-chevron-right srv-row-arrow" aria-hidden="true"></i>
           </button>
               </div>
@@ -1300,7 +1300,7 @@
       <div class="max-w-3xl mx-auto flex flex-col items-center gap-5 text-center">
 
         <div class="ume-hero-logo">
-          <img src="assets/images/logo-ume-scaled-e1776191801809.png" alt="Hospital UME, Unidad Médica Especializada" width="334" height="258">
+          <img src="assets/images/logo-ume.webp" alt="Hospital UME, Unidad Médica Especializada" width="560" height="239">
         </div>
 
         <div class="inline-flex items-center gap-2.5 bg-brand-teal/25 text-teal-100 border border-brand-teal/50 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-md">
@@ -1551,7 +1551,7 @@
           </div>
           <h3 class="text-xl font-bold text-brand-navy mb-2">Ambulancia</h3>
           <p class="text-slate-600 text-sm leading-relaxed mb-6">
-            Servicio de ambulancia de Hospital UME con línea telefónica directa: (656) 660 9734.
+            Servicio de ambulancia de Hospital UME, disponible las 24 horas, los 7 días de la semana. Línea directa: (656) 660 9734.
           </p>
           <span class="srv-more text-brand-teal font-semibold text-sm inline-flex items-center gap-2">
             <span>Ver servicio</span>
@@ -2373,7 +2373,7 @@
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-14 border-b border-slate-800/80">
         <div>
           <div class="flex items-center gap-3">
-            <img src="assets/images/logo-ume-scaled-e1776191801809.png" alt="Hospital UME" width="334" height="258" loading="lazy" class="h-12 w-auto brightness-0 invert drop-shadow">
+            <img src="assets/images/logo-ume.webp" alt="Hospital UME" width="560" height="239" loading="lazy" class="h-12 w-auto brightness-0 invert drop-shadow">
             <span class="text-2xl font-serif font-black text-white tracking-tight">HOSPITAL UME</span>
           </div>
           <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-md">
@@ -3570,10 +3570,10 @@
       <h3>Equipos y estudios</h3>
       <div class="srv-areas">
         <article class="srv-area"><figure class=""><img src="assets/images/ume-resonancia.webp" alt="Sala de resonancia magnética de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Resonancia magnética (RM)</h4><p>La resonancia magnética puede realizarse con anestesia. Estudios que se realizan:</p><p class="srv-chips-t">Estudios de resonancia</p><ul class="srv-chips"><li>Cráneo simple</li><li>Cráneo simple y contrastada</li><li>Resonancia simple (región a indicar)</li><li>Abdomen completo</li><li>Angiorresonancia</li><li>Próstata</li><li>Mama</li><li>Colangiorresonancia</li><li>Cardiorresonancia</li><li>Neuroeje</li></ul></div></article>
-        <article class="srv-area"><figure class=""><img src="assets/images/ume-tomografia.webp" alt="Sala de tomografía computarizada de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Tomografía computarizada (TAC)</h4><p>Estudios que se realizan:</p><p class="srv-chips-t">Estudios de tomografía</p><ul class="srv-chips"><li>Cráneo simple</li><li>Cráneo simple y contrastada</li><li>Tomografía simple de cualquier región</li><li>Tomografía contrastada de cualquier región</li><li>Abdomen completo con un contraste</li><li>Abdomen completo con doble contraste (intravenoso y oral)</li><li>Angio‑TAC coronaria</li><li>Angio‑TAC (región a indicar)</li><li>Angio‑TAC de abdomen</li><li>Score de calcio coronario</li></ul></div></article>
-        <article class="srv-area srv-area-nophoto"><div><h4>Rayos X y ultrasonido</h4><p>Rayos X y ultrasonido general, obstétrico y de mama.</p></div></article>
+        <article class="srv-area"><figure class=""><img src="assets/images/ume-tomografia.webp" alt="Sala de tomografía computarizada de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Tomografía computarizada (TAC)</h4><p>Disponible las 24 horas, los 7 días de la semana. Estudios que se realizan:</p><p class="srv-chips-t">Estudios de tomografía</p><ul class="srv-chips"><li>Cráneo simple</li><li>Cráneo simple y contrastada</li><li>Tomografía simple de cualquier región</li><li>Tomografía contrastada de cualquier región</li><li>Abdomen completo con un contraste</li><li>Abdomen completo con doble contraste (intravenoso y oral)</li><li>Angio‑TAC coronaria</li><li>Angio‑TAC (región a indicar)</li><li>Angio‑TAC de abdomen</li><li>Score de calcio coronario</li></ul></div></article>
+        <article class="srv-area srv-area-nophoto"><div><h4>Rayos X y ultrasonido</h4><p>Rayos X y ultrasonido general, obstétrico y de mama, disponibles las 24 horas, los 7 días de la semana.</p></div></article>
       </div>
-      <p class="srv-note"><i class="fa-solid fa-circle-info"></i> Área de Imagenología las 24 horas: tomografía, resonancia magnética, rayos X y ultrasonido. Consulta la disponibilidad y la preparación de cada estudio llamando al (656) 900 2248 o por WhatsApp.</p>
+      <p class="srv-note"><i class="fa-solid fa-circle-info"></i> Rayos X, tomografía y ultrasonido, disponibles las 24 horas, los 7 días de la semana. Consulta la disponibilidad y la preparación de cada estudio llamando al (656) 900 2248 o por WhatsApp.</p>
       <div class="srv-cta">
         <a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=Hola,%20quisiera%20información%20sobre%20estudios%20de%20diagnóstico%20por%20imagen%20en%20Hospital%20UME" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;Consultar por WhatsApp</a>
         <a class="ume-btn ume-btn-outline" href="tel:6569002248"><i class="fa-solid fa-phone"></i>&nbsp;(656) 900 2248</a>
@@ -3670,12 +3670,12 @@
       <div>
         <span class="srv-kicker">Hospital UME</span>
         <h2 id="srv-ambulancia-t">Ambulancia</h2>
-        <p>Servicio de ambulancia de Hospital UME.</p>
+        <p>Servicio de ambulancia de Hospital UME, disponible las 24 horas, los 7 días de la semana.</p>
       </div>
     </div>
     <div class="legal-body srv-body">
       <div class="srv-areas">
-        <article class="srv-area"><figure class=""><img src="assets/images/ume-ambulancia.webp" alt="Ambulancia de Hospital UME frente a la entrada de urgencias" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Línea directa de ambulancia</h4><p>Para solicitar el servicio llama directamente al <strong>(656) 660 9734</strong>. Consulta por teléfono la disponibilidad y las condiciones del servicio.</p></div></article>
+        <article class="srv-area"><figure class=""><img src="assets/images/ume-ambulancia.webp" alt="Ambulancia de Hospital UME frente a la entrada de urgencias" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Línea directa de ambulancia</h4><p>Disponible las 24 horas, los 7 días de la semana. Para solicitar el servicio llama directamente al <strong>(656) 660 9734</strong>.</p></div></article>
       </div>
       <div class="srv-cta">
         <a class="ume-btn ume-btn-dark" href="tel:+526566609734"><i class="fa-solid fa-truck-medical"></i>&nbsp;Llamar a ambulancia · (656) 660 9734</a>
