@@ -739,11 +739,11 @@
 
     /* ================= JUNTA 27 OCT: INICIO CON FACHADA REAL, NOSOTROS, FICHAS Y DIRECTORIO ================= */
     .ume-hero-photo { position: absolute; inset: 0; z-index: 0; }
-    .ume-hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 42%; transform-origin: 30% 50%; animation: ume-hero-zoom 24s ease-out both; }
+    .ume-hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 45%; transform-origin: 55% 50%; animation: ume-hero-zoom 24s ease-out both; }
     @keyframes ume-hero-zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
-    @media (max-width: 639px) { .ume-hero-photo img { object-position: 50% 18%; } }
+    @media (max-width: 639px) { .ume-hero-photo img { object-position: 74% 50%; transform-origin: 74% 50%; } }
     @media (prefers-reduced-motion: reduce) { .ume-hero-photo img { animation: none; } }
-    .ume-hero-shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(7, 22, 38, .60), rgba(7, 22, 38, .22) 40%, rgba(7, 22, 38, .80)); }
+    .ume-hero-shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(7, 22, 38, .62), rgba(7, 22, 38, .38) 42%, rgba(7, 22, 38, .82)); }
     @media (max-width: 639px) { .ume-hero-shade { background: linear-gradient(to bottom, rgba(7, 22, 38, .66), rgba(7, 22, 38, .42) 45%, rgba(7, 22, 38, .84)); } }
     .ume-hero-logo { background: rgba(255, 255, 255, .95); border-radius: 1.25rem; padding: .7rem 1.3rem; box-shadow: 0 18px 50px rgba(0, 0, 0, .38); animation: ume-logo-in .9s cubic-bezier(.16, 1, .3, 1) both; }
     .ume-hero-logo { position: relative; }
@@ -910,6 +910,15 @@
     .ume-form-note { margin: 12px 0 0; text-align: center; font-size: 12px; color: #64748b; }
     .ume-form-foot { margin: 16px 0 0; padding-top: 16px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 14px; color: #475569; }
     @media (max-width: 480px) { .ume-form { padding: 28px 20px 22px; } }
+
+    .ume-ext { border: 1px solid #e2e8f0; background: #fff; border-radius: 1.1rem; padding: 14px 16px; }
+    .ume-ext-t { margin: 0 0 10px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #0e7490; }
+    .ume-ext-t i { margin-right: 6px; }
+    .ume-ext ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .ume-ext li { display: flex; flex-direction: column; padding: 9px 12px; border-radius: .8rem; background: #f8fafc; border: 1px solid #e2e8f0; font-size: 13px; color: #475569; }
+    .ume-ext li b { color: #0c2340; font-size: 14.5px; }
+    @media (max-width: 480px) { .ume-ext ul { grid-template-columns: 1fr; } }
+    .dir-note { font-size: 13px; color: #64748b; margin: 0 0 14px; }
 
     /* ================= AJUSTES DE LA AUDITORIA ================= */
     @media (pointer: coarse), (max-width: 1023px) {
@@ -1300,8 +1309,7 @@
   <section id="inicio" class="relative overflow-hidden bg-brand-navy text-white flex items-center min-h-[92svh] lg:min-h-[660px]">
 
     <picture class="ume-hero-photo">
-      <source media="(max-width: 639px)" srcset="assets/images/ume-fachada-esquina.webp">
-      <img src="assets/images/ume-fachada.webp" alt="Fachada real de Hospital UME sobre el Boulevard Independencia, en Ciudad Juárez" width="1920" height="1080" fetchpriority="high" decoding="async">
+      <img src="assets/images/ume-fachada.webp" alt="Fachada de Hospital UME con el letrero de Urgencias 24 horas, en Ciudad Juárez" width="1600" height="900" fetchpriority="high" decoding="async">
     </picture>
     <div class="ume-hero-shade" aria-hidden="true"></div>
 
@@ -1512,7 +1520,7 @@
 
         <!-- Tarjeta 5: Maternidad y Partos -->
         <div class="border-trail-card ume-card group" data-dlg="srv-materna" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver los servicios de Maternidad y Partos">
-          <img class="ume-card-bg" src="assets/images/esp-maternidad.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <img class="ume-card-bg" src="assets/images/ume-parto.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
           <div class="ume-card-shade"></div>
           <svg aria-hidden="true" focusable="false" class="border-trail-svg"><rect class="border-trail-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="20" /></svg>
           <div class="ume-card-panel">
@@ -1595,7 +1603,7 @@
         </div>
       </div>
       <!-- data-pendiente: padrón vigente de médicos, fotos autorizadas, horarios y extensiones por área (UME no los ha validado) -->
-      <script type="application/json" id="directorio-data">{"version": "2026-11-04", "fuente": "Currículo hospitalario de UME (pág. 8). Los nombres de médicos se agregan solo cuando UME entregue el padrón vigente y autorice su foto.", "grupos": [{"nombre": "Medicina y diagnóstico clínico", "especialidades": [{"id": "medicina-general", "nombre": "Medicina general", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "medicina-interna", "nombre": "Medicina interna", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "cardiologia", "nombre": "Cardiología", "medicos": [], "foto": "assets/images/ume-hemodinamia-sala.webp", "pie": "Sala de hemodinamia de Hospital UME"}, {"id": "angiologia", "nombre": "Angiología", "medicos": [], "foto": "assets/images/ume-hemodinamia-equipo.webp", "pie": "Equipo de hemodinamia de Hospital UME"}, {"id": "nefrologia", "nombre": "Nefrología", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "neurologia", "nombre": "Neurología", "medicos": [], "foto": "assets/images/ume-resonancia.webp", "pie": "Sala de resonancia magnética de Hospital UME"}, {"id": "reumatologia", "nombre": "Reumatología", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "oncologia", "nombre": "Oncología", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "dermatologia", "nombre": "Dermatología", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "nutricion", "nombre": "Nutrición", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "psicologia", "nombre": "Psicología", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}], "corto": "Medicina"}, {"nombre": "Cirugía y procedimientos", "especialidades": [{"id": "cirugia-general", "nombre": "Cirugía general", "medicos": [], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}, {"id": "cirugia-cardiotoracica", "nombre": "Cirugía cardiotorácica", "medicos": [], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}, {"id": "ortopedia-y-traumatologia", "nombre": "Ortopedia y traumatología", "medicos": [], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}, {"id": "otorrinolaringologia", "nombre": "Otorrinolaringología", "medicos": [], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}, {"id": "urologia", "nombre": "Urología", "medicos": [], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}], "corto": "Cirugía"}, {"nombre": "Mujer, embarazo y niñez", "especialidades": [{"id": "ginecologia", "nombre": "Ginecología", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "obstetricia", "nombre": "Obstetricia", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "pediatria-y-neonatologia", "nombre": "Pediatría y neonatología", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}], "corto": "Mujer y niñez"}, {"nombre": "Apoyo hospitalario", "especialidades": [{"id": "medicina-intensiva", "nombre": "Medicina intensiva", "medicos": [], "foto": "assets/images/ume-terapia-intensiva.webp", "pie": "Terapia intensiva de Hospital UME"}, {"id": "radiologia-e-imagen", "nombre": "Radiología e imagen", "medicos": [], "foto": "assets/images/ume-tomografia.webp", "pie": "Sala de tomografía de Hospital UME"}, {"id": "hemodialisis", "nombre": "Hemodiálisis", "medicos": []}], "corto": "Apoyo hospitalario"}]}</script>
+      <script type="application/json" id="directorio-data">{"version": "2026-11-06", "fuente": "Directorio médico oficial de UME (44 médicos) y currículo hospitalario.", "grupos": [{"nombre": "Medicina y diagnóstico clínico", "corto": "Medicina", "especialidades": [{"id": "medicina-general", "nombre": "Medicina general", "medicos": [], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "medicina-interna", "nombre": "Medicina interna", "medicos": [{"nombre": "David Leonel Gonzalez Mocken"}, {"nombre": "Jorge Sahagun Zaragoza"}, {"nombre": "Luis Alberto Sigala Perez"}, {"nombre": "Hector Serrato"}], "foto": "assets/images/ume-consultorio-2.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "cardiologia", "nombre": "Cardiología", "medicos": [{"nombre": "Javier Alberto Higuera Castillo"}, {"nombre": "Cesar Adrian Martinez Ramos"}], "foto": "assets/images/ume-ecocardiograma.webp", "pie": "Sala de ecocardiograma de Hospital UME"}, {"id": "angiologia", "nombre": "Angiología", "medicos": [{"nombre": "Carlos Enrique Navarro"}], "foto": "assets/images/ume-hemodinamia-equipo.webp", "pie": "Equipo de hemodinamia de Hospital UME"}, {"id": "gastroenterologia", "nombre": "Gastroenterología", "medicos": [{"nombre": "Arcadio Castro Rubio"}, {"nombre": "Pedro Luis Valverde Aragon"}], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "nefrologia", "nombre": "Nefrología", "medicos": [{"nombre": "Karen Villegas Valle"}, {"nombre": "Allen Estrada Lopez"}], "foto": "assets/images/ume-consultorio-2.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "neurologia", "nombre": "Neurología", "medicos": [{"nombre": "David Alfredo Gonzalez Holguin"}, {"nombre": "Jose Antonio Medina Collantes"}], "foto": "assets/images/ume-resonancia.webp", "pie": "Sala de resonancia magnética de Hospital UME"}, {"id": "reumatologia", "nombre": "Reumatología", "medicos": [{"nombre": "Carmen Paola Lopez Lopez"}], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "oncologia", "nombre": "Oncología", "medicos": [], "foto": "assets/images/ume-consultorio-2.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "dermatologia", "nombre": "Dermatología", "medicos": [{"nombre": "Manuel Dominguez Orozco"}], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "alergologia", "nombre": "Alergología", "medicos": [{"nombre": "Claudia Anahi Estavillo Gomez"}], "foto": "assets/images/ume-consultorio-2.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "geriatria", "nombre": "Geriatría", "medicos": [{"nombre": "Juan Armando Quiroz Uribe"}], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "algologia", "nombre": "Algología", "medicos": [{"nombre": "Paola Carolina Garcia Parra"}], "foto": "assets/images/ume-consultorio-2.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "oftalmologia", "nombre": "Oftalmología", "medicos": [{"nombre": "Ana Victoria Ramos Diaz De Leon"}], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "nutricion", "nombre": "Nutrición", "medicos": [{"nombre": "Melissa Ramirez Valdez"}, {"nombre": "Monica Cristina Elizalde Moncayo"}], "foto": "assets/images/ume-consultorio-2.webp", "pie": "Consultorios equipados de Hospital UME"}, {"id": "psicologia", "nombre": "Psicología", "medicos": [{"nombre": "Ernesto Ortiz"}], "foto": "assets/images/ume-consultorio.webp", "pie": "Consultorios equipados de Hospital UME"}]}, {"nombre": "Cirugía y procedimientos", "corto": "Cirugía", "especialidades": [{"id": "cirugia-general", "nombre": "Cirugía general", "medicos": [{"nombre": "Guillermo Meza Jimenez"}, {"nombre": "Virinia Soto"}], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}, {"id": "cirugia-cardiotoracica", "nombre": "Cirugía cardiotorácica", "medicos": [], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}, {"id": "neurocirugia", "nombre": "Neurocirugía", "medicos": [{"nombre": "Jesus Eduardo Chan Cerecer"}], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}, {"id": "coloproctologia", "nombre": "Coloproctología", "medicos": [{"nombre": "Armando Medina Martinez"}], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}, {"id": "bariatria", "nombre": "Bariatría", "medicos": [{"nombre": "Edgar Santos"}], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}, {"id": "ortopedia-y-traumatologia", "nombre": "Ortopedia y traumatología", "medicos": [{"nombre": "Florencio Flores Razo"}, {"nombre": "Ricardo Othoniel Muñoz Trijillo"}, {"nombre": "Martin Valdivia"}], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}, {"id": "otorrinolaringologia", "nombre": "Otorrinolaringología", "medicos": [{"nombre": "Luis Alejandro Bravo Ayala"}], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}, {"id": "urologia", "nombre": "Urología", "medicos": [{"nombre": "Eymar Marquez Morales"}, {"nombre": "Carlos Raúl Medina López"}, {"nombre": "Juan Antonio Mirazo Roman"}], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}]}, {"nombre": "Mujer, embarazo y niñez", "corto": "Mujer y niñez", "especialidades": [{"id": "ginecologia-y-obstetricia", "nombre": "Ginecología y obstetricia", "medicos": [{"nombre": "Omar Eliazar Reyes Catellanos"}, {"nombre": "Vanessa Monserrat Garcia Carrillo"}, {"nombre": "Mario Humberto Perez Urguiza"}, {"nombre": "Ana Luisa Castro"}, {"nombre": "Jorge Oswaldo Ferreira Ascencio"}], "foto": "assets/images/ume-parto.webp", "pie": "Sala de expulsión de Hospital UME"}, {"id": "pediatria-y-neonatologia", "nombre": "Pediatría y neonatología", "medicos": [{"nombre": "Guillermo Perez Guitierrez", "rol": "Pediatría"}, {"nombre": "Carla Celene Mendoza Valenzuela", "rol": "Pediatría"}, {"nombre": "Hector Daniel Yañez Gordillo", "rol": "Pediatra neonatólogo"}], "foto": "assets/images/ume-neonatal.webp", "pie": "Zona neonatal de Hospital UME"}, {"id": "cirugia-pediatrica", "nombre": "Cirugía pediátrica", "medicos": [{"nombre": "Alan Cardenas"}, {"nombre": "Miguel Angel Zatarain Ontiveros"}], "foto": "assets/images/ume-quirofano.webp", "pie": "Quirófano de Hospital UME"}]}, {"nombre": "Apoyo hospitalario", "corto": "Apoyo hospitalario", "especialidades": [{"id": "medicina-intensiva", "nombre": "Medicina intensiva", "medicos": [], "foto": "assets/images/ume-terapia-intensiva.webp", "pie": "Terapia intensiva de Hospital UME"}, {"id": "radiologia-e-imagen", "nombre": "Radiología e imagen", "medicos": [], "foto": "assets/images/ume-tomografia.webp", "pie": "Sala de tomografía de Hospital UME"}, {"id": "hemodialisis", "nombre": "Hemodiálisis", "medicos": []}]}]}</script>
     </div>
   </section>
 
@@ -1698,6 +1706,15 @@
             Blvd. Independencia #841, Colonia Zaragoza, C.P. 32570, Ciudad Juárez, Chihuahua.<br>
             <span class="text-xs text-slate-400">Teléfono: <strong class="text-slate-700">(656) 900 2248</strong> · Ambulancia directa: <strong class="text-slate-700">(656) 660 9734</strong></span>
           </p>
+          <div class="ume-ext">
+            <p class="ume-ext-t"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i> Marca (656) 900 2248 y pide la extensión</p>
+            <ul>
+              <li><span>Imagenología</span><b>Ext. 1007</b></li>
+              <li><span>Laboratorio</span><b>Ext. 1008</b></li>
+              <li><span>Consulta externa y citas</span><b>Ext. 1009 y 1010</b></li>
+              <li><span>Facturación</span><b>Ext. 1022</b></li>
+            </ul>
+          </div>
 
           <!-- Componente LocationMap 3D (Siempre visible, mapa oficial embebido de Google Maps, tilt 3D y expansión 3D interactiva) -->
           <div class="location-map-perspective relative w-full" id="location-map-wrapper">
@@ -2041,7 +2058,7 @@
           
           <!-- Item 1: Fachada -->
           <div class="gallery-item" data-index="0" role="button" tabindex="0" aria-label="Ver foto 0 de la galeria" onclick="rotateGalleryTo(0)">
-            <img src="assets/images/ume-fachada.webp" alt="Fachada de Hospital UME" width="1400" height="788" loading="lazy" decoding="async" class="w-full h-full object-cover">
+            <img src="assets/images/ume-fachada-noche.webp" alt="Fachada de Hospital UME por la noche, con ambulancia en la entrada de urgencias" width="1280" height="715" loading="lazy" decoding="async" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
             <div class="absolute bottom-4 left-4 right-4 text-sm font-bold text-white drop-shadow">Fachada Principal · Cd. Juárez</div>
           </div>
@@ -2449,6 +2466,7 @@
           <div class="text-xs text-slate-300">
             <span class="text-slate-500 block mb-0.5">Teléfono Principal:</span>
             <a href="tel:6569002248" class="text-brand-cyan font-bold text-sm hover:underline">(656) 900 2248</a>
+            <span class="block mt-1 text-[11px] leading-relaxed text-slate-400">Ext. Imagenología 1007 · Laboratorio 1008 · Consulta externa 1009 y 1010 · Facturación 1022</span>
           </div>
           <div class="text-xs text-slate-300">
             <span class="text-slate-500 block mb-0.5">Ambulancia (línea directa):</span>
@@ -3466,7 +3484,7 @@
         const lista = medicos.length
           ? '<ul class="dir-docs">' + medicos.map((m) => '<li class="dir-doc">' +
               (m.foto ? '<img src="' + esc(m.foto) + '" alt="' + esc(m.nombre) + '" loading="lazy">' : '<span class="dir-ini" aria-hidden="true">' + esc(m.nombre.replace(/^(Dra?\.|Lic\.)\s*/i, '').charAt(0)) + '</span>') +
-              '<div><b>' + esc(m.nombre) + '</b><span>' + esc(esp.nombre) + '</span></div></li>').join('') + '</ul>'
+              '<div><b>' + esc(m.nombre) + '</b><span>' + esc(m.rol || esp.nombre) + '</span></div></li>').join('') + '</ul><p class="dir-note">Consulta horarios y disponibilidad con nuestro equipo: citas y consulta externa, (656) 900 2248, extensiones 1009 y 1010.</p>'
           : '<p>Consulta la disponibilidad con nuestro equipo.</p>';
         const msg = encodeURIComponent('Hola, quisiera información sobre ' + esp.nombre + ' en Hospital UME');
         const fig = esp.foto ? '<figure class="dir-fig"><img src="' + esc(esp.foto) + '" alt="' + esc(esp.pie || esp.nombre) + '" loading="lazy"><figcaption>' + esc(esp.pie || '') + '</figcaption></figure>' : '';
@@ -3601,13 +3619,13 @@
     <div class="legal-body srv-body">
       <h3>Áreas y capacidades</h3>
       <div class="srv-areas">
-        <article class="srv-area srv-area-nophoto"><div><h4>Urgencias 24 horas</h4><p>Atención de emergencias médicas las 24 horas, con 5 camas hospitalarias de corta estancia. Cuenta con monitores de signos vitales, ultrasonido, electrocardiógrafo y tococardiógrafo, y una unidad de choque con desfibrilador, ventilador mecánico no invasivo y equipo de aspiración.</p></div></article>
+        <article class="srv-area"><figure class=""><img src="assets/images/ume-urgencias.webp" alt="Área de urgencias de Hospital UME con camas de corta estancia y monitores" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Urgencias 24 horas</h4><p>Atención de emergencias médicas las 24 horas, con 5 camas hospitalarias de corta estancia. Cuenta con monitores de signos vitales, ultrasonido, electrocardiógrafo y tococardiógrafo, y una unidad de choque con desfibrilador, ventilador mecánico no invasivo y equipo de aspiración.</p></div></article>
         <article class="srv-area srv-area-nophoto"><div><h4>Hospitalización</h4><p>17 habitaciones con cama hospitalaria, monitor de signos vitales y sistema de telemetría conectado a la central de enfermería.</p></div></article>
-        <article class="srv-area"><figure class=""><img src="assets/images/ume-terapia-intensiva.webp" alt="Área de terapia intensiva de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Terapia intensiva</h4><p>5 camas con colchón de aire, pensadas para estancias largas y para evitar úlceras por presión. Monitores de signos vitales con telemetría, cinco ventiladores mecánicos invasivos con ventilación sincrónica o espontánea y un ventilador BiPAP con ciclos adaptativos.</p></div></article>
+        <article class="srv-area"><figure class=""><img src="assets/images/ume-terapia-intensiva.webp" alt="Área de terapia intensiva de Hospital UME con camas y monitores" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Terapia intensiva</h4><p>5 camas con colchón de aire, pensadas para estancias largas y para evitar úlceras por presión. Monitores de signos vitales con telemetría, cinco ventiladores mecánicos invasivos con ventilación sincrónica o espontánea y un ventilador BiPAP con ciclos adaptativos.</p></div></article>
         <article class="srv-area"><figure class=""><img src="assets/images/ume-quirofano.webp" alt="Quirófano de Hospital UME con mesa quirúrgica, lámpara y máquina de anestesia" width="703" height="395" loading="lazy" decoding="async"></figure><div><h4>Quirófanos</h4><p>2 quirófanos equipados con mesa quirúrgica, lámpara, máquina de anestesia, equipo de electrocirugía, torre de laparoscopia y equipo de aspiración. También torre de endoscopia, equipo de rayos X móvil y fluoroscopio.</p></div></article>
         <article class="srv-area"><figure class=""><img src="assets/images/ume-sala-procedimientos.webp" alt="Sala de procedimientos de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Sala de procedimientos</h4><p>Área hospitalaria para la realización de procedimientos.</p></div></article>
         <article class="srv-area"><figure class="dos"><img src="assets/images/ume-hemodinamia-equipo.webp" alt="Equipo de la sala de hemodinamia de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"><img src="assets/images/ume-hemodinamia-sala.webp" alt="Sala de hemodinamia con equipo de imagen de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Hemodinamia</h4><p>Sala con tecnología de rayos X de alta resolución para diagnosticar y tratar enfermedades del corazón y del sistema circulatorio con procedimientos mínimamente invasivos. Cuenta con ultrasonido para cardiología y un arco en C robótico Siemens para procedimientos neurológicos, de miembros periféricos y embolizaciones; permite angiografía, sustracción y roadmap.</p></div></article>
-        <article class="srv-area srv-area-nophoto"><div><h4>Cuidados neonatales</h4><p>2 cubículos con cunas de cuidado intensivo que proporcionan fototerapia, monitores de signos vitales para neonatos, ventilador mecánico con ventilación sincrónica o espontánea e incubadora para prematuros.</p></div></article>
+        <article class="srv-area"><figure class=""><img src="assets/images/ume-neonatal.webp" alt="Zona neonatal de Hospital UME con cunas de cuidado intensivo" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Cuidados neonatales</h4><p>2 cubículos con cunas de cuidado intensivo que proporcionan fototerapia, monitores de signos vitales para neonatos, ventilador mecánico con ventilación sincrónica o espontánea e incubadora para prematuros.</p></div></article>
         <article class="srv-area srv-area-nophoto"><div><h4>Hemodiálisis</h4><p>3 máquinas de hemodiálisis en sala común y una en sala aislada.</p></div></article>
         <article class="srv-area srv-area-nophoto"><div><h4>Inhaloterapia</h4><p>Área diseñada para administrar oxígeno, humedad y medicamentos directamente a las vías respiratorias, con especialistas las 24 horas.</p></div></article>
         <article class="srv-area srv-area-nophoto"><div><h4>Enfermería</h4><p>Departamento con 4 turnos (matutino, vespertino, nocturno y jornada acumulada): 32 enfermeras y enfermeros generales y 3 enfermeros especialistas en terapia intensiva.</p></div></article>
@@ -3672,9 +3690,9 @@
       <div class="srv-areas">
         <article class="srv-area"><figure class=""><img src="assets/images/ume-resonancia.webp" alt="Sala de resonancia magnética de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Resonancia magnética (RM)</h4><p>La resonancia magnética puede realizarse con anestesia. Estudios que se realizan:</p><p class="srv-chips-t">Estudios de resonancia</p><ul class="srv-chips"><li>Cráneo simple</li><li>Cráneo simple y contrastada</li><li>Resonancia simple (región a indicar)</li><li>Abdomen completo</li><li>Angiorresonancia</li><li>Próstata</li><li>Mama</li><li>Colangiorresonancia</li><li>Cardiorresonancia</li><li>Neuroeje</li></ul></div></article>
         <article class="srv-area"><figure class=""><img src="assets/images/ume-tomografia.webp" alt="Sala de tomografía computarizada de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Tomografía computarizada (TAC)</h4><p>Disponible las 24 horas, los 7 días de la semana. Estudios que se realizan:</p><p class="srv-chips-t">Estudios de tomografía</p><ul class="srv-chips"><li>Cráneo simple</li><li>Cráneo simple y contrastada</li><li>Tomografía simple de cualquier región</li><li>Tomografía contrastada de cualquier región</li><li>Abdomen completo con un contraste</li><li>Abdomen completo con doble contraste (intravenoso y oral)</li><li>Angio‑TAC coronaria</li><li>Angio‑TAC (región a indicar)</li><li>Angio‑TAC de abdomen</li><li>Score de calcio coronario</li></ul></div></article>
-        <article class="srv-area srv-area-nophoto"><div><h4>Rayos X y ultrasonido</h4><p>Rayos X y ultrasonido general, obstétrico y de mama, disponibles las 24 horas, los 7 días de la semana.</p></div></article>
+        <article class="srv-area"><figure class=""><img src="assets/images/ume-ultrasonido.webp" alt="Sala de ultrasonido de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Rayos X y ultrasonido</h4><p>Rayos X y ultrasonido general, obstétrico y de mama, disponibles las 24 horas, los 7 días de la semana.</p></div></article>
       </div>
-      <p class="srv-note"><i class="fa-solid fa-circle-info"></i> Rayos X, tomografía y ultrasonido, disponibles las 24 horas, los 7 días de la semana. Consulta la disponibilidad y la preparación de cada estudio llamando al (656) 900 2248 o por WhatsApp.</p>
+      <p class="srv-note"><i class="fa-solid fa-circle-info"></i> Rayos X, tomografía y ultrasonido, disponibles las 24 horas, los 7 días de la semana. Consulta la disponibilidad y la preparación de cada estudio llamando al (656) 900 2248, extensión 1007 (Imagenología), o por WhatsApp.</p>
       <div class="srv-cta">
         <a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=Hola,%20quisiera%20información%20sobre%20estudios%20de%20diagnóstico%20por%20imagen%20en%20Hospital%20UME" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;Consultar por WhatsApp</a>
         <a class="ume-btn ume-btn-outline" href="tel:6569002248"><i class="fa-solid fa-phone"></i>&nbsp;(656) 900 2248</a>
@@ -3703,6 +3721,7 @@
         <li><i class="fa-solid fa-circle-check"></i><span>Enzimas cardíacas</span></li>
         <li><i class="fa-solid fa-circle-check"></i><span>Electrocardiograma (EKG)</span></li>
       </ul>
+      <p class="srv-note"><i class="fa-solid fa-circle-info"></i> Laboratorio: llama al (656) 900 2248, extensión 1008.</p>
       <div class="srv-cta">
         <a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=Hola,%20quisiera%20información%20sobre%20estudios%20de%20laboratorio%20en%20Hospital%20UME" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;Consultar por WhatsApp</a>
         <a class="ume-btn ume-btn-outline" href="tel:6569002248"><i class="fa-solid fa-phone"></i>&nbsp;(656) 900 2248</a>
@@ -3710,7 +3729,7 @@
     </div>
   </dialog>
   <dialog class="legal-dlg srv-dlg" id="srv-materna" aria-labelledby="srv-materna-t">
-    <div class="srv-hero" style="--bg: url('assets/images/esp-maternidad.webp');">
+    <div class="srv-hero" style="--bg: url('assets/images/ume-parto.webp');">
       <button type="button" class="legal-close srv-close" data-close aria-label="Cerrar">✕</button>
       <div>
         <span class="srv-kicker">Hospital UME</span>
@@ -3719,6 +3738,11 @@
       </div>
     </div>
     <div class="legal-body srv-body">
+      <h3>Áreas y capacidades</h3>
+      <div class="srv-areas">
+        <article class="srv-area"><figure class=""><img src="assets/images/ume-parto.webp" alt="Sala de expulsión de Hospital UME con mesa de partos, lámpara y máquina de anestesia" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Sala de expulsión</h4><p>Equipada con mesa para partos, máquina de anestesia, monitor fetal, capnógrafo y cuna térmica.</p></div></article>
+        <article class="srv-area"><figure class=""><img src="assets/images/ume-neonatal.webp" alt="Zona neonatal de Hospital UME con cunas de cuidado intensivo" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Cuidados neonatales</h4><p>2 cubículos con cunas de cuidado intensivo que proporcionan fototerapia, monitores de signos vitales para neonatos, ventilador mecánico e incubadora para prematuros.</p></div></article>
+      </div>
       <h3>Qué atendemos</h3>
       <ul class="srv-list">
         <li><i class="fa-solid fa-circle-check"></i><span>Atención de parto normal</span></li>
@@ -3726,8 +3750,6 @@
         <li><i class="fa-solid fa-circle-check"></i><span>Valoración y seguimiento del embarazo</span></li>
         <li><i class="fa-solid fa-circle-check"></i><span>Ultrasonido obstétrico</span></li>
         <li><i class="fa-solid fa-circle-check"></i><span>Atención hospitalaria materna</span></li>
-        <li><i class="fa-solid fa-circle-check"></i><span>Sala de expulsión equipada: mesa para partos, máquina de anestesia, monitor fetal, capnógrafo y cuna térmica</span></li>
-        <li><i class="fa-solid fa-circle-check"></i><span>Cuidados neonatales con fototerapia e incubadora para prematuros</span></li>
       </ul>
       <div class="srv-cta">
         <a class="ume-btn ume-btn-dark" href="https://wa.me/526565632887?text=Hola,%20quisiera%20información%20sobre%20maternidad%20y%20partos%20en%20Hospital%20UME" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>&nbsp;Consultar por WhatsApp</a>
@@ -3747,7 +3769,7 @@
     <div class="legal-body srv-body">
       <h3>Qué ofrecemos</h3>
       <div class="srv-areas">
-        <article class="srv-area"><figure class=""><img src="assets/images/ume-consultorio.webp" alt="Consultorio equipado de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Consultorios médicos equipados</h4><p>Consultorios equipados disponibles para médicos especialistas.</p></div></article>
+        <article class="srv-area"><figure class=""><img src="assets/images/ume-consultorio-2.webp" alt="Consultorio equipado de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Consultorios médicos equipados</h4><p>Consultorios equipados disponibles para médicos especialistas.</p></div></article>
         <article class="srv-area"><figure class=""><img src="assets/images/ume-recepcion.webp" alt="Recepción de Hospital UME" width="1400" height="788" loading="lazy" decoding="async"></figure><div><h4>Admisión 24 horas</h4><p>Admisión y recepción en el hospital, con procedimientos rápidos para órdenes de admisión, reportes médicos y alta hospitalaria.</p></div></article>
       </div>
       <ul class="srv-list">
